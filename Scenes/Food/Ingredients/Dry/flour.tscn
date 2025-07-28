@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbvysev8axigi"]
+
+[ext_resource type="Texture2D" uid="uid://dytopvc3rkp4d" path="res://Assets/FoodAssets/IngredientAssets/DryIngredientAssets/josieFlour.png" id="1_q3lmi"]
+
+[node name="Flour" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_q3lmi")

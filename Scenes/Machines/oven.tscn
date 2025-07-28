@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgtsespvd00"]
+
+[ext_resource type="Texture2D" uid="uid://dfa5lhl7on2ki" path="res://Assets/TempAssets/Stove_Sketch.png" id="1_ad6jo"]
+
+[node name="Oven" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ad6jo")
