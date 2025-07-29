@@ -21,15 +21,21 @@ script = ExtResource("1_yxu82")
 
 [node name="Slot" parent="." instance=ExtResource("2_g554v")]
 layout_mode = 2
-ingredient = ExtResource("3_dx076")
+item = ExtResource("4_4hpr3")
 amount = 5
 
 [node name="Slot2" parent="." instance=ExtResource("2_g554v")]
 layout_mode = 2
-ingredient = ExtResource("4_4hpr3")
+item = ExtResource("3_dx076")
 amount = 5
 
 [node name="Slot3" parent="." instance=ExtResource("2_g554v")]
 layout_mode = 2
-ingredient = ExtResource("5_o45yr")
+item = ExtResource("5_o45yr")
 amount = 5
+
+[node name="Slot4" parent="." instance=ExtResource("2_g554v")]
+layout_mode = 2
+
+[node name="Slot5" parent="." instance=ExtResource("2_g554v")]
+layout_mode = 2

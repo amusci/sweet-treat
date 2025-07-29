@@ -7,7 +7,7 @@
 [node name="BakeryPlayground" type="Node2D"]
 
 [node name="Oven4" parent="." instance=ExtResource("3_gyj70")]
-position = Vector2(73, 33)
+position = Vector2(128, 28)
 
 [node name="Hotbar" parent="." instance=ExtResource("2_sqe8n")]
 anchors_preset = 0
