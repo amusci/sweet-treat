@@ -1,52 +1,42 @@
-[gd_resource type="Resource" script_class="Recipe" load_steps=18 format=3 uid="uid://bbpdh55jflj0h"]
+[gd_resource type="Resource" script_class="Recipe" load_steps=14 format=3 uid="uid://bbpdh55jflj0h"]
 
 [ext_resource type="Resource" uid="uid://ehkrduea8x4a" path="res://Resources/IngredientResources/wetIngredientResources/butter.tres" id="1_bagit"]
 [ext_resource type="Script" path="res://Scripts/ResourceClasses/Recipe.gd" id="1_q3jil"]
+[ext_resource type="Resource" uid="uid://cwtg4nksbkhqf" path="res://Resources/RecipeResources/InbetweenRecipeResources/self_rising_dough.tres" id="1_qyc1x"]
 [ext_resource type="Script" path="res://Scripts/ResourceClasses/RecipeRequirement.gd" id="1_xjijx"]
 [ext_resource type="Resource" uid="uid://bm5wa7wu7j2lo" path="res://Resources/IngredientResources/wetIngredientResources/egg.tres" id="3_e4103"]
 [ext_resource type="Texture2D" uid="uid://cr1isyvhpjy3s" path="res://Assets/TempAssets/Cookie_Dough.png" id="3_gqoca"]
-[ext_resource type="Resource" uid="uid://b22e0h2xh7sfx" path="res://Resources/IngredientResources/dryIngredientResources/sea_salt.tres" id="4_gyefy"]
-[ext_resource type="Resource" uid="uid://b5gvgfhupsx1o" path="res://Resources/IngredientResources/dryIngredientResources/flour.tres" id="4_nq28o"]
 [ext_resource type="Resource" uid="uid://bmgduypa23b6h" path="res://Resources/IngredientResources/wetIngredientResources/vanilla_extract.tres" id="6_usqu2"]
 [ext_resource type="Resource" uid="uid://dck7jlw3lmsvy" path="res://Resources/IngredientResources/dryIngredientResources/sugar.tres" id="6_uy27w"]
-[ext_resource type="Resource" uid="uid://bscgdv7tmnru" path="res://Resources/IngredientResources/dryIngredientResources/baking_soda.tres" id="7_8168c"]
 
-[sub_resource type="Resource" id="Resource_6ln8n"]
+[sub_resource type="Resource" id="Resource_hct02"]
 script = ExtResource("1_xjijx")
-ingredient = ExtResource("4_nq28o")
+ingredient = ExtResource("1_qyc1x")
 
-[sub_resource type="Resource" id="Resource_si7ht"]
-script = ExtResource("1_xjijx")
-ingredient = ExtResource("7_8168c")
-
-[sub_resource type="Resource" id="Resource_djmpx"]
-script = ExtResource("1_xjijx")
-ingredient = ExtResource("4_gyefy")
-
-[sub_resource type="Resource" id="Resource_xsq7v"]
-script = ExtResource("1_xjijx")
-ingredient = ExtResource("1_bagit")
-
-[sub_resource type="Resource" id="Resource_nxm4y"]
-script = ExtResource("1_xjijx")
-ingredient = ExtResource("6_uy27w")
-
-[sub_resource type="Resource" id="Resource_05j4i"]
-script = ExtResource("1_xjijx")
-ingredient = ExtResource("6_usqu2")
-
-[sub_resource type="Resource" id="Resource_t8kqq"]
+[sub_resource type="Resource" id="Resource_mx8fl"]
 script = ExtResource("1_xjijx")
 ingredient = ExtResource("3_e4103")
 
+[sub_resource type="Resource" id="Resource_sskqx"]
+script = ExtResource("1_xjijx")
+ingredient = ExtResource("1_bagit")
+
+[sub_resource type="Resource" id="Resource_8l02b"]
+script = ExtResource("1_xjijx")
+ingredient = ExtResource("6_usqu2")
+
+[sub_resource type="Resource" id="Resource_s8xic"]
+script = ExtResource("1_xjijx")
+ingredient = ExtResource("6_uy27w")
+
 [resource]
 script = ExtResource("1_q3jil")
-name = "Cookie Dough"
+title = "Cookie Dough"
 sprite = ExtResource("3_gqoca")
 description = "CD"
 category = "inbetween"
-ingredients = Array[ExtResource("1_xjijx")]([SubResource("Resource_6ln8n"), SubResource("Resource_si7ht"), SubResource("Resource_djmpx"), SubResource("Resource_xsq7v"), SubResource("Resource_nxm4y"), SubResource("Resource_05j4i"), SubResource("Resource_t8kqq")])
-tool_required = ""
+ingredients = Array[ExtResource("1_xjijx")]([SubResource("Resource_hct02"), SubResource("Resource_mx8fl"), SubResource("Resource_sskqx"), SubResource("Resource_8l02b"), SubResource("Resource_s8xic")])
+tool_required = "bowl"
 oven_temp = 0.0
 sell_price = 0.0
 unlock_level = 1

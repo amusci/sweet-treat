@@ -10,11 +10,11 @@ ingredient = ExtResource("1_f73b3")
 
 [resource]
 script = ExtResource("1_54fjk")
-name = "Baking Sheet Cookie Dough"
+title = "Baking Sheet Cookie Dough"
 description = "BSCD"
-category = "bakingsheet"
+category = "inbetween"
 ingredients = Array[ExtResource("1_nityr")]([SubResource("Resource_8dxy4")])
-tool_required = ""
+tool_required = "bakingsheet"
 oven_temp = 375.0
 sell_price = 0.0
 unlock_level = 1

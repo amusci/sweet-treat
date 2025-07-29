@@ -11,6 +11,7 @@ script = ExtResource("1_bryeu")
 layout_mode = 0
 offset_right = 30.0
 offset_bottom = 30.0
+expand_mode = 5
 
 [node name="Amount" type="Label" parent="."]
 layout_mode = 1

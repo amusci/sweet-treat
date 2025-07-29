@@ -10,7 +10,6 @@ const WET_INGREDIENTS_PATH = "res://Resources/IngredientResources/wetIngredientR
 const INBETWEEN_RECIPES_PATH = "res://Resources/RecipeResources/InbetweenRecipeResources/"
 const FINISHED_RECIPES_PATH = "res://Resources/RecipeResources/FinishedRecipeResources/"
 
-
 signal data_loaded
 
 func _ready():

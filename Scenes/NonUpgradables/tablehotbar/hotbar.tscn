@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://q1v1svbbga3m"]
+[gd_scene load_steps=6 format=3 uid="uid://q1v1svbbga3m"]
 
 [ext_resource type="Script" path="res://Scenes/NonUpgradables/tablehotbar/hotbar.gd" id="1_yxu82"]
 [ext_resource type="PackedScene" uid="uid://dfseuxorrds8m" path="res://Scenes/NonUpgradables/tablehotbar/ingredient_slot.tscn" id="2_g554v"]
+[ext_resource type="Resource" uid="uid://b5gvgfhupsx1o" path="res://Resources/IngredientResources/dryIngredientResources/flour.tres" id="3_dx076"]
+[ext_resource type="Resource" uid="uid://bscgdv7tmnru" path="res://Resources/IngredientResources/dryIngredientResources/baking_soda.tres" id="4_4hpr3"]
+[ext_resource type="Resource" uid="uid://b22e0h2xh7sfx" path="res://Resources/IngredientResources/dryIngredientResources/sea_salt.tres" id="5_o45yr"]
 
 [node name="Hotbar" type="HBoxContainer"]
 custom_minimum_size = Vector2(320, 30)
@@ -18,27 +21,15 @@ script = ExtResource("1_yxu82")
 
 [node name="Slot" parent="." instance=ExtResource("2_g554v")]
 layout_mode = 2
-
-[node name="Slot3" parent="." instance=ExtResource("2_g554v")]
-layout_mode = 2
-
-[node name="Slot4" parent="." instance=ExtResource("2_g554v")]
-layout_mode = 2
-
-[node name="Slot5" parent="." instance=ExtResource("2_g554v")]
-layout_mode = 2
-
-[node name="Slot6" parent="." instance=ExtResource("2_g554v")]
-layout_mode = 2
-
-[node name="Slot7" parent="." instance=ExtResource("2_g554v")]
-layout_mode = 2
-
-[node name="Slot8" parent="." instance=ExtResource("2_g554v")]
-layout_mode = 2
-
-[node name="Slot9" parent="." instance=ExtResource("2_g554v")]
-layout_mode = 2
+ingredient = ExtResource("3_dx076")
+amount = 5
 
 [node name="Slot2" parent="." instance=ExtResource("2_g554v")]
 layout_mode = 2
+ingredient = ExtResource("4_4hpr3")
+amount = 5
+
+[node name="Slot3" parent="." instance=ExtResource("2_g554v")]
+layout_mode = 2
+ingredient = ExtResource("5_o45yr")
+amount = 5

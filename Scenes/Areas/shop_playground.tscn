@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://4rouxcf08nwj"]
+
+[ext_resource type="Script" path="res://Scenes/Areas/shop_playground.gd" id="1_ovb87"]
+
+[node name="ShopPlayground" type="Node2D"]
+script = ExtResource("1_ovb87")

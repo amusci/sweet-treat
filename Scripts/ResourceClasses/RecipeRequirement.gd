@@ -1,4 +1,4 @@
 class_name RecipeRequirement
 extends Resource
 
-@export var ingredient : Ingredient
+@export var ingredient : Resource
