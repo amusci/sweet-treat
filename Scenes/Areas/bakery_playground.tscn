@@ -1,21 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://jrswjeeueyee"]
 
-[ext_resource type="PackedScene" uid="uid://q1v1svbbga3m" path="res://Scenes/Machines/hotbar.tscn" id="2_sqe8n"]
+[ext_resource type="PackedScene" uid="uid://q1v1svbbga3m" path="res://Scenes/NonUpgradables/tablehotbar/hotbar.tscn" id="2_sqe8n"]
 [ext_resource type="PackedScene" uid="uid://bgtsespvd00" path="res://Scenes/Machines/oven.tscn" id="3_gyj70"]
 
 [node name="BakeryPlayground" type="Node2D"]
-
-[node name="Oven" parent="." instance=ExtResource("3_gyj70")]
-position = Vector2(157, 56)
-
-[node name="Oven2" parent="." instance=ExtResource("3_gyj70")]
-position = Vector2(200, 112)
-
-[node name="Oven3" parent="." instance=ExtResource("3_gyj70")]
-position = Vector2(273, 60)
 
 [node name="Oven4" parent="." instance=ExtResource("3_gyj70")]
 position = Vector2(54, 43)
 
 [node name="Hotbar" parent="." instance=ExtResource("2_sqe8n")]
-position = Vector2(0, 120)
+offset_top = 120.0
+offset_bottom = 120.0

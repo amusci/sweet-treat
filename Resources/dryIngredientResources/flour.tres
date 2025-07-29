@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=3 format=3 uid="uid://b5gvgfhupsx1o"]
+
+[ext_resource type="Script" path="res://Scripts/Ingredient.gd" id="1_sf3qv"]
+[ext_resource type="Texture2D" uid="uid://dytopvc3rkp4d" path="res://Assets/FoodAssets/IngredientAssets/DryIngredientAssets/josieFlour.png" id="1_uxghp"]
+
+[resource]
+script = ExtResource("1_sf3qv")
+title = "Flour"
+icon = ExtResource("1_uxghp")
