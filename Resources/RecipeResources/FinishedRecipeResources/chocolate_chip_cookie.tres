@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=2 format=3 uid="uid://bq7n7n1o4h666"]
+
+[ext_resource type="Script" path="res://Scripts/ResourceClasses/Recipe.gd" id="1_la24q"]
+
+[resource]
+script = ExtResource("1_la24q")
+name = "Chocolate Chip Cookie"
+description = "This is a CCC"
+category = "Finished"
+ingredients = Array[Resource("res://Scripts/ResourceClasses/RecipeRequirement.gd")]([])
+tool_required = Array[String]([])
+sell_price = 0.0
+unlock_level = 1

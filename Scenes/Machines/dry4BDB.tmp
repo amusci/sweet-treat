@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://be6ih76u65jfa"]
+[gd_scene load_steps=4 format=3 uid="uid://be6ih76u65jfa"]
 
 [ext_resource type="PackedScene" uid="uid://dfseuxorrds8m" path="res://Scenes/NonUpgradables/tablehotbar/ingredient_slot.tscn" id="1_t70tn"]
 [ext_resource type="PackedScene" uid="uid://q1v1svbbga3m" path="res://Scenes/NonUpgradables/tablehotbar/hotbar.tscn" id="1_x157y"]
-[ext_resource type="Resource" uid="uid://b5gvgfhupsx1o" path="res://Resources/IngredientResources/dryIngredientResources/flour.tres" id="2_t4mjk"]
-[ext_resource type="Resource" uid="uid://dck7jlw3lmsvy" path="res://Resources/IngredientResources/dryIngredientResources/sugar.tres" id="3_vxmps"]
+[ext_resource type="Resource" uid="uid://b5gvgfhupsx1o" path="res://Resources/dryIngredientResources/flour.tres" id="2_t4mjk"]
 
 [node name="DryStorage" type="Control"]
 layout_mode = 3
@@ -30,38 +29,47 @@ amount = 5
 
 [node name="Slot3" parent="UI/GridContainer" instance=ExtResource("1_t70tn")]
 layout_mode = 2
-ingredient = ExtResource("3_vxmps")
-amount = 10
+amount = null
 
 [node name="Slot4" parent="UI/GridContainer" instance=ExtResource("1_t70tn")]
 layout_mode = 2
+amount = null
 
 [node name="Slot5" parent="UI/GridContainer" instance=ExtResource("1_t70tn")]
 layout_mode = 2
+amount = null
 
 [node name="Slot6" parent="UI/GridContainer" instance=ExtResource("1_t70tn")]
 layout_mode = 2
+amount = null
 
 [node name="Slot7" parent="UI/GridContainer" instance=ExtResource("1_t70tn")]
 layout_mode = 2
+amount = null
 
 [node name="Slot8" parent="UI/GridContainer" instance=ExtResource("1_t70tn")]
 layout_mode = 2
+amount = null
 
 [node name="Slot9" parent="UI/GridContainer" instance=ExtResource("1_t70tn")]
 layout_mode = 2
+amount = null
 
 [node name="Slot10" parent="UI/GridContainer" instance=ExtResource("1_t70tn")]
 layout_mode = 2
+amount = null
 
 [node name="Slot11" parent="UI/GridContainer" instance=ExtResource("1_t70tn")]
 layout_mode = 2
+amount = null
 
 [node name="Slot12" parent="UI/GridContainer" instance=ExtResource("1_t70tn")]
 layout_mode = 2
+amount = null
 
 [node name="Slot2" parent="UI/GridContainer" instance=ExtResource("1_t70tn")]
 layout_mode = 2
+amount = null
 
 [node name="Hotbar" parent="UI" instance=ExtResource("1_x157y")]
 anchors_preset = 7

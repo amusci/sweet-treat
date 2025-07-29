@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://q1v1svbbga3m"]
+
+[ext_resource type="Script" path="res://Scenes/NonUpgradables/tablehotbar/hotbar.gd" id="1_yxu82"]
+[ext_resource type="PackedScene" uid="uid://dfseuxorrds8m" path="res://Scenes/NonUpgradables/tablehotbar/ingredient_slot.tscn" id="2_g554v"]
+
+[node name="Hotbar" type="HBoxContainer"]
+custom_minimum_size = Vector2(320, 30)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -160.0
+offset_right = 160.0
+offset_bottom = 30.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+alignment = 1
+script = ExtResource("1_yxu82")
+
+[node name="Slot" parent="." instance=ExtResource("2_g554v")]
+layout_mode = 2
+
+[node name="Slot3" parent="." instance=ExtResource("2_g554v")]
+layout_mode = 2
+
+[node name="Slot4" parent="." instance=ExtResource("2_g554v")]
+layout_mode = 2
+
+[node name="Slot5" parent="." instance=ExtResource("2_g554v")]
+layout_mode = 2
+
+[node name="Slot6" parent="." instance=ExtResource("2_g554v")]
+layout_mode = 2
+
+[node name="Slot7" parent="." instance=ExtResource("2_g554v")]
+layout_mode = 2
+
+[node name="Slot8" parent="." instance=ExtResource("2_g554v")]
+layout_mode = 2
+
+[node name="Slot9" parent="." instance=ExtResource("2_g554v")]
+layout_mode = 2
+
+[node name="Slot2" parent="." instance=ExtResource("2_g554v")]
+layout_mode = 2

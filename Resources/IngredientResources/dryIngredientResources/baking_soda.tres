@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=3 format=3 uid="uid://bscgdv7tmnru"]
+
+[ext_resource type="Script" path="res://Scripts/ResourceClasses/Ingredient.gd" id="1_ffeaj"]
+[ext_resource type="Texture2D" uid="uid://ca2xwqvxlpetl" path="res://Assets/TempAssets/Baking_Soda.png" id="1_yk8u1"]
+
+[resource]
+script = ExtResource("1_ffeaj")
+title = "Baking Soda"
+description = "This is Baking Soda"
+icon = ExtResource("1_yk8u1")
+price = 99.0

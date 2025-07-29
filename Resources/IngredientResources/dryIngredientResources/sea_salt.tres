@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=3 format=3 uid="uid://b22e0h2xh7sfx"]
+
+[ext_resource type="Texture2D" uid="uid://bs7s1710qmt6u" path="res://Assets/TempAssets/Sea-Salt.png" id="1_uxm1c"]
+[ext_resource type="Script" path="res://Scripts/ResourceClasses/Ingredient.gd" id="2_qv4p3"]
+
+[resource]
+script = ExtResource("2_qv4p3")
+title = "Sea Salt"
+description = "This is Sea Salt"
+icon = ExtResource("1_uxm1c")
+price = 3.5

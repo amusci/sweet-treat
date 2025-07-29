@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=3 format=3 uid="uid://ehkrduea8x4a"]
+
+[ext_resource type="Texture2D" uid="uid://dhf7ct8pu8moo" path="res://Assets/TempAssets/Butter.png" id="1_6u1op"]
+[ext_resource type="Script" path="res://Scripts/ResourceClasses/Ingredient.gd" id="2_r8a4r"]
+
+[resource]
+script = ExtResource("2_r8a4r")
+title = "Butter"
+description = "This is Butter"
+icon = ExtResource("1_6u1op")
+price = 3.5
