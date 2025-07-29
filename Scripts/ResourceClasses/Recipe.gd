@@ -1,7 +1,7 @@
 class_name Recipe
 extends Resource
 
-@export var name: String
+@export var title: String
 @export var sprite: Texture2D
 @export var description: String
 @export var category: String # if it is an in between (cookie batter) or just finished cookie
