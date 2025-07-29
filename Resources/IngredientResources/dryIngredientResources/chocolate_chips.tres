@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=3 format=3 uid="uid://catxdbslsqi7o"]
+
+[ext_resource type="Texture2D" uid="uid://bjm6mvrii2ym6" path="res://Assets/TempAssets/Chocolate_Chips.png" id="1_hbvon"]
+[ext_resource type="Script" path="res://Scripts/ResourceClasses/Ingredient.gd" id="2_32c3s"]
+
+[resource]
+script = ExtResource("2_32c3s")
+title = "Chocolate Chips"
+description = "This is Chocolate Chips"
+icon = ExtResource("1_hbvon")
+price = 3.5

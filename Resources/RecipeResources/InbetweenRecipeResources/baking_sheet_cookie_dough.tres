@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=5 format=3 uid="uid://baxpxodwfxusw"]
+
+[ext_resource type="Script" path="res://Scripts/ResourceClasses/Recipe.gd" id="1_54fjk"]
+[ext_resource type="Resource" uid="uid://bbpdh55jflj0h" path="res://Resources/RecipeResources/InbetweenRecipeResources/cookie_dough.tres" id="1_f73b3"]
+[ext_resource type="Script" path="res://Scripts/ResourceClasses/RecipeRequirement.gd" id="1_nityr"]
+
+[sub_resource type="Resource" id="Resource_8dxy4"]
+script = ExtResource("1_nityr")
+ingredient = ExtResource("1_f73b3")
+
+[resource]
+script = ExtResource("1_54fjk")
+name = "Baking Sheet Cookie Dough"
+description = "BSCD"
+category = "bakingsheet"
+ingredients = Array[ExtResource("1_nityr")]([SubResource("Resource_8dxy4")])
+tool_required = ""
+oven_temp = 375.0
+sell_price = 0.0
+unlock_level = 1

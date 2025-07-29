@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Ingredient" load_steps=2 format=3 uid="uid://drnxahayfncf7"]
+
+[ext_resource type="Script" path="res://Scripts/ResourceClasses/Ingredient.gd" id="1_xvclc"]
+
+[resource]
+script = ExtResource("1_xvclc")
+title = ""
+description = ""
+price = 0.0

@@ -1,9 +1,11 @@
 [gd_resource type="Resource" script_class="Ingredient" load_steps=3 format=3 uid="uid://b5gvgfhupsx1o"]
 
-[ext_resource type="Script" path="res://Scripts/Ingredient.gd" id="1_sf3qv"]
 [ext_resource type="Texture2D" uid="uid://dytopvc3rkp4d" path="res://Assets/FoodAssets/IngredientAssets/DryIngredientAssets/josieFlour.png" id="1_uxghp"]
+[ext_resource type="Script" path="res://Scripts/ResourceClasses/Ingredient.gd" id="2_e1yng"]
 
 [resource]
-script = ExtResource("1_sf3qv")
+script = ExtResource("2_e1yng")
 title = "Flour"
+description = "This is flour"
 icon = ExtResource("1_uxghp")
+price = 3.5
