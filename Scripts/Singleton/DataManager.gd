@@ -48,9 +48,6 @@ func load_dry_ingredients():
 	
 	print("Finished loading dry ingredients. Total: ", dry_ingredients.size())
 	
-	
-		
-	
 func load_wet_ingredients():
 	var dir = DirAccess.open(WET_INGREDIENTS_PATH)
 	

@@ -21,4 +21,4 @@ grow_horizontal = 1
 size_flags_vertical = 4
 
 [node name="AuxStation" parent="." instance=ExtResource("3_ff7m2")]
-position = Vector2(211, 161)
+position = Vector2(204, 120)

@@ -1,9 +1,8 @@
+class_name InventorySlot
 extends Panel
 
 @export var item : Resource = null:
-	
-	# Able to add a item to the slot
-	
+	# The item currently in this slot
 	set(value):
 		item = value
 		
@@ -15,223 +14,215 @@ extends Panel
 		$Icon.texture = value.icon
 		
 @export var amount := 0:
-	
-	# Able to set an amount to the item in the slot
-	
+	# The amount current in this slot
 	set(value):
 		amount = value
 		$Amount.text = str(value)
 		if amount <= 0:
 			item = null
 
-# Drag state variables
-
-var is_dragging = false
-var drag_start_pos = Vector2.ZERO
-var is_right_click_drag = false
-var drag_preview = null
-
-# Drag threshold to prevent accidental drags
-
-const DRAG_THRESHOLD = 5
+# Dragging variables shared across every slot (static)
+static var currently_dragging_slot = null # slot being dragged from
+static var drag_preview = null # visual preview of the item being dragged
+static var is_right_click_mode = false # if the drag is right click initated
 
 func _ready():
-	
-	# Connect mouse signals
-	
+	# Connect GUI input to handle mouse clicks
 	gui_input.connect(_on_gui_input)
 
-func _on_gui_input(event):
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT:
-			if event.pressed:
-				_start_drag(event.global_position, false)
-			else:
-				_end_drag(event.global_position)
-		elif event.button_index == MOUSE_BUTTON_RIGHT:
-			if event.pressed:
-				_start_drag(event.global_position, true)
-			else:
-				_end_drag(event.global_position)
-	
-	elif event is InputEventMouseMotion and is_dragging:
-		_update_drag(event.global_position)
+func _process(_delta):
+	# Follow the mouse with the drag preview
+	if currently_dragging_slot == self and drag_preview:
+		var mouse_pos = get_global_mouse_position()
+		drag_preview.global_position = mouse_pos - drag_preview.size / 2
 
-func _start_drag(pos: Vector2, right_click: bool):
-	
-	# Dragging is true
-	
-	if item == null:
+func _on_gui_input(event):
+	# Detect mouse clicks
+	if event is InputEventMouseButton and event.pressed:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			_handle_click(false)
+		elif event.button_index == MOUSE_BUTTON_RIGHT:
+			_handle_click(true)
+
+func _handle_click(right_click: bool):
+	# What to do with our click
+	if currently_dragging_slot != null:
+		# If we are already dragging, drop into current slot
+		_try_drop_here(right_click)
+	else:
+		# If we aren't dragging, let's start
+		_start_click_drag(right_click)
+
+func _start_click_drag(right_click: bool):
+	# What to do when we click
+	if item == null: # Do I really need to explain this Lukas
 		return
 	
-	is_dragging = true
-	drag_start_pos = pos
-	is_right_click_drag = right_click
-	print("I AM CURRENTLY DRAGGING " , amount, " " , item.title)
+	currently_dragging_slot = self
+	is_right_click_mode = right_click # true or false
+	
+	print("PICKED UP ", amount, " ", item.title)
 	
 	# Create drag preview
-	
 	_create_drag_preview()
 
-func _update_drag(pos: Vector2):
-	if not is_dragging:
+func _try_drop_here(_right_click: bool):
+	# How to handle dropping the drag
+	if currently_dragging_slot == self:
+		# Cancel drop if dropping ontop of current slot
+		_cancel_drag()
 		return
 	
-	# Check if we've moved enough to start visual dragging
-	if drag_start_pos.distance_to(pos) > DRAG_THRESHOLD:
-		if drag_preview:
-			drag_preview.global_position = pos - drag_preview.size / 2
+	# Dropping ontop new slot
+	if is_right_click_mode:
+		_handle_right_click_drop_here() 
+	else:
+		_handle_left_click_drop_here()
+	
+	# Clean up drag state
+	_end_drag()
 
-func _end_drag(pos: Vector2):
-	if not is_dragging:
-		return
+func _cancel_drag():
+	# Cancel drag logic and clean up
 	
-	is_dragging = false
+	#print("CANCELLED DRAG")
+	_cleanup_drag_preview()
+	currently_dragging_slot = null
+	is_right_click_mode = false
+
+func _end_drag():
+	# End drag logic and clean up
 	
-	# Clean up preview
+	# print("DROPPED ITEM")
+	_cleanup_drag_preview()
+	currently_dragging_slot = null
+	is_right_click_mode = false
+
+
+func _cleanup_drag_preview():
+	# Good bye drag preview
 	if drag_preview:
 		drag_preview.queue_free()
 		drag_preview = null
-	
-	# Only process drop if we moved enough distance
-	if drag_start_pos.distance_to(pos) > DRAG_THRESHOLD:
-		_process_drop(pos)
 
 func _create_drag_preview():
+	# Hello drag preview
 	if not item:
 		return
 	
-	# Create a visual preview of the dragged item
+	# Create a preview of the dragged item
 	drag_preview = Control.new()
 	drag_preview.set_anchors_and_offsets_preset(Control.PRESET_TOP_LEFT)
 	drag_preview.size = size
 	drag_preview.z_index = 100
-	
-	# Add background
+	drag_preview.mouse_filter = Control.MOUSE_FILTER_IGNORE
+
 	var bg = ColorRect.new()
 	bg.color = Color(0.2, 0.2, 0.2, 0.8)
 	bg.size = size
+	bg.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	drag_preview.add_child(bg)
-	
-	# Add icon
+
 	var icon = TextureRect.new()
 	icon.texture = item.icon
 	icon.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
 	icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	icon.size = $Icon.size
 	icon.position = $Icon.position
+	icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	drag_preview.add_child(icon)
+
+	### TODO: uhh do we want to see the amount? idk kind of weird and whats the point?
 	
-	# Add amount text if more than 1
-	var drag_amount = amount
-	if is_right_click_drag and amount > 1:
-		drag_amount = 1
+	#var drag_amount = amount
+	#if is_right_click_mode and amount > 1:
+		#drag_amount = 1
 	
-	if drag_amount > 1:
-		var amount_label = Label.new()
-		amount_label.text = str(drag_amount)
-		amount_label.size = $Amount.size
-		amount_label.position = Vector2(25,23) # lukas fault
-		amount_label.add_theme_color_override("font_color", Color.WHITE)
-		amount_label.add_theme_font_size_override("font_size", 4)
-		drag_preview.add_child(amount_label)
+	#if drag_amount > 1:
+		#var amount_label = Label.new()
+		#amount_label.text = str(drag_amount)
+		#amount_label.size = $Amount.size
+		#amount_label.position = Vector2(25,23)
+		#amount_label.add_theme_color_override("font_color", Color.WHITE)
+		#amount_label.add_theme_font_size_override("font_size", 4)
+		#amount_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		#drag_preview.add_child(amount_label)
 	
-	# Add to scene tree
+	# Add to scene
 	get_tree().root.add_child(drag_preview)
 
-func _process_drop(drop_pos: Vector2):
-	# Find the target slot under the mouse
-	var target_slot = _find_slot_at_position(drop_pos)
+func _handle_left_click_drop_here():
+	# LEFT CLICK DROP LOGIC
+	var source_slot = currently_dragging_slot
 	
-	if target_slot == null or target_slot == self:
-		return
-	
-	# Process the drop based on click type
-	if is_right_click_drag:
-		_handle_right_click_drop(target_slot)
-	else:
-		_handle_left_click_drop(target_slot)
-
-func _find_slot_at_position(pos: Vector2) -> Panel:
-	# Get all inventory slots in the scene
-	var slots = _get_all_inventory_slots()
-	
-	for slot in slots:
-		if slot == self:
-			continue
-		
-		var slot_rect = Rect2(slot.global_position, slot.size)
-		if slot_rect.has_point(pos):
-			return slot
-	
-	return null
-
-func _get_all_inventory_slots() -> Array:
-	# This function should return all inventory slots in your game
-	# You might need to adjust this based on your scene structure
-	var slots = []
-	_find_inventory_slots_recursive(get_tree().root, slots)
-	return slots
-
-func _find_inventory_slots_recursive(node: Node, slots: Array):
-	# Check if this node is an inventory slot (has the same script)
-	if node.get_script() == get_script() and node != self:
-		slots.append(node)
-	
-	# Recursively check children
-	for child in node.get_children():
-		_find_inventory_slots_recursive(child, slots)
-
-func _handle_left_click_drop(target_slot: Panel):
 	# Left click: move entire stack or swap items
-	if target_slot.item == null:
-		# Target slot is empty move our item there
-		target_slot.item = item
-		target_slot.amount = amount
-		item = null
-		amount = 0
+	if item == null:
+		# Target slot is empty move the item to that slot
+		item = source_slot.item
+		amount = source_slot.amount
+		source_slot.item = null
+		source_slot.amount = 0
 	else:
 		# Target slot has item check if same type
-		if target_slot.item == item:
-			# Same item type combine stacks
-			target_slot.amount += amount
-			item = null
-			amount = 0
+		if item == source_slot.item:
+			# Same item type COMBINE
+			amount += source_slot.amount
+			source_slot.item = null
+			source_slot.amount = 0
 		else:
-			# Different item types swap them
-			var temp_item = target_slot.item
-			var temp_amount = target_slot.amount
+			# Different item types SWAP
+			var temp_item = item
+			var temp_amount = amount
 			
-			target_slot.item = item
-			target_slot.amount = amount
+			item = source_slot.item
+			amount = source_slot.amount
 			
-			item = temp_item
-			amount = temp_amount
+			source_slot.item = temp_item
+			source_slot.amount = temp_amount
 
-func _handle_right_click_drop(target_slot: Panel):
-	# Right click take one item from stack
-	if target_slot.item != null:
-		# Check if it's the same item type stack them
-		if target_slot.item == item:
-			target_slot.amount += 1
-			if amount <= 1:
-				# We only had one item remove it entirely
-				item = null
-				amount = 0
+func _handle_right_click_drop_here():
+	# RIGHT CLICK DROP LOGIC
+	var source_slot = currently_dragging_slot
+	
+	# If target slot is not empty
+	if item != null:
+		# Check if the current item is the same as the dropped slot
+		if item == source_slot.item:
+			amount += 1 # If the same ADD ONE 
+			if source_slot.amount <= 1:
+				# If source slot had 1 of the item and we are dropping WE OBVIOUSLY CANT DUPLICATE
+				source_slot.item = null
+				source_slot.amount = 0
 			else:
-				# We had multiple items reduce by one
-				amount -= 1
-		# If different item types do nothing
+				# Source slot had multiple items REDUCE BY ONE
+				source_slot.amount -= 1
+		# If different item types do nothing right click is NOT MERGE
 		return
 	
-	if amount <= 1:
-		# Only one item move it entirely
-		target_slot.item = item
-		target_slot.amount = 1
-		item = null
-		amount = 0
+	# If Target slot is empty
+	if source_slot.amount <= 1:
+		# Only one item MOVE THE ITEM
+		item = source_slot.item
+		amount = 1
+		source_slot.item = null
+		source_slot.amount = 0
 	else:
-		# Multiple items move one
-		target_slot.item = item
-		target_slot.amount = 1
-		amount -= 1
+		# Multiple items MOVE ONE OF THE ITEM
+		item = source_slot.item
+		amount = 1
+		source_slot.amount -= 1
+		
+		
+# Dont think I need these and if i did WHOOPS
+
+#func _find_all_area2d_nodes() -> Array:
+	#var areas = []
+	#_find_area2d_recursive(get_tree().root, areas)
+	#return areas
+#
+#func _find_area2d_recursive(node: Node, areas: Array):
+	#if node is Area2D and node != self:
+		#areas.append(node)
+	#
+	#for child in node.get_children():
+		#_find_area2d_recursive(child, areas)
