@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://jrswjeeueyee"]
+[gd_scene load_steps=6 format=3 uid="uid://jrswjeeueyee"]
 
+[ext_resource type="PackedScene" uid="uid://blkvrprhpw4ay" path="res://Scenes/UI/TestMoneyButtons.tscn" id="1_n7mu0"]
 [ext_resource type="PackedScene" uid="uid://q1v1svbbga3m" path="res://Scenes/NonUpgradables/tablehotbar/hotbar.tscn" id="2_sqe8n"]
 [ext_resource type="PackedScene" uid="uid://b85a3mf75arf7" path="res://Scenes/NonUpgradables/tablehotbar/aux_station.tscn" id="3_ff7m2"]
 [ext_resource type="PackedScene" uid="uid://bgtsespvd00" path="res://Scenes/Machines/oven.tscn" id="3_gyj70"]
+[ext_resource type="PackedScene" uid="uid://byjt0e223ntsh" path="res://Scenes/UI/Finances .tscn" id="4_x06sl"]
 
 [node name="BakeryPlayground" type="Node2D"]
+
+[node name="Control2" parent="." instance=ExtResource("1_n7mu0")]
 
 [node name="Oven4" parent="." instance=ExtResource("3_gyj70")]
 position = Vector2(73, 33)
@@ -22,3 +26,5 @@ size_flags_vertical = 4
 
 [node name="AuxStation" parent="." instance=ExtResource("3_ff7m2")]
 position = Vector2(211, 161)
+
+[node name="Control" parent="." instance=ExtResource("4_x06sl")]
