@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://j0wbag6a7qhn"]
+
+[ext_resource type="Texture2D" uid="uid://d154yobbuflx5" path="res://Assets/TempAssets/World Map.png" id="1_5jorx"]
+[ext_resource type="Script" path="res://Scripts/ResourceClasses/World Map/Timmy'sMovement.gd" id="2_68sbv"]
+[ext_resource type="Texture2D" uid="uid://dck7o7gst0wis" path="res://Assets/TempAssets/TyreekSpriteSheet.png" id="2_gjqd8"]
+
+[sub_resource type="Curve2D" id="Curve2D_t68de"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 205, 100, 0, 0, 0, 0, 106, 100, 0, 0, 0, 0, 106, 51)
+}
+point_count = 3
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ari4"]
+atlas = ExtResource("2_gjqd8")
+region = Rect2(0, 0, 8, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5c0r"]
+atlas = ExtResource("2_gjqd8")
+region = Rect2(8, 0, 8, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sfri8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ari4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5c0r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(160, 90)
+texture = ExtResource("1_5jorx")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_t68de")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(205, 100)
+rotation = 3.14159
+rotates = false
+loop = false
+script = ExtResource("2_68sbv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Path2D/PathFollow2D"]
+rotation = -3.14159
+sprite_frames = SubResource("SpriteFrames_sfri8")
+autoplay = "default"
+frame = 1
+frame_progress = 0.0511665

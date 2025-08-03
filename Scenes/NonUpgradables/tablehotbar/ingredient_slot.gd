@@ -23,6 +23,3 @@ var is_dragging = false
 var drag_start_pos = Vector2.ZERO
 var is_right_click_drag = false
 var drag_preview = null
-
-
-
