@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Ingredient" load_steps=3 format=3 uid="uid://bmgduypa23b6h"]
 
-[ext_resource type="Texture2D" uid="uid://dytopvc3rkp4d" path="res://Assets/FoodAssets/IngredientAssets/DryIngredientAssets/josieFlour.png" id="1_vmtyp"]
+[ext_resource type="Texture2D" uid="uid://7q07knpe2cdg" path="res://Assets/TempAssets/Vanilla_Extract.png" id="1_4hayg"]
 [ext_resource type="Script" path="res://Scripts/ResourceClasses/Ingredient.gd" id="2_xm634"]
 
 [resource]
 script = ExtResource("2_xm634")
-title = "Flour"
-description = "This is flour"
-icon = ExtResource("1_vmtyp")
+title = "Vanilla Extract"
+description = "This is VE"
+icon = ExtResource("1_4hayg")
 price = 3.5

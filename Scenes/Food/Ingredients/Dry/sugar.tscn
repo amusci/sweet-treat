@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cn7vt1ywsf1h"]
-
-[ext_resource type="Texture2D" uid="uid://3yoy2puyrd8" path="res://Assets/FoodAssets/IngredientAssets/DryIngredientAssets/josieSugar.png" id="1_orxsm"]
-
-[node name="Sugar" type="Node2D"]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_orxsm")

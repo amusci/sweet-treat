@@ -211,18 +211,3 @@ func _handle_right_click_drop_here():
 		item = source_slot.item
 		amount = 1
 		source_slot.amount -= 1
-		
-		
-# Dont think I need these and if i did WHOOPS
-
-#func _find_all_area2d_nodes() -> Array:
-	#var areas = []
-	#_find_area2d_recursive(get_tree().root, areas)
-	#return areas
-#
-#func _find_area2d_recursive(node: Node, areas: Array):
-	#if node is Area2D and node != self:
-		#areas.append(node)
-	#
-	#for child in node.get_children():
-		#_find_area2d_recursive(child, areas)

@@ -1,8 +1,37 @@
-[gd_scene load_steps=2 format=3 uid="uid://bgtsespvd00"]
+[gd_scene load_steps=6 format=3 uid="uid://cgltvgu28fltw"]
 
-[ext_resource type="Texture2D" uid="uid://dfa5lhl7on2ki" path="res://Assets/TempAssets/Stove_Sketch.png" id="1_ad6jo"]
+[ext_resource type="PackedScene" uid="uid://dfseuxorrds8m" path="res://Scenes/NonUpgradables/tablehotbar/inventory_slot.tscn" id="1_0okcl"]
+[ext_resource type="Script" path="res://Scripts/MachineClasses/Oven.gd" id="1_wbqh4"]
+[ext_resource type="Texture2D" uid="uid://cjnorlh67a2tn" path="res://Assets/TempAssets/ovenTemp.png" id="1_x1j6l"]
+[ext_resource type="Resource" uid="uid://drnxahayfncf7" path="res://Resources/IngredientResources/dryIngredientResources/baking_powder.tres" id="4_jie1a"]
 
-[node name="Oven" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5vh13"]
+size = Vector2(42, 62)
+
+[node name="Oven" type="Area2D"]
+script = ExtResource("1_wbqh4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_ad6jo")
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_x1j6l")
+
+[node name="OutputSlot" parent="." instance=ExtResource("1_0okcl")]
+offset_left = -14.0
+offset_top = -63.0
+offset_right = 16.0
+offset_bottom = -33.0
+item = ExtResource("4_jie1a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_5vh13")
+
+[node name="Button" type="Button" parent="."]
+offset_left = -43.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 26.0
+scale = Vector2(0.3, 0.3)
+text = "BaKE"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

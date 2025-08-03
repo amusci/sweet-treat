@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Recipe" load_steps=10 format=3 uid="uid://cwtg4nksbkhqf"]
 
+[ext_resource type="Texture2D" uid="uid://dsr0os6v1t08y" path="res://Assets/TempAssets/Bowl_Empty.png" id="1_bnlqk"]
 [ext_resource type="Resource" uid="uid://b5gvgfhupsx1o" path="res://Resources/IngredientResources/dryIngredientResources/flour.tres" id="1_cmwlw"]
 [ext_resource type="Script" path="res://Scripts/ResourceClasses/RecipeRequirement.gd" id="2_hupyq"]
 [ext_resource type="Resource" uid="uid://bscgdv7tmnru" path="res://Resources/IngredientResources/dryIngredientResources/baking_soda.tres" id="3_c1vfy"]
 [ext_resource type="Resource" uid="uid://b22e0h2xh7sfx" path="res://Resources/IngredientResources/dryIngredientResources/sea_salt.tres" id="4_gof8e"]
 [ext_resource type="Script" path="res://Scripts/ResourceClasses/Recipe.gd" id="9_eneie"]
-[ext_resource type="Texture2D" uid="uid://cr1isyvhpjy3s" path="res://Assets/TempAssets/Cookie_Dough.png" id="10_2g3nm"]
 
 [sub_resource type="Resource" id="Resource_6ln8n"]
 script = ExtResource("2_hupyq")
@@ -22,7 +22,7 @@ ingredient = ExtResource("4_gof8e")
 [resource]
 script = ExtResource("9_eneie")
 title = "Self Rising Dough"
-sprite = ExtResource("10_2g3nm")
+icon = ExtResource("1_bnlqk")
 description = "SRD"
 category = "inbetween"
 ingredients = Array[ExtResource("2_hupyq")]([SubResource("Resource_6ln8n"), SubResource("Resource_si7ht"), SubResource("Resource_djmpx")])
