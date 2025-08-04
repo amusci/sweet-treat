@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cgltvgu28fltw"]
+[gd_scene load_steps=5 format=3 uid="uid://cgltvgu28fltw"]
 
 [ext_resource type="PackedScene" uid="uid://dfseuxorrds8m" path="res://Scenes/NonUpgradables/tablehotbar/inventory_slot.tscn" id="1_0okcl"]
 [ext_resource type="Script" path="res://Scripts/MachineClasses/Oven.gd" id="1_wbqh4"]
 [ext_resource type="Texture2D" uid="uid://cjnorlh67a2tn" path="res://Assets/TempAssets/ovenTemp.png" id="1_x1j6l"]
-[ext_resource type="Resource" uid="uid://drnxahayfncf7" path="res://Resources/IngredientResources/dryIngredientResources/baking_powder.tres" id="4_jie1a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vh13"]
 size = Vector2(42, 62)
@@ -20,7 +19,6 @@ offset_left = -14.0
 offset_top = -63.0
 offset_right = 16.0
 offset_bottom = -33.0
-item = ExtResource("4_jie1a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -1)

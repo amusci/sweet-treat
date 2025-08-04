@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://Scenes/NonUpgradables/tablehotbar/hotbar.gd" id="1_yxu82"]
 [ext_resource type="PackedScene" uid="uid://dfseuxorrds8m" path="res://Scenes/NonUpgradables/tablehotbar/inventory_slot.tscn" id="2_wps2s"]
-[ext_resource type="Resource" uid="uid://baxpxodwfxusw" path="res://Resources/RecipeResources/InbetweenRecipeResources/baking_sheet_cookie_dough.tres" id="3_c7c5n"]
 [ext_resource type="Resource" uid="uid://bscgdv7tmnru" path="res://Resources/IngredientResources/dryIngredientResources/baking_soda.tres" id="4_hjnd8"]
 [ext_resource type="Resource" uid="uid://b5gvgfhupsx1o" path="res://Resources/IngredientResources/dryIngredientResources/flour.tres" id="5_24xdc"]
 [ext_resource type="Resource" uid="uid://b22e0h2xh7sfx" path="res://Resources/IngredientResources/dryIngredientResources/sea_salt.tres" id="6_x2wia"]
+[ext_resource type="Resource" uid="uid://dck7jlw3lmsvy" path="res://Resources/IngredientResources/dryIngredientResources/sugar.tres" id="7_gekwj"]
 
 [node name="Hotbar" type="HBoxContainer"]
 custom_minimum_size = Vector2(320, 30)
@@ -22,11 +22,13 @@ script = ExtResource("1_yxu82")
 
 [node name="Slot" parent="." instance=ExtResource("2_wps2s")]
 layout_mode = 2
-item = ExtResource("3_c7c5n")
+item = ExtResource("5_24xdc")
 amount = 5
 
 [node name="Slot2" parent="." instance=ExtResource("2_wps2s")]
 layout_mode = 2
+item = ExtResource("6_x2wia")
+amount = 5
 
 [node name="Slot3" parent="." instance=ExtResource("2_wps2s")]
 layout_mode = 2
@@ -35,10 +37,9 @@ amount = 5
 
 [node name="Slot4" parent="." instance=ExtResource("2_wps2s")]
 layout_mode = 2
-item = ExtResource("5_24xdc")
 amount = 5
 
 [node name="Slot5" parent="." instance=ExtResource("2_wps2s")]
 layout_mode = 2
-item = ExtResource("6_x2wia")
+item = ExtResource("7_gekwj")
 amount = 5
