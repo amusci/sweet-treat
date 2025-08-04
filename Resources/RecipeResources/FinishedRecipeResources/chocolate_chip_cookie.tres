@@ -1,16 +1,18 @@
-[gd_resource type="Resource" script_class="Recipe" load_steps=5 format=3 uid="uid://bq7n7n1o4h666"]
+[gd_resource type="Resource" script_class="Recipe" load_steps=6 format=3 uid="uid://bq7n7n1o4h666"]
 
+[ext_resource type="Texture2D" uid="uid://cghjqli5la48e" path="res://Assets/FoodAssets/FinishedFoodAssets/CookieAssets/cookie.png" id="1_1rjr2"]
 [ext_resource type="Script" path="res://Scripts/ResourceClasses/Recipe.gd" id="1_la24q"]
 [ext_resource type="Script" path="res://Scripts/ResourceClasses/RecipeRequirement.gd" id="1_mcsu6"]
-[ext_resource type="Texture2D" uid="uid://cghjqli5la48e" path="res://Assets/FoodAssets/FinishedFoodAssets/CookieAssets/cookie.png" id="3_2irly"]
+[ext_resource type="Resource" uid="uid://bbpdh55jflj0h" path="res://Resources/RecipeResources/InbetweenRecipeResources/cookie_dough.tres" id="2_k3dlt"]
 
 [sub_resource type="Resource" id="Resource_k3yvg"]
 script = ExtResource("1_mcsu6")
+ingredient = ExtResource("2_k3dlt")
 
 [resource]
 script = ExtResource("1_la24q")
 title = "Chocolate Chip Cookie"
-sprite = ExtResource("3_2irly")
+icon = ExtResource("1_1rjr2")
 description = "This is a CCC"
 category = "finished"
 ingredients = Array[ExtResource("1_mcsu6")]([SubResource("Resource_k3yvg")])

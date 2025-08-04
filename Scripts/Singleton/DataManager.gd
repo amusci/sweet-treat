@@ -2,7 +2,7 @@ extends Node
 
 var dry_ingredients: Dictionary = {} # String -> Ingredient (Dry Storage)
 var wet_ingredients: Dictionary = {} # String -> Ingredient (Fridge)
-var inbetween_recipes: Dictionary = {} # String -> Ingredient 
+var inbetween_recipes: Dictionary = {} # String -> Recipe
 var finished_recipes: Dictionary = {} # String -> Recipe
 
 const DRY_INGREDIENTS_PATH = "res://Resources/IngredientResources/dryIngredientResources/"
@@ -16,114 +16,35 @@ func _ready():
 	load_all_data()
 	
 func load_all_data():
-	load_dry_ingredients()
-	load_wet_ingredients()
-	load_inbetween_recipes()
-	load_finished_recipes()
-	data_loaded.emit()
-	print("DataManager loaded: ", dry_ingredients.size(), " dry ingredients ", wet_ingredients.size(), " wet ingredients ",inbetween_recipes.size(), " inbetween recipes ", finished_recipes.size(), " finished recipes ")
+	load_resources(DRY_INGREDIENTS_PATH, dry_ingredients, "dry ingredient")
+	load_resources(WET_INGREDIENTS_PATH, wet_ingredients, "wet ingredient")
+	load_resources(INBETWEEN_RECIPES_PATH, inbetween_recipes, "inbetween recipe")
+	load_resources(FINISHED_RECIPES_PATH, finished_recipes, "finished recipe")
+	data_loaded.emit() # Let the world know we are ready to rumble
+	print("DataManager loaded: ", dry_ingredients.size(), " dry ingredients, ", wet_ingredients.size(), " wet ingredients, ", inbetween_recipes.size(), " inbetween recipes, ", finished_recipes.size(), " finished recipes")
 
-func load_dry_ingredients():
-	var dir = DirAccess.open(DRY_INGREDIENTS_PATH)
+func load_resources(directory_path: String, target_dictionary: Dictionary, resource_type: String):
+	# Loads resources specified in load_all_data
+	var dir = DirAccess.open(directory_path)
+	if dir == null:
+		print("ERROR: Could not open directory: ", directory_path)
+		return
 	
-	dir.list_dir_begin()
+	dir.list_dir_begin() # Start listing all files in directory
 	var file_name = dir.get_next()
 	
 	while file_name != "":
-		print("Found file: ", file_name)
-		
-		if file_name.ends_with(".tres"):
-			var full_path = DRY_INGREDIENTS_PATH + file_name
-			print("Loading dry ingredient from: ", full_path)
-			
-			var ingredient = load(full_path) as Ingredient
-			if ingredient:
+		if file_name.ends_with(".tres"): # Loop through directory looking for only .tres
+			var full_path = directory_path + file_name
+			var resource = load(full_path)
+			if resource:
 				var id = file_name.get_basename()  # Remove .tres extension
-				dry_ingredients[id] = dry_ingredients
-				print("Successfully loaded dry ingredient: ", id, " - ", ingredient.title)
+				target_dictionary[id] = resource # Adds resource to dictionary
+				# print("Successfully loaded ", resource_type, ": ", id, " - ", resource.title)
 			else:
-				print("ERROR: Failed to load dry ingredient from: ", full_path)
+				print("ERROR: Failed to load ", resource_type, " from: ", full_path)
 		
-		file_name = dir.get_next()
-	
-	print("Finished loading dry ingredients. Total: ", dry_ingredients.size())
-	
-	
-		
-	
-func load_wet_ingredients():
-	var dir = DirAccess.open(WET_INGREDIENTS_PATH)
-	
-	dir.list_dir_begin()
-	var file_name = dir.get_next()
-	
-	while file_name != "":
-		print("Found file: ", file_name)
-		
-		if file_name.ends_with(".tres"):
-			var full_path = WET_INGREDIENTS_PATH + file_name
-			print("Loading wet ingredient from: ", full_path)
-			
-			var ingredient = load(full_path) as Ingredient
-			if ingredient:
-				var id = file_name.get_basename()  # Remove .tres extension
-				wet_ingredients[id] = wet_ingredients
-				print("Successfully loaded wet ingredient: ", id, " - ", ingredient.title)
-			else:
-				print("ERROR: Failed to load wet ingredient from: ", full_path)
-		
-		file_name = dir.get_next()
-	
-	print("Finished loading wet ingredients. Total: ", wet_ingredients.size())
+		file_name = dir.get_next() # Next in line
 
-func load_inbetween_recipes():
-	
-	var dir = DirAccess.open(INBETWEEN_RECIPES_PATH)
-	
-	dir.list_dir_begin()
-	var file_name = dir.get_next()
-	
-	while file_name != "":
-		print("Found file: ", file_name)
-		
-		if file_name.ends_with(".tres"):
-			var full_path = INBETWEEN_RECIPES_PATH + file_name
-			print("Loading inbetween recipes from: ", full_path)
-			
-			var recipe = load(full_path) as Recipe
-			if recipe:
-				var id = file_name.get_basename()  # Remove .tres extension
-				inbetween_recipes[id] = inbetween_recipes
-				print("Successfully loaded inbetween recipe: ", id, " - ", recipe.title)
-			else:
-				print("ERROR: Failed to load inbetween recipe from: ", full_path)
-		
-		file_name = dir.get_next()
-	
-	print("Finished loading inbetween recipe. Total: ", inbetween_recipes.size())
+	print("Finished loading ", resource_type, "s. Total: ", target_dictionary.size())
 
-func load_finished_recipes():
-	
-	var dir = DirAccess.open(FINISHED_RECIPES_PATH)
-	
-	dir.list_dir_begin()
-	var file_name = dir.get_next()
-	
-	while file_name != "":
-		print("Found file: ", file_name)
-		
-		if file_name.ends_with(".tres"):
-			var full_path = FINISHED_RECIPES_PATH + file_name
-			print("Loading finished recipes from: ", full_path)
-			
-			var recipe = load(full_path) as Recipe
-			if recipe:
-				var id = file_name.get_basename()  # Remove .tres extension
-				finished_recipes[id] = finished_recipes
-				print("Successfully loaded finished recipe: ", id, " - ", recipe.title)
-			else:
-				print("ERROR: Failed to load finished recipe from: ", full_path)
-		
-		file_name = dir.get_next()
-	
-	print("Finished loading finished recipe. Total: ", finished_recipes.size())
