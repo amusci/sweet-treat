@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8rhowa3gudpk"]
+
+[sub_resource type="Theme" id="Theme_jk4ue"]
+
+[node name="SceneButtons" type="HBoxContainer"]
+
+[node name="StorageButton" type="Button" parent="."]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+theme = SubResource("Theme_jk4ue")
+theme_override_font_sizes/font_size = 5
+text = "Storage"
+
+[node name="BakingButton" type="Button" parent="."]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+theme = SubResource("Theme_jk4ue")
+theme_override_font_sizes/font_size = 5
+text = "Baking"
+
+[node name="ShopButton" type="Button" parent="."]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+theme = SubResource("Theme_jk4ue")
+theme_override_font_sizes/font_size = 5
+text = "Shop
+"

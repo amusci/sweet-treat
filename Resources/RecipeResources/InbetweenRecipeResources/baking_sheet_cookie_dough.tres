@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="Recipe" load_steps=6 format=3 uid="uid://baxpxodwfxusw"]
 
-[ext_resource type="Script" path="res://Scripts/ResourceClasses/Recipe.gd" id="1_54fjk"]
+[ext_resource type="Script" uid="uid://db58b0en31pin" path="res://Scripts/ResourceClasses/Recipe.gd" id="1_54fjk"]
 [ext_resource type="Resource" uid="uid://bbpdh55jflj0h" path="res://Resources/RecipeResources/InbetweenRecipeResources/cookie_dough.tres" id="1_f73b3"]
-[ext_resource type="Script" path="res://Scripts/ResourceClasses/RecipeRequirement.gd" id="1_nityr"]
+[ext_resource type="Script" uid="uid://2afi4mayu2gq" path="res://Scripts/ResourceClasses/RecipeRequirement.gd" id="1_nityr"]
 [ext_resource type="Texture2D" uid="uid://bh5id4bcdflxa" path="res://Assets/TempAssets/Baking_Sheet.png" id="1_x0jro"]
 
 [sub_resource type="Resource" id="Resource_8dxy4"]

@@ -47,4 +47,3 @@ func load_resources(directory_path: String, target_dictionary: Dictionary, resou
 		file_name = dir.get_next() # Next in line
 
 	print("Finished loading ", resource_type, "s. Total: ", target_dictionary.size())
-

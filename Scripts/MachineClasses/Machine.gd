@@ -106,13 +106,21 @@ func _remove_item_from_slot(slot):
 	if slot.amount <= 1:
 		slot.item = null
 		slot.amount = 0
+		# Clean up drag state
 		InventorySlot.currently_dragging_slot = null
 		InventorySlot.is_right_click_mode = false
 		if InventorySlot.drag_preview:
 			InventorySlot.drag_preview.queue_free()
 			InventorySlot.drag_preview = null
 	else:
+		# If multiple items in stack reduce by 1 
 		slot.amount -= 1
+		# Clean up drag and drop remaining items back to original slot
+		InventorySlot.currently_dragging_slot = null
+		InventorySlot.is_right_click_mode = false
+		if InventorySlot.drag_preview:
+			InventorySlot.drag_preview.queue_free()
+			InventorySlot.drag_preview = null
 
 func _can_accept_ingredient(ingredient) -> bool:
 	# Helper function that returns true or false if the machine can accept the inputted ingredient
