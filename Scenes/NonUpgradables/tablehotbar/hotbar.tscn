@@ -8,15 +8,14 @@
 [ext_resource type="Resource" uid="uid://dck7jlw3lmsvy" path="res://Resources/IngredientResources/dryIngredientResources/sugar.tres" id="7_gekwj"]
 
 [node name="Hotbar" type="HBoxContainer"]
-custom_minimum_size = Vector2(320, 30)
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -160.0
-offset_right = 160.0
+offset_left = -84.5
+offset_right = 84.5
 offset_bottom = 30.0
 grow_horizontal = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 8
 alignment = 1
 script = ExtResource("1_yxu82")
 

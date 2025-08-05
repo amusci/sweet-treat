@@ -13,10 +13,11 @@ offset_right = 310.0
 offset_bottom = 175.0
 
 [node name="Hotbar" parent="." instance=ExtResource("2_4lbp4")]
-offset_left = -77.0
-offset_top = 147.0
-offset_right = 243.0
-offset_bottom = 177.0
+offset_left = 9.0
+offset_top = 145.0
+offset_right = 175.0
+offset_bottom = 175.0
+size_flags_horizontal = 0
 
 [node name="Fridge" parent="." instance=ExtResource("3_48a00")]
 position = Vector2(31, 38)

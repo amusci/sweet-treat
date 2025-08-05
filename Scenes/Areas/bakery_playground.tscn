@@ -1,13 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://jrswjeeueyee"]
+[gd_scene load_steps=5 format=3 uid="uid://jrswjeeueyee"]
 
-[ext_resource type="Script" uid="uid://dkukyysvvs3cp" path="res://Scenes/Areas/bakery_playground.gd" id="1_0sb6y"]
 [ext_resource type="PackedScene" uid="uid://q1v1svbbga3m" path="res://Scenes/NonUpgradables/tablehotbar/hotbar.tscn" id="2_sqe8n"]
 [ext_resource type="PackedScene" uid="uid://b85a3mf75arf7" path="res://Scenes/Machines/mixing_station.tscn" id="3_ff7m2"]
 [ext_resource type="PackedScene" uid="uid://cgltvgu28fltw" path="res://Scenes/Machines/oven.tscn" id="3_gyj70"]
 [ext_resource type="PackedScene" uid="uid://b8rhowa3gudpk" path="res://Scenes/SceneSwitching/SceneButtons.tscn" id="4_gf4qy"]
 
 [node name="BakeryPlayground" type="Node2D"]
-script = ExtResource("1_0sb6y")
 
 [node name="Oven" parent="." instance=ExtResource("3_gyj70")]
 position = Vector2(33, 64)
@@ -16,10 +14,10 @@ position = Vector2(33, 64)
 anchors_preset = 0
 anchor_left = 0.0
 anchor_right = 0.0
-offset_left = -77.0
-offset_top = 147.0
-offset_right = 243.0
-offset_bottom = 177.0
+offset_left = 9.0
+offset_top = 145.0
+offset_right = 175.0
+offset_bottom = 175.0
 grow_horizontal = 1
 size_flags_vertical = 4
 
