@@ -24,4 +24,4 @@ size_flags_horizontal = 0
 position = Vector2(31, 38)
 
 [node name="DryStorage" parent="." instance=ExtResource("4_hrdef")]
-position = Vector2(279, 28)
+position = Vector2(280, 50)

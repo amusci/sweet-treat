@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://be6ih76u65jfa"]
+[gd_scene load_steps=5 format=3 uid="uid://be6ih76u65jfa"]
 
 [ext_resource type="Script" uid="uid://cofnb51oufb17" path="res://Scripts/MachineClasses/DryStorage.gd" id="1_dk03e"]
 [ext_resource type="PackedScene" uid="uid://dfseuxorrds8m" path="res://Scenes/NonUpgradables/tablehotbar/inventory_slot.tscn" id="1_t70tn"]
+[ext_resource type="Resource" uid="uid://bq7n7n1o4h666" path="res://Resources/RecipeResources/FinishedRecipeResources/chocolate_chip_cookie.tres" id="3_5kuyu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_halrl"]
 
@@ -20,26 +21,32 @@ offset_right = -27.0
 offset_bottom = 77.0
 columns = 4
 
-[node name="Slot" parent="Inventory" instance=ExtResource("1_t70tn")]
+[node name="DryStorageSlot" parent="Inventory" instance=ExtResource("1_t70tn")]
 layout_mode = 2
 
-[node name="Slot2" parent="Inventory" instance=ExtResource("1_t70tn")]
+[node name="DryStorageSlot2" parent="Inventory" instance=ExtResource("1_t70tn")]
+visible = false
 layout_mode = 2
 
-[node name="Slot3" parent="Inventory" instance=ExtResource("1_t70tn")]
+[node name="DryStorageSlot3" parent="Inventory" instance=ExtResource("1_t70tn")]
+layout_mode = 2
+item = ExtResource("3_5kuyu")
+amount = 5
+
+[node name="DryStorageSlot4" parent="Inventory" instance=ExtResource("1_t70tn")]
 layout_mode = 2
 
-[node name="Slot4" parent="Inventory" instance=ExtResource("1_t70tn")]
+[node name="DryStorageSlot5" parent="Inventory" instance=ExtResource("1_t70tn")]
 layout_mode = 2
 
-[node name="Slot5" parent="Inventory" instance=ExtResource("1_t70tn")]
+[node name="DryStorageSlot6" parent="Inventory" instance=ExtResource("1_t70tn")]
 layout_mode = 2
 
-[node name="Slot6" parent="Inventory" instance=ExtResource("1_t70tn")]
+[node name="DryStorageSlot7" parent="Inventory" instance=ExtResource("1_t70tn")]
 layout_mode = 2
 
-[node name="Slot7" parent="Inventory" instance=ExtResource("1_t70tn")]
+[node name="DryStorageSlot8" parent="Inventory" instance=ExtResource("1_t70tn")]
 layout_mode = 2
 
-[node name="Slot8" parent="Inventory" instance=ExtResource("1_t70tn")]
+[node name="DryStorageSlot9" parent="Inventory" instance=ExtResource("1_t70tn")]
 layout_mode = 2
