@@ -1,9 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://be6ih76u65jfa"]
+[gd_scene load_steps=3 format=3 uid="uid://be6ih76u65jfa"]
 
 [ext_resource type="PackedScene" uid="uid://dfseuxorrds8m" path="res://Scenes/NonUpgradables/tablehotbar/inventory_slot.tscn" id="1_t70tn"]
 [ext_resource type="PackedScene" uid="uid://q1v1svbbga3m" path="res://Scenes/NonUpgradables/tablehotbar/hotbar.tscn" id="1_x157y"]
-[ext_resource type="Resource" uid="uid://b5gvgfhupsx1o" path="res://Resources/IngredientResources/dryIngredientResources/flour.tres" id="2_t4mjk"]
-[ext_resource type="Resource" uid="uid://dck7jlw3lmsvy" path="res://Resources/IngredientResources/dryIngredientResources/sugar.tres" id="3_vxmps"]
 
 [node name="DryStorage" type="Control"]
 layout_mode = 3
@@ -25,12 +23,10 @@ columns = 4
 
 [node name="Slot" parent="UI/GridContainer" instance=ExtResource("1_t70tn")]
 layout_mode = 2
-ingredient = ExtResource("2_t4mjk")
 amount = 5
 
 [node name="Slot3" parent="UI/GridContainer" instance=ExtResource("1_t70tn")]
 layout_mode = 2
-ingredient = ExtResource("3_vxmps")
 amount = 10
 
 [node name="Slot4" parent="UI/GridContainer" instance=ExtResource("1_t70tn")]

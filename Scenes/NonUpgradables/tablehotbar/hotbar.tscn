@@ -37,7 +37,6 @@ amount = 5
 
 [node name="Slot4" parent="." instance=ExtResource("2_wps2s")]
 layout_mode = 2
-amount = 5
 
 [node name="Slot5" parent="." instance=ExtResource("2_wps2s")]
 layout_mode = 2

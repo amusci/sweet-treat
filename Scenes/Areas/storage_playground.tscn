@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3e01muplx18p"]
+
+[ext_resource type="PackedScene" uid="uid://b8rhowa3gudpk" path="res://Scenes/SceneSwitching/SceneButtons.tscn" id="1_5ysot"]
+[ext_resource type="PackedScene" uid="uid://q1v1svbbga3m" path="res://Scenes/NonUpgradables/tablehotbar/hotbar.tscn" id="2_4lbp4"]
+[ext_resource type="PackedScene" uid="uid://m07v5i1n8ugu" path="res://Scenes/Machines/fridge.tscn" id="3_48a00"]
+
+[node name="StoragePlayground" type="Node2D"]
+
+[node name="SceneButtons" parent="." instance=ExtResource("1_5ysot")]
+offset_left = 212.0
+offset_top = 145.0
+offset_right = 310.0
+offset_bottom = 175.0
+
+[node name="Hotbar" parent="." instance=ExtResource("2_4lbp4")]
+offset_left = -77.0
+offset_top = 147.0
+offset_right = 243.0
+offset_bottom = 177.0
+
+[node name="Fridge" parent="." instance=ExtResource("3_48a00")]
+position = Vector2(31, 38)
