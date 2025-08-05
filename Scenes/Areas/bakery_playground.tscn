@@ -8,7 +8,7 @@
 [node name="BakeryPlayground" type="Node2D"]
 
 [node name="Oven" parent="." instance=ExtResource("3_gyj70")]
-position = Vector2(33, 64)
+position = Vector2(63, 71)
 
 [node name="Hotbar" parent="." instance=ExtResource("2_sqe8n")]
 anchors_preset = 0
@@ -22,7 +22,7 @@ grow_horizontal = 1
 size_flags_vertical = 4
 
 [node name="MixingStation" parent="." instance=ExtResource("3_ff7m2")]
-position = Vector2(129, 61)
+position = Vector2(194, 63)
 
 [node name="SceneButtons" parent="." instance=ExtResource("4_gf4qy")]
 offset_left = 212.0

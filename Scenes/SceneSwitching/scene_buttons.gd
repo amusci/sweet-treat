@@ -16,7 +16,7 @@ func _on_baking_button_pressed():
 	InventoryManager.save_all_inventory_slots()
 	TransitionScreen.transition()
 	
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(1).timeout
 	get_tree().change_scene_to_file("res://Scenes/Areas/bakery_playground.tscn")
 
 func _on_storage_button_pressed():
@@ -26,7 +26,7 @@ func _on_storage_button_pressed():
 	InventoryManager.save_all_inventory_slots()
 	TransitionScreen.transition()
 	
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(1).timeout
 	get_tree().change_scene_to_file("res://Scenes/Areas/storage_playground.tscn")
 	
 func _get_current_scene(scene_path: String) -> bool:

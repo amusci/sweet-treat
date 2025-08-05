@@ -13,6 +13,7 @@ func _ready():
 
 func _on_animation_finished(animation_name):
 	# Animation finished handling (Make sure to come back to this with more animations
+	#TODO: JAYDUBZ SAYS SHOULD BE SCREEN WIPE FOR NEW SCENES
 	if animation_name == "fade_to_black":
 		on_transition_finished.emit()
 		animation_player.play("fade_to_normal")
