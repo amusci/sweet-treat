@@ -27,6 +27,11 @@ static var drag_preview = null # visual preview of the item being dragged
 static var is_right_click_mode = false # if the drag is right click initated
 
 func _ready():
+	
+	# Add slot to group
+	add_to_group("inventory_slots")
+	print("Added slot to group: ", get_path())
+	
 	# Connect GUI input to handle mouse clicks
 	gui_input.connect(_on_gui_input)
 

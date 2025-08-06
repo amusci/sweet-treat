@@ -27,20 +27,20 @@ offset_top = -20.0
 offset_right = 158.725
 offset_bottom = 20.0
 
-[node name="Slot" parent="Inventory" instance=ExtResource("2_at4fk")]
+[node name="FridgeSlot" parent="Inventory" instance=ExtResource("2_at4fk")]
 layout_mode = 2
 item = ExtResource("4_5y3t7")
 amount = 5
 
-[node name="Slot2" parent="Inventory" instance=ExtResource("2_at4fk")]
+[node name="FridgeSlot2" parent="Inventory" instance=ExtResource("2_at4fk")]
 layout_mode = 2
 item = ExtResource("5_lc1u1")
 amount = 5
 
-[node name="Slot3" parent="Inventory" instance=ExtResource("2_at4fk")]
+[node name="FridgeSlot3" parent="Inventory" instance=ExtResource("2_at4fk")]
 layout_mode = 2
 
-[node name="Slot4" parent="Inventory" instance=ExtResource("2_at4fk")]
+[node name="FridgeSlot4" parent="Inventory" instance=ExtResource("2_at4fk")]
 layout_mode = 2
 item = ExtResource("6_2wvmb")
 amount = 5

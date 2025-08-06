@@ -14,6 +14,7 @@ var machine_type: String = "" # "mixing", "bakingsheet", "oven"
 var recipe_folder_path: String = "" # Path to recipes for this machine type
 
 func _ready():
+	add_to_group("machines") # Add machine to machines group
 	# Common setup for all machines
 	input_event.connect(_on_input_event)
 	
