@@ -1,10 +1,9 @@
 extends Area2D
 class_name Machine
 
-# Common properties for all machines
 var current_ingredients: Dictionary = {} # {key: Resource, value: amount}
 var is_mouse_over = false
-var available_recipes: Array[Recipe] = []
+var available_recipes: Array[Recipe] = [] 
 
 # Reference to the output slot node 
 @export var output_slot: InventorySlot = null
@@ -13,10 +12,17 @@ var available_recipes: Array[Recipe] = []
 var machine_type: String = "" # "mixing", "bakingsheet", "oven"
 var recipe_folder_path: String = "" # Path to recipes for this machine type
 
+# Persistence properties
+@export var machine_id: String = "" # Unique identifier for this machine instance
+
 func _ready():
 	add_to_group("machines") # Add machine to machines group
 	# Common setup for all machines
 	input_event.connect(_on_input_event)
+	
+	# Set machine_id if not already set (fallback to node name + machine_type)
+	if machine_id.is_empty():
+		machine_id = name + "_" + machine_type
 	
 	# Try to find output slot if not assigned
 	if output_slot == null:
@@ -25,6 +31,11 @@ func _ready():
 			print("Warning: No InventorySlot found for ", machine_type, " machine output")
 	
 	_load_recipes()
+	_load_machine_state() # Load persisted state
+
+func _exit_tree():
+	# Save machine state when leaving the scene
+	_save_machine_state()
 
 func _load_recipes():
 	# Wait for DataManager to load
@@ -51,6 +62,71 @@ func _load_recipes_from_data_manager():
 			available_recipes.append(recipe)
 	
 	print("Loaded ", available_recipes.size(), " recipes for ", machine_type, " station")
+
+
+func _save_machine_state():
+	# Save ingredients in machine
+	if not MachineManager:
+		print("Warning: MachineManager not found, cannot save machine state")
+		return
+	
+	var machine_data = {
+		"current_ingredients": _serialize_ingredients(),
+		"output_item": _serialize_output_item(),
+		"machine_type": machine_type
+	}
+	
+	MachineManager.set_machine_data(machine_id, machine_data)
+
+func _load_machine_state():
+	# Load ingredients in machine
+	if not MachineManager:
+		print("Warning: MachineManager not found, cannot load machine state")
+		return
+	
+	var machine_data = MachineManager.get_machine_data(machine_id)
+	if machine_data == null:
+		return
+	
+	# Restore ingredients
+	current_ingredients = _deserialize_ingredients(machine_data.get("current_ingredients", {}))
+
+func _serialize_ingredients() -> Dictionary:
+	# Convert current_ingredients to a saveable format
+	var serialized = {}
+	for ingredient in current_ingredients:
+		if ingredient is Resource:
+			# Save by resource path
+			serialized[ingredient.resource_path] = current_ingredients[ingredient]
+		else:
+			print("Warning: Non-resource ingredient found: ", ingredient)
+	return serialized
+
+func _deserialize_ingredients(serialized_data: Dictionary) -> Dictionary:
+	# Convert saved data back to ingredient dictionary
+	var ingredients = {}
+	for resource_path in serialized_data:
+		var ingredient = load(resource_path)
+		if ingredient != null:
+			ingredients[ingredient] = serialized_data[resource_path]
+		else:
+			print("Warning: Could not load ingredient from path: ", resource_path)
+	return ingredients
+
+func _serialize_output_item() -> Dictionary:
+	# Save output slot contents
+	if output_slot == null or output_slot.item == null:
+		return {}
+	
+	var output_data = {
+		"item_path": "",
+		"amount": output_slot.amount
+	}
+	
+	if output_slot.item is Resource:
+		output_data["item_path"] = output_slot.item.resource_path
+	
+	return output_data
 
 func _on_input_event(viewport, event, shape_idx):
 	# Mouse input handling
@@ -101,6 +177,9 @@ func _consume_ingredient(slot, item_resource):
 	
 	# Remove item from inventory slot
 	_remove_item_from_slot(slot)
+	
+	# Save state immediately after ingredient change
+	_save_machine_state()
 
 func _remove_item_from_slot(slot):
 	# Remove amount of 1 from the slot
@@ -178,6 +257,9 @@ func _craft_recipe(recipe: Recipe):
 	
 	# Put the crafted recipe in the output slot
 	_handle_crafted_item(recipe)
+	
+	# Save state after crafting
+	_save_machine_state()
 	
 	print("Successfully crafted: ", recipe.title)
 	return recipe

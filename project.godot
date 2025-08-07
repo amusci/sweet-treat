@@ -21,6 +21,7 @@ DataManager="*res://Scripts/Singleton/DataManager.gd"
 Money="*res://Scripts/Singleton/Money.gd"
 InventoryManager="*res://Scripts/Singleton/InventoryManager.gd"
 TransitionScreen="*res://Scripts/Singleton/transition_screen.tscn"
+MachineManager="*res://Scripts/MachineManager.gd"
 
 [display]
 
