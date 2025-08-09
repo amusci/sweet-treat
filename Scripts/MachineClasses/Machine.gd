@@ -6,7 +6,7 @@ var is_mouse_over = false
 var available_recipes: Array[Recipe] = [] 
 
 # Reference to the output slot node 
-@export var output_slot: InventorySlot = null
+@export var output_slot: OutputSlot = null
 
 # Machine-specific properties
 var machine_type: String = "" # "mixing", "bakingsheet", "oven"
@@ -26,9 +26,9 @@ func _ready():
 	
 	# Try to find output slot if not assigned
 	if output_slot == null:
-		output_slot = find_child("OutputSlot") as InventorySlot
+		output_slot = find_child("OutputSlot") as OutputSlot
 		if output_slot == null:
-			print("Warning: No InventorySlot found for ", machine_type, " machine output")
+			print("Warning: No OutputSlot found for ", machine_type, " machine output")
 	
 	_load_recipes()
 	_load_machine_state() # Load persisted state
@@ -90,6 +90,11 @@ func _load_machine_state():
 	
 	# Restore ingredients
 	current_ingredients = _deserialize_ingredients(machine_data.get("current_ingredients", {}))
+	
+	# Restore output item if it exists
+	var output_data = machine_data.get("output_item", {})
+	if not output_data.is_empty() and output_slot != null:
+		_deserialize_output_item(output_data)
 
 func _serialize_ingredients() -> Dictionary:
 	# Convert current_ingredients to a saveable format
@@ -115,7 +120,7 @@ func _deserialize_ingredients(serialized_data: Dictionary) -> Dictionary:
 
 func _serialize_output_item() -> Dictionary:
 	# Save output slot contents
-	if output_slot == null or output_slot.item == null:
+	if output_slot == null or not output_slot.has_output():
 		return {}
 	
 	var output_data = {
@@ -127,6 +132,21 @@ func _serialize_output_item() -> Dictionary:
 		output_data["item_path"] = output_slot.item.resource_path
 	
 	return output_data
+
+func _deserialize_output_item(output_data: Dictionary):
+	# Restore output slot contents
+	if output_data.is_empty() or output_slot == null:
+		return
+	
+	var item_path = output_data.get("item_path", "")
+	var amount = output_data.get("amount", 0)
+	
+	if item_path != "" and amount > 0:
+		var item = load(item_path)
+		if item != null:
+			output_slot.set_output_item(item, amount)
+		else:
+			print("Warning: Could not load output item from path: ", item_path)
 
 func _on_input_event(viewport, event, shape_idx):
 	# Mouse input handling
@@ -235,7 +255,7 @@ func _craft_recipe(recipe: Recipe):
 	print("Crafting: ", recipe.title, " in ", machine_type, " station")
 	
 	# Make sure output slot is empty or else won't craft
-	if output_slot != null and output_slot.item != null:
+	if output_slot != null and output_slot.has_output():
 		print("Output slot is full! Clear it before crafting.")
 		return null
 	
@@ -274,10 +294,9 @@ func _handle_crafted_item(recipe: Recipe):
 	# Create the crafted recipe and put it in the output slot
 	var crafted_item = _create_item_from_recipe(recipe)
 	if crafted_item:
-		# Set item and amount
-		output_slot.item = crafted_item
-		output_slot.amount = _get_recipe_output_amount(recipe) # idk maybe we will use this
-		print("Crafted ", output_slot.amount, "x ", crafted_item.title, " - ready for collection!")
+		var output_amount = _get_recipe_output_amount(recipe)
+		output_slot.set_output_item(crafted_item, output_amount)
+		print("Crafted ", output_amount, "x ", crafted_item.title, " - ready for collection!")
 
 func _create_item_from_recipe(recipe: Recipe):
 	# Convert recipe to an actual item
@@ -297,7 +316,7 @@ func _get_recipe_output_amount(recipe: Recipe) -> int:
 
 func _can_attempt_crafting() -> bool:
 	# Helper function to see if the machine can actually output
-	return output_slot == null or output_slot.item == null
+	return output_slot == null or not output_slot.has_output()
 
 func _attempt_crafting():
 	# Crafting handling (checks to make sure the output is empty, we can craft, and the recipe exists)
