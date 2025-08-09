@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cbp7qyiqpeatv" path="res://Assets/TempAssets/32x32.png" id="1_i1gg8"]
 [ext_resource type="Script" uid="uid://cr4tktpkntgep" path="res://Scripts/MachineClasses/MixingStation.gd" id="2_yfpn2"]
-[ext_resource type="PackedScene" uid="uid://dfseuxorrds8m" path="res://Scenes/NonUpgradables/tablehotbar/inventory_slot.tscn" id="3_0g3ny"]
+[ext_resource type="PackedScene" uid="uid://dijx62bclshmv" path="res://Scenes/Machines/output_slot.tscn" id="3_eop8k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m4321"]
 size = Vector2(32, 32)
@@ -13,14 +13,14 @@ script = ExtResource("2_yfpn2")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_i1gg8")
 
-[node name="OutputSlot" parent="." instance=ExtResource("3_0g3ny")]
-offset_left = 29.0
-offset_top = -14.0
-offset_right = 59.0
-offset_bottom = 16.0
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_m4321")
+
+[node name="OutputSlot" parent="." instance=ExtResource("3_eop8k")]
+offset_left = 33.0
+offset_top = -16.0
+offset_right = 63.0
+offset_bottom = 14.0
 
 [node name="Button" type="Button" parent="."]
 offset_left = -8.0

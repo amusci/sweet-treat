@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://cgltvgu28fltw"]
 
-[ext_resource type="PackedScene" uid="uid://dfseuxorrds8m" path="res://Scenes/NonUpgradables/tablehotbar/inventory_slot.tscn" id="1_0okcl"]
 [ext_resource type="Script" uid="uid://cockt13kkpoqn" path="res://Scripts/MachineClasses/Oven.gd" id="1_wbqh4"]
 [ext_resource type="Texture2D" uid="uid://cjnorlh67a2tn" path="res://Assets/TempAssets/ovenTemp.png" id="1_x1j6l"]
+[ext_resource type="PackedScene" uid="uid://dijx62bclshmv" path="res://Scenes/Machines/output_slot.tscn" id="3_pokic"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vh13"]
 size = Vector2(42, 62)
@@ -14,15 +14,15 @@ script = ExtResource("1_wbqh4")
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_x1j6l")
 
-[node name="OutputSlot" parent="." instance=ExtResource("1_0okcl")]
-offset_left = -14.0
-offset_top = -63.0
-offset_right = 16.0
-offset_bottom = -33.0
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -1)
 shape = SubResource("RectangleShape2D_5vh13")
+
+[node name="OutputSlot" parent="." instance=ExtResource("3_pokic")]
+offset_left = 39.0
+offset_top = -13.0
+offset_right = 69.0
+offset_bottom = 17.0
 
 [node name="Button" type="Button" parent="."]
 offset_left = -43.0
