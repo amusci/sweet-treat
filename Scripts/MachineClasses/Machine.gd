@@ -206,7 +206,7 @@ func _remove_item_from_slot(slot):
 	if slot.amount <= 1:
 		slot.item = null
 		slot.amount = 0
-		# Clean up drag state
+		# Clean up drag state when slot becomes empty
 		InventorySlot.currently_dragging_slot = null
 		InventorySlot.is_right_click_mode = false
 		if InventorySlot.drag_preview:
@@ -216,6 +216,11 @@ func _remove_item_from_slot(slot):
 		# If multiple items in stack reduce by 1 
 		slot.amount -= 1
 		# Clean up drag and drop remaining items back to original slot
+		if slot.item != null:
+			slot.get_node("Icon").texture = slot.item.icon
+			slot.get_node("Amount").text = str(slot.amount)
+		
+		# Clean up drag state
 		InventorySlot.currently_dragging_slot = null
 		InventorySlot.is_right_click_mode = false
 		if InventorySlot.drag_preview:
