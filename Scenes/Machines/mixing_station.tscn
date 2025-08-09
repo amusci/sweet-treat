@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b85a3mf75arf7"]
 
 [ext_resource type="Texture2D" uid="uid://cbp7qyiqpeatv" path="res://Assets/TempAssets/32x32.png" id="1_i1gg8"]
-[ext_resource type="Script" uid="uid://cr4tktpkntgep" path="res://Scripts/MachineClasses/MixingStation.gd" id="2_yfpn2"]
+[ext_resource type="Script" path="res://Scripts/MachineClasses/MixingStation.gd" id="2_yfpn2"]
 [ext_resource type="PackedScene" uid="uid://dfseuxorrds8m" path="res://Scenes/NonUpgradables/tablehotbar/inventory_slot.tscn" id="3_0g3ny"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m4321"]

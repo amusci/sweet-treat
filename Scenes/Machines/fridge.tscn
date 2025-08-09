@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://m07v5i1n8ugu"]
 
 [ext_resource type="Texture2D" uid="uid://bur3ygr21flod" path="res://Assets/TempAssets/fridgeTemp.png" id="1_dgwsk"]
-[ext_resource type="Script" uid="uid://brs005kj6nqdw" path="res://Scripts/MachineClasses/Fridge.gd" id="1_nh1lm"]
+[ext_resource type="Script" path="res://Scripts/MachineClasses/Fridge.gd" id="1_nh1lm"]
 [ext_resource type="PackedScene" uid="uid://dfseuxorrds8m" path="res://Scenes/NonUpgradables/tablehotbar/inventory_slot.tscn" id="2_at4fk"]
 [ext_resource type="Resource" uid="uid://bmgduypa23b6h" path="res://Resources/IngredientResources/wetIngredientResources/vanilla_extract.tres" id="4_5y3t7"]
 [ext_resource type="Resource" uid="uid://bm5wa7wu7j2lo" path="res://Resources/IngredientResources/wetIngredientResources/egg.tres" id="5_lc1u1"]

@@ -21,10 +21,14 @@ extends Panel
 		if amount <= 0:
 			item = null
 
-# Dragging variables shared across every slot (static)
-static var currently_dragging_slot = null # slot being dragged from
-static var drag_preview = null # visual preview of the item being dragged
-static var is_right_click_mode = false # if the drag is right click initated
+# Static vars
+static var currently_dragging_slot = null # Slot being dragged from
+static var drag_preview = null # Visual preview of the item being dragged
+static var is_right_click_mode = false # If the drag is right click initated
+
+# Local vars 
+var _original_icon_texture = null # Visual of original icon in original slot
+var _original_amount_text = "" # Visual of original amount in original slot
 
 func _ready():
 	
@@ -68,6 +72,19 @@ func _start_click_drag(right_click: bool):
 	
 	print("PICKED UP ", amount, " ", item.title)
 	
+	# Save original visuals if drag cancelled
+	_original_icon_texture = $Icon.texture
+	_original_amount_text = $Amount.text
+	
+	# Adjust visuals depending on click type
+	if right_click and amount > 1:
+		# Stack reduced by one
+		$Amount.text = str(amount - 1)
+	else:
+		# Clear visuals for left-click full drag
+		$Icon.texture = null
+		$Amount.text = ""
+	
 	# Create drag preview
 	_create_drag_preview()
 
@@ -90,6 +107,10 @@ func _try_drop_here(_right_click: bool):
 func _cancel_drag():
 	# Cancel drag logic and clean up
 	
+	# Restore original visuals on drag cancel
+	$Icon.texture = _original_icon_texture
+	$Amount.text = _original_amount_text
+	
 	#print("CANCELLED DRAG")
 	_cleanup_drag_preview()
 	currently_dragging_slot = null
@@ -98,11 +119,15 @@ func _cancel_drag():
 func _end_drag():
 	# End drag logic and clean up
 	
+	# Restore visuals if dropping back into same slot without swapping
+	if currently_dragging_slot == self:
+		$Icon.texture = _original_icon_texture
+		$Amount.text = _original_amount_text
+	
 	# print("DROPPED ITEM")
 	_cleanup_drag_preview()
 	currently_dragging_slot = null
 	is_right_click_mode = false
-
 
 func _cleanup_drag_preview():
 	# Good bye drag preview
@@ -137,21 +162,21 @@ func _create_drag_preview():
 	icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	drag_preview.add_child(icon)
 
-	### TODO: uhh do we want to see the amount? idk kind of weird and whats the point?
+	### I knew this day would come...
 	
-	#var drag_amount = amount
-	#if is_right_click_mode and amount > 1:
-		#drag_amount = 1
+	var drag_amount = amount
+	if is_right_click_mode and amount > 1:
+		drag_amount = 1
 	
-	#if drag_amount > 1:
-		#var amount_label = Label.new()
-		#amount_label.text = str(drag_amount)
-		#amount_label.size = $Amount.size
-		#amount_label.position = Vector2(25,23)
-		#amount_label.add_theme_color_override("font_color", Color.WHITE)
-		#amount_label.add_theme_font_size_override("font_size", 4)
-		#amount_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
-		#drag_preview.add_child(amount_label)
+	if drag_amount >= 1:
+		var amount_label = Label.new()
+		amount_label.text = str(drag_amount)
+		amount_label.size = $Amount.size
+		amount_label.position = Vector2(25,23) # Hack positioning
+		amount_label.add_theme_color_override("font_color", Color.WHITE)
+		amount_label.add_theme_font_size_override("font_size", 4)
+		amount_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		drag_preview.add_child(amount_label)
 	
 	# Add to scene
 	get_tree().root.add_child(drag_preview)
