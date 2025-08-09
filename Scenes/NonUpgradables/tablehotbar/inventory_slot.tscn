@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dfseuxorrds8m"]
 
-[ext_resource type="Script" path="res://Scenes/NonUpgradables/tablehotbar/inventory_slot.gd" id="1_1qonm"]
+[ext_resource type="Script" uid="uid://dty4dmp1t4a2s" path="res://Scenes/NonUpgradables/tablehotbar/inventory_slot.gd" id="1_1qonm"]
 
 [node name="Slot" type="Panel"]
 z_index = -1

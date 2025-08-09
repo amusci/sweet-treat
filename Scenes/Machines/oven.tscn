@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cgltvgu28fltw"]
 
-[ext_resource type="Script" path="res://Scripts/MachineClasses/Oven.gd" id="1_wbqh4"]
+[ext_resource type="Script" uid="uid://cockt13kkpoqn" path="res://Scripts/MachineClasses/Oven.gd" id="1_wbqh4"]
 [ext_resource type="Texture2D" uid="uid://cjnorlh67a2tn" path="res://Assets/TempAssets/ovenTemp.png" id="1_x1j6l"]
 [ext_resource type="PackedScene" uid="uid://dijx62bclshmv" path="res://Scenes/Machines/output_slot.tscn" id="3_pokic"]
 

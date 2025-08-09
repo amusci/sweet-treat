@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://be6ih76u65jfa"]
 
-[ext_resource type="Script" path="res://Scripts/MachineClasses/DryStorage.gd" id="1_dk03e"]
+[ext_resource type="Script" uid="uid://cofnb51oufb17" path="res://Scripts/MachineClasses/DryStorage.gd" id="1_dk03e"]
 [ext_resource type="PackedScene" uid="uid://dfseuxorrds8m" path="res://Scenes/NonUpgradables/tablehotbar/inventory_slot.tscn" id="1_t70tn"]
 [ext_resource type="Resource" uid="uid://bq7n7n1o4h666" path="res://Resources/RecipeResources/FinishedRecipeResources/chocolate_chip_cookie.tres" id="3_5kuyu"]
 
