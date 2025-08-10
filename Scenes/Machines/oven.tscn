@@ -25,10 +25,10 @@ offset_right = 69.0
 offset_bottom = 17.0
 
 [node name="Button" type="Button" parent="."]
-offset_left = -43.0
-offset_top = -5.0
-offset_right = 5.0
-offset_bottom = 26.0
+offset_left = 47.0
+offset_top = -27.0
+offset_right = 95.0
+offset_bottom = 4.0
 scale = Vector2(0.3, 0.3)
 text = "BaKE"
 

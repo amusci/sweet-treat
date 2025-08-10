@@ -27,6 +27,5 @@ description = "SRD"
 category = "inbetween"
 ingredients = Array[ExtResource("2_hupyq")]([SubResource("Resource_6ln8n"), SubResource("Resource_si7ht"), SubResource("Resource_djmpx")])
 tool_required = "mixing"
-oven_temp = 0.0
 sell_price = 0.0
-unlock_level = 1
+time_to_make = 10.0

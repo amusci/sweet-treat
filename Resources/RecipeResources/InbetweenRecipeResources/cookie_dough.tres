@@ -37,6 +37,5 @@ description = "CD"
 category = "inbetween"
 ingredients = Array[ExtResource("1_xjijx")]([SubResource("Resource_hct02"), SubResource("Resource_mx8fl"), SubResource("Resource_sskqx"), SubResource("Resource_8l02b"), SubResource("Resource_s8xic")])
 tool_required = "mixing"
-oven_temp = 0.0
 sell_price = 0.0
-unlock_level = 1
+time_to_make = 10.0

@@ -17,6 +17,5 @@ description = "BSCD"
 category = "inbetween"
 ingredients = Array[ExtResource("1_nityr")]([SubResource("Resource_8dxy4")])
 tool_required = "bakingsheet"
-oven_temp = 375.0
 sell_price = 0.0
-unlock_level = 1
+time_to_make = 10.0
