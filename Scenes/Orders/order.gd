@@ -1,8 +1,7 @@
 extends VBoxContainer
 
 ###TODO: Maybe a button the cancel orders you don't want to do?
-######## Needs to show sprite + SPRITE + sPrItE = RECIPE
-######## Need to also show previous inbetween recipes.. no clue how to do this...
+######## Need to also show previous inbetween recipes.. no clue how to ######## do this...
 
 var progress_bar: ProgressBar
 var label: Label
@@ -66,7 +65,6 @@ func setup(order_data_param):
 	# Show recipe name
 	label.text = "Order: %s" % order_data.recipe.title
 
-	
 	progress_bar.max_value = 100.0
 	progress_bar.value = 100.0
 

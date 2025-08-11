@@ -3,9 +3,15 @@
 [ext_resource type="Script" uid="uid://clbrewwkc1qkf" path="res://Scenes/Orders/order.gd" id="1_0qwn2"]
 
 [node name="Order" type="VBoxContainer"]
-offset_top = 48.0
-offset_right = 300.0
-offset_bottom = 150.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_right = 150.0
+offset_bottom = 102.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 script = ExtResource("1_0qwn2")
 
 [node name="RecipeContainer" type="HBoxContainer" parent="."]
@@ -24,5 +30,5 @@ horizontal_alignment = 1
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_vertical = 6
 fill_mode = 3

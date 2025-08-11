@@ -6,7 +6,7 @@ extends Node
 var available_recipes: Array = []
 var active_orders: Array = []
 @export var max_orders := 3
-@export var spawn_interval := 1.0
+@export var spawn_interval := 5.0
 var spawn_timer := 0.0
 
 signal order_added(order_data)

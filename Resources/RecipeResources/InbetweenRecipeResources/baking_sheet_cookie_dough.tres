@@ -18,4 +18,4 @@ category = "inbetween"
 ingredients = Array[ExtResource("1_nityr")]([SubResource("Resource_8dxy4")])
 tool_required = "bakingsheet"
 sell_price = 0.0
-time_to_make = 5.0
+time_to_make = 15.0
