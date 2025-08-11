@@ -1,25 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqekke6vc13d1"]
+[gd_scene load_steps=3 format=3 uid="uid://bqekke6vc13d1"]
 
-[ext_resource type="Texture2D" uid="uid://cbp7qyiqpeatv" path="res://Assets/TempAssets/32x32.png" id="1_7klac"]
 [ext_resource type="PackedScene" uid="uid://c0xh2jlxgkwvv" path="res://Scenes/Orders/Order.tscn" id="1_bvury"]
 [ext_resource type="Script" uid="uid://dvuv40ewirygo" path="res://Scenes/Orders/order_container.gd" id="2_tuw3p"]
 
-[node name="TextureRect" type="TextureRect"]
-modulate = Color(0.796078, 0.592157, 0.52549, 1)
+[node name="OrderContainer" type="Control"]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_7klac")
 
-[node name="OrderContainer" type="VBoxContainer" parent="."]
-custom_minimum_size = Vector2(0, 50)
+[node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
 script = ExtResource("2_tuw3p")
 order_scene = ExtResource("1_bvury")

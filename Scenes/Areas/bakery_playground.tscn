@@ -32,8 +32,8 @@ offset_right = 310.0
 offset_bottom = 175.0
 
 [node name="OrderContainer" parent="." instance=ExtResource("5_0sb6y")]
-offset_left = 205.0
-offset_top = 9.0
-offset_right = 423.0
-offset_bottom = 152.0
+offset_left = 51.0
+offset_top = 69.0
+offset_right = 491.0
+offset_bottom = 212.0
 scale = Vector2(0.5, 0.5)

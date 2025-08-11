@@ -38,4 +38,4 @@ category = "inbetween"
 ingredients = Array[ExtResource("1_xjijx")]([SubResource("Resource_hct02"), SubResource("Resource_mx8fl"), SubResource("Resource_sskqx"), SubResource("Resource_8l02b"), SubResource("Resource_s8xic")])
 tool_required = "mixing"
 sell_price = 0.0
-time_to_make = 10.0
+time_to_make = 15.0
