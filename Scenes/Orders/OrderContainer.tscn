@@ -1,42 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqekke6vc13d1"]
+[gd_scene load_steps=4 format=3 uid="uid://bqekke6vc13d1"]
 
-[ext_resource type="PackedScene" uid="uid://c0xh2jlxgkwvv" path="res://Scenes/Orders/Order.tscn" id="1_bvury"]
+[ext_resource type="Texture2D" uid="uid://b1d5mv0ylx62x" path="res://Assets/TempAssets/ordercontainertest.png" id="1_bvury"]
 [ext_resource type="Script" uid="uid://dvuv40ewirygo" path="res://Scenes/Orders/order_container.gd" id="2_tuw3p"]
+[ext_resource type="PackedScene" uid="uid://c0xh2jlxgkwvv" path="res://Scenes/Orders/Order.tscn" id="3_tuw3p"]
 
 [node name="OrderContainer" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+anchors_preset = 0
+size_flags_horizontal = 0
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -60.0
-offset_right = 60.0
-offset_bottom = 35.0
+offset_right = 62.0
+offset_bottom = 136.0
 grow_horizontal = 2
+texture = ExtResource("1_bvury")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
-layout_mode = 2
+[node name="OrdersContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 62.0
+offset_bottom = 135.0
 script = ExtResource("2_tuw3p")
-order_scene = ExtResource("1_bvury")
-
-[node name="ToggleButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "Hide Orders ▲"
-
-[node name="OrdersContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/ToggleButton" to="PanelContainer/MarginContainer/VBoxContainer" method="_on_toggle_button_pressed"]
+order_scene = ExtResource("3_tuw3p")

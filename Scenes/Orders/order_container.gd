@@ -1,37 +1,22 @@
 # order_container.gd
 extends VBoxContainer
+
 ###TODO: UI is hell
+
 @export var order_scene: PackedScene
-var toggle_button: Button
 var orders_container: VBoxContainer
-var is_minimized = false
 var order_instances: Dictionary = {}  # Track order instances by order_id instead of order_data
 
-# Persist through scenes
-static var persistent_order_state = false
-
 func _ready():
-	# Get references to child nodes
-	toggle_button = get_node("ToggleButton")
-	orders_container = get_node("OrdersContainer")
-	
-	# Restore the minimized state from the static variable
-	is_minimized = persistent_order_state
+	# Get reference to self since this script IS the VBoxContainer
+	orders_container = self
 	
 	# Connect signals from OrderManager
 	OrderManager.order_added.connect(_on_order_added)
 	OrderManager.order_removed.connect(_on_order_removed)
 	
-	# Connect the toggle button - make sure this happens
-	if toggle_button:
-		if not toggle_button.pressed.is_connected(_on_toggle_button_pressed):
-			toggle_button.pressed.connect(_on_toggle_button_pressed)
-	
 	# Restore existing orders when returning to this scene
 	restore_existing_orders()
-	
-	# Apply the minimized state AFTER everything is set up
-	call_deferred("apply_button_state")
 
 func restore_existing_orders():
 	# Clear any existing UI elements first
@@ -75,35 +60,3 @@ func remove_order_ui(order_data):
 		order_instances.erase(order_data.id)
 		if is_instance_valid(order_instance):
 			order_instance.queue_free()
-
-func _on_toggle_button_pressed():
-	if is_minimized:
-		maximize_orders()
-	else:
-		minimize_orders()
-
-func apply_button_state():
-	# Force apply the correct state after everything is loaded
-	print("Applying minimized state: ", is_minimized)  # Debug print
-	if is_minimized:
-		minimize_orders()
-	else:
-		maximize_orders()
-
-func minimize_orders():
-	# Minimize order functionality
-	if orders_container:
-		orders_container.visible = false
-		if toggle_button:
-			toggle_button.text = "Show Orders"
-		is_minimized = true
-		persistent_order_state = true
-
-func maximize_orders():
-	# Maximize order functionality
-	if orders_container:
-		orders_container.visible = true
-		if toggle_button:
-			toggle_button.text = "Hide Orders"
-		is_minimized = false
-		persistent_order_state = false

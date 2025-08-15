@@ -28,8 +28,7 @@ position = Vector2(31, 38)
 position = Vector2(280, 50)
 
 [node name="OrderContainer" parent="." instance=ExtResource("5_fsijw")]
-offset_left = 218.0
-offset_top = 4.0
-offset_right = 354.0
-offset_bottom = 106.0
-scale = Vector2(0.5, 0.5)
+offset_left = 258.0
+offset_top = 1.0
+offset_right = 258.0
+offset_bottom = 1.0
