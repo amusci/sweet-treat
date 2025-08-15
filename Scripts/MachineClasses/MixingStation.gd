@@ -8,3 +8,4 @@ func _ready():
 # Button press fucntionality
 func _on_button_pressed():
 	_attempt_crafting()
+	print("helloo!!!")

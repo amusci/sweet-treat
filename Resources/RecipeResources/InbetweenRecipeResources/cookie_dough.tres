@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Recipe" load_steps=14 format=3 uid="uid://bbpdh55jflj0h"]
+[gd_resource type="Resource" script_class="Recipe" load_steps=15 format=3 uid="uid://bbpdh55jflj0h"]
 
 [ext_resource type="Resource" uid="uid://ehkrduea8x4a" path="res://Resources/IngredientResources/wetIngredientResources/butter.tres" id="1_bagit"]
 [ext_resource type="Script" uid="uid://db58b0en31pin" path="res://Scripts/ResourceClasses/Recipe.gd" id="1_q3jil"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cr1isyvhpjy3s" path="res://Assets/TempAssets/Cookie_Dough.png" id="3_gqoca"]
 [ext_resource type="Resource" uid="uid://bmgduypa23b6h" path="res://Resources/IngredientResources/wetIngredientResources/vanilla_extract.tres" id="6_usqu2"]
 [ext_resource type="Resource" uid="uid://dck7jlw3lmsvy" path="res://Resources/IngredientResources/dryIngredientResources/sugar.tres" id="6_uy27w"]
+[ext_resource type="Texture2D" uid="uid://dfa5lhl7on2ki" path="res://Assets/TempAssets/Stove_Sketch.png" id="9_0847v"]
 
 [sub_resource type="Resource" id="Resource_hct02"]
 script = ExtResource("1_xjijx")
@@ -37,5 +38,6 @@ description = "CD"
 category = "inbetween"
 ingredients = Array[ExtResource("1_xjijx")]([SubResource("Resource_hct02"), SubResource("Resource_mx8fl"), SubResource("Resource_sskqx"), SubResource("Resource_8l02b"), SubResource("Resource_s8xic")])
 tool_required = "mixing"
+tool_required_icon = ExtResource("9_0847v")
 sell_price = 0.0
 time_to_make = 100.0

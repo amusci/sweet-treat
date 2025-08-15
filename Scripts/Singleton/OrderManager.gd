@@ -50,6 +50,7 @@ func spawn_order():
 		"recipe": recipe,
 		"time_left": recipe.time_to_make,
 		"ingredients": recipe.ingredients,
+		"tool_icon" : recipe.tool_required_icon
 	}
 	active_orders.append(order_data) # Create new order in array
 	#print("New order: ", recipe.title, " (", active_orders.size(), "/", max_orders, ")")

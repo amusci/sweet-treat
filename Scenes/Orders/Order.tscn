@@ -20,32 +20,34 @@ offset_right = 62.0
 offset_bottom = 136.0
 texture = ExtResource("2_767pm")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="OutputPanel" type="Panel" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.5, 0.4)
 
-[node name="TextureRect" type="TextureRect" parent="Panel"]
+[node name="TextureRect" type="TextureRect" parent="OutputPanel"]
 z_index = 1
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_0h1ut")
+stretch_mode = 2
 
-[node name="Panel2" type="Panel" parent="."]
+[node name="StationPanel" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 21.0
 offset_right = 61.0
 offset_bottom = 40.0
 scale = Vector2(0.5, 0.4)
 
-[node name="TextureRect" type="TextureRect" parent="Panel2"]
+[node name="TextureRect" type="TextureRect" parent="StationPanel"]
 z_index = 1
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_0h1ut")
+stretch_mode = 2
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0

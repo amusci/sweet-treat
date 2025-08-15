@@ -7,7 +7,8 @@ extends Control
 var label: Label
 var recipe
 var grid_container: GridContainer
-var panel_texture: TextureRect
+var output_texture: TextureRect
+var machine_texture: TextureRect
 var order_id  # Store unique ID 
 var container_parent  # Order container
 
@@ -21,10 +22,12 @@ func setup(order_data_param):
 	# Get references to existing nodes in the scene
 	label = get_node("Label")
 	grid_container = get_node("GridContainer")
-	panel_texture = get_node("Panel/TextureRect")
+	output_texture = get_node("OutputPanel/TextureRect")
+	machine_texture = get_node("StationPanel/TextureRect")
 	
 	# Set the output recipe texture in the top-left panel
-	panel_texture.texture = order_data_param.recipe.icon
+	output_texture.texture = order_data_param.recipe.icon
+	machine_texture.texture = order_data_param.recipe.tool_required_icon
 	
 	# Clear existing grid items
 	for child in grid_container.get_children():
