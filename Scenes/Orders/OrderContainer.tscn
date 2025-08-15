@@ -10,6 +10,7 @@ anchors_preset = 0
 size_flags_horizontal = 0
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -20,6 +21,7 @@ grow_horizontal = 2
 texture = ExtResource("1_bvury")
 
 [node name="OrdersContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 0
 offset_right = 62.0
 offset_bottom = 135.0

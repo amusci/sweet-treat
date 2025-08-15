@@ -1,11 +1,13 @@
 # order.gd
-extends VBoxContainer
+extends Control
+
 ###TODO: Maybe a button the cancel orders you don't want to do?
 ######## Need to also show previous inbetween recipes.. no clue how to ######## do this...
-var progress_bar: ProgressBar
+
 var label: Label
 var recipe
-var recipe_container: HBoxContainer
+var grid_container: GridContainer
+var panel_texture: TextureRect
 var order_id  # Store unique ID 
 var container_parent  # Order container
 
@@ -16,55 +18,44 @@ func setup(order_data_param):
 	# Get reference to the container parent
 	call_deferred("_get_container_parent")
 	
-	# Load these as they are instantiated
-	progress_bar = get_node("ProgressBar") 
+	# Get references to existing nodes in the scene
 	label = get_node("Label")
-	recipe_container = get_node("RecipeContainer")
+	grid_container = get_node("GridContainer")
+	panel_texture = get_node("Panel/TextureRect")
 	
-	# Clear any existing recipe display
-	for child in recipe_container.get_children():
+	# Set the output recipe texture in the top-left panel
+	panel_texture.texture = order_data_param.recipe.icon
+	
+	# Clear existing grid items
+	for child in grid_container.get_children():
 		child.queue_free()
 	
-	# Add ingredient sprites
-	for i in range(order_data_param.ingredients.size()):
+	# Populate grid with ingredients (up to 6 slots)
+	var ingredient_count = min(order_data_param.ingredients.size(), 6)
+	
+	for i in range(ingredient_count):
 		var recipe_requirement = order_data_param.ingredients[i]
 		var actual_ingredient = recipe_requirement.ingredient
 		
-		# Create sprite for ingredient
-		var ingredient_sprite = TextureRect.new()
-		ingredient_sprite.texture = actual_ingredient.icon
-		ingredient_sprite.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-		ingredient_sprite.custom_minimum_size = Vector2(32, 32)
-		recipe_container.add_child(ingredient_sprite)
-		
-		# Add + between ingredients
-		if i < order_data_param.ingredients.size() - 1:
-			var plus_label = Label.new()
-			plus_label.text = " + "
-			plus_label.add_theme_font_size_override("font_size", 16)
-			plus_label.add_theme_color_override("font_color", Color.BLACK)
-			recipe_container.add_child(plus_label)
+		# Create new TextureRect for this ingredient
+		var ingredient_texture = TextureRect.new()
+		ingredient_texture.texture = actual_ingredient.icon
+		ingredient_texture.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		ingredient_texture.z_index = 1
+		grid_container.add_child(ingredient_texture)
 	
-	# Add equals sign to signify output
-	var equals_label = Label.new()
-	equals_label.text = " = "
-	equals_label.add_theme_font_size_override("font_size", 16)
-	equals_label.add_theme_color_override("font_color", Color.BLACK)
-	recipe_container.add_child(equals_label)
-	
-	# Add final recipe 
-	var recipe_sprite = TextureRect.new()
-	recipe_sprite.texture = order_data_param.recipe.icon
-	recipe_sprite.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	recipe_sprite.custom_minimum_size = Vector2(32, 32)
-	recipe_container.add_child(recipe_sprite)
+	# Fill remaining slots
+	var remaining_slots = 6 - ingredient_count
+	for i in range(remaining_slots):
+		var empty_texture = TextureRect.new()
+		empty_texture.z_index = 1
+		grid_container.add_child(empty_texture)
 	
 	# Set up the rest of the order data
 	recipe = order_data_param.recipe
 	
-	# Show recipe name
-	label.text = "Order: %s" % order_data_param.recipe.title
-	progress_bar.max_value = 100.0
+	# Update label to show time left
+	_update_label(order_data_param)
 
 func _get_container_parent():
 	# Find the order container parent
@@ -84,18 +75,15 @@ func _process(delta):
 		queue_free()
 		return
 	
-	if is_instance_valid(progress_bar):
-		var max_time = current_order_data.recipe.time_to_make
-		var time_left = current_order_data.time_left
-		
-		# DO NOT DIVIDE BY 0
-		if max_time > 0:
-			var progress_percentage = max(0.0, (time_left / max_time) * 100.0)
-			progress_bar.value = progress_percentage
-			
-			#print("Order: ", current_order_data.recipe.title, " Time left: ", time_left, " Max: ", max_time, " Progress: ", progress_percentage)
-		else:
-			progress_bar.value = 0.0
+	# Update the label with current time
+	_update_label(current_order_data)
+
+func _update_label(order_data):
+	# Update label with time left
+	if is_instance_valid(label):
+		var time_left = int(order_data.time_left)
+		label.text = str(time_left)
 
 func get_order_data():
+	# Helper function to get order data
 	return OrderManager.get_order_by_id(order_id)

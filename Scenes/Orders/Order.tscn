@@ -5,19 +5,26 @@
 [ext_resource type="Texture2D" uid="uid://b1d5mv0ylx62x" path="res://Assets/TempAssets/ordercontainertest.png" id="2_767pm"]
 
 [node name="Control" type="Control"]
+custom_minimum_size = Vector2(50, 40)
 layout_mode = 3
-anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0qwn2")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 62.0
+offset_bottom = 136.0
+texture = ExtResource("2_767pm")
+
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-scale = Vector2(0.500057, 0.400757)
+scale = Vector2(0.5, 0.4)
 
 [node name="TextureRect" type="TextureRect" parent="Panel"]
 z_index = 1
@@ -26,64 +33,37 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_0h1ut")
 
-[node name="Label" type="Label" parent="."]
-z_index = 1
+[node name="Panel2" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 21.0
 offset_right = 61.0
-offset_bottom = 22.3333
-scale = Vector2(1.02154, 0.713593)
-text = "120
-"
-horizontal_alignment = 1
-vertical_alignment = 1
+offset_bottom = 40.0
+scale = Vector2(0.5, 0.4)
+
+[node name="TextureRect" type="TextureRect" parent="Panel2"]
+z_index = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_0h1ut")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0
 offset_top = 17.0
-offset_right = 40.0
-offset_bottom = 57.0
+offset_right = 104.0
+offset_bottom = 310.0
 scale = Vector2(0.597479, 0.396347)
 columns = 3
 
-[node name="TextureRect" type="TextureRect" parent="GridContainer"]
-z_index = 1
-layout_mode = 2
-texture = ExtResource("1_0h1ut")
-stretch_mode = 2
-
-[node name="TextureRect2" type="TextureRect" parent="GridContainer"]
-z_index = 1
-layout_mode = 2
-texture = ExtResource("1_0h1ut")
-stretch_mode = 2
-
-[node name="TextureRect3" type="TextureRect" parent="GridContainer"]
-z_index = 1
-layout_mode = 2
-texture = ExtResource("1_0h1ut")
-stretch_mode = 2
-
-[node name="TextureRect4" type="TextureRect" parent="GridContainer"]
-z_index = 1
-layout_mode = 2
-texture = ExtResource("1_0h1ut")
-stretch_mode = 2
-
-[node name="TextureRect5" type="TextureRect" parent="GridContainer"]
-z_index = 1
-layout_mode = 2
-texture = ExtResource("1_0h1ut")
-stretch_mode = 2
-
-[node name="TextureRect6" type="TextureRect" parent="GridContainer"]
-z_index = 1
-layout_mode = 2
-texture = ExtResource("1_0h1ut")
-stretch_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Label" type="Label" parent="."]
+z_index = 3
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("2_767pm")
+offset_left = 41.0
+offset_top = 2.0
+offset_right = 69.0
+offset_bottom = 17.0
+scale = Vector2(0.75, 0.75)
+theme_override_font_sizes/font_size = 10
+text = "120"
+horizontal_alignment = 1
+vertical_alignment = 1
