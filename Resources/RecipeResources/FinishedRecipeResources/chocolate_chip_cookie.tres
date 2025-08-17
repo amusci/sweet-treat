@@ -17,5 +17,5 @@ description = "This is a CCC"
 category = "finished"
 ingredients = Array[ExtResource("1_mcsu6")]([SubResource("Resource_k3yvg")])
 tool_required = "oven"
-sell_price = 0.0
+sell_price = 200.0
 time_to_make = 500.0

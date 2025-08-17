@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://jrswjeeueyee"]
+[gd_scene load_steps=8 format=3 uid="uid://jrswjeeueyee"]
 
 [ext_resource type="Texture2D" uid="uid://b2x3xxvvj082m" path="res://Assets/Scenes/Baking_Scene_Background.png" id="1_iw7e6"]
 [ext_resource type="PackedScene" uid="uid://q1v1svbbga3m" path="res://Scenes/NonUpgradables/tablehotbar/hotbar.tscn" id="2_sqe8n"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cgltvgu28fltw" path="res://Scenes/Machines/oven.tscn" id="3_gyj70"]
 [ext_resource type="PackedScene" uid="uid://b8rhowa3gudpk" path="res://Scenes/SceneSwitching/SceneButtons.tscn" id="4_gf4qy"]
 [ext_resource type="PackedScene" uid="uid://bqekke6vc13d1" path="res://Scenes/Orders/OrderContainer.tscn" id="5_0sb6y"]
+[ext_resource type="PackedScene" uid="uid://byjt0e223ntsh" path="res://Scenes/UI/Finances.tscn" id="7_yqxkc"]
 
 [node name="BakeryPlayground" type="Node2D"]
 
@@ -45,3 +46,5 @@ offset_left = 258.0
 offset_top = 1.0
 offset_right = 258.0
 offset_bottom = 1.0
+
+[node name="Money" parent="." instance=ExtResource("7_yqxkc")]

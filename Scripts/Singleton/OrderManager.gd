@@ -5,7 +5,7 @@ var available_recipes: Array = []
 var active_orders: Array = []
 var progress_by_order_id: Dictionary = {} 
 @export var max_orders := 3
-@export var spawn_interval := 1.0
+@export var spawn_interval : float # Randomized
 var spawn_timer := 0.0
 
 signal order_added(order_data)
@@ -36,17 +36,17 @@ func _process(delta):
 			print("Order expired: ", order_data.recipe.title)
 			order_removed.emit(order_data)
 			active_orders.remove_at(i)
-			# Cleanup progress
 			progress_by_order_id.erase(order_data.id)
 
-	# Spawn an order if we under limit
+	# Increment the spawn timer
 	spawn_timer += delta
+
+	# Only spawn if timer passed AND we are under the max orders
 	if spawn_timer >= spawn_interval and active_orders.size() < max_orders:
-		spawn_timer = 0.0
 		spawn_order()
 
 func spawn_order():
-	# Spawn order functionality
+	# Spawn the order
 	var recipe = available_recipes.pick_random()
 	var order_data = {
 		"id": Time.get_unix_time_from_system() + randf(),
@@ -58,6 +58,12 @@ func spawn_order():
 	active_orders.append(order_data)
 	_init_order_progress(order_data)
 	order_added.emit(order_data)
+	print("Spawned order: ", recipe.title)
+
+	# Reset timer AND pick next random interval for next spawn
+	spawn_timer = 0.0
+	spawn_interval = 10.0 + randf() * 10.0
+	print("Next order in: ", spawn_interval, " seconds")
 
 func remove_order_by_data(order_data):
 	# Remove order functionality
@@ -82,7 +88,6 @@ func get_order_by_id(order_id) -> Dictionary:
 
 func complete_order(order_data):
 	remove_order_by_data(order_data)
-	# TODO: MONEY TIME
 
 func _init_order_progress(order_data: Dictionary) -> void:
 	

@@ -1,5 +1,9 @@
 extends Control
-#TODO: Finished recipes should output money for the user.
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
-	pass
+	# Loop through all children 
+	for child in get_children():
+		# Only add InventorySlot children to the group
+		if child is InventorySlot:
+			child.add_to_group("hotbar")
+			print("Added slot to hotbar group:", child.name)
