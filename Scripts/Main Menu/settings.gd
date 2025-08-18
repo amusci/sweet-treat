@@ -3,13 +3,13 @@ extends Node2D
 var music = AudioServer.get_bus_index("Music")
 @onready var music_slider = $HSlider
 
-func _ready(): 
-	print(music_slider.value)
-	AudioServer.set_bus_volume_db(music, linear_to_db(.3))
-	
+func _ready():
+	# Set slider to saved volume
+	music_slider.value = MusicManager.get_current_volume()
 
-
-	
 func _on_h_slider_value_changed(value: float) -> void:
-	AudioServer.set_bus_volume_db(music, linear_to_db(value))
+	MusicManager.set_volume(value)
 	print("Volume Changed ", value)
+
+func _on_back_pressed():
+	get_tree().change_scene_to_file("res://Scenes/Areas/Title Screen/title_screen.tscn")

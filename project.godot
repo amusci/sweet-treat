@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Sweet Treat"
-run/main_scene="res://Scenes/Areas/bakery_playground.tscn"
+run/main_scene="uid://cs61hh6a5onuu"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -23,6 +23,7 @@ InventoryManager="*res://Scripts/Singleton/InventoryManager.gd"
 TransitionScreen="*res://Scripts/Singleton/transition_screen.tscn"
 MachineManager="*res://Scripts/Singleton/MachineManager.gd"
 OrderManager="*res://Scripts/Singleton/OrderManager.gd"
+MusicManager="*res://Scripts/Singleton/MusicManager.gd"
 
 [display]
 
