@@ -1,31 +1,50 @@
-[gd_scene load_steps=5 format=3 uid="uid://jrswjeeueyee"]
+[gd_scene load_steps=8 format=3 uid="uid://jrswjeeueyee"]
 
+[ext_resource type="Texture2D" uid="uid://b2x3xxvvj082m" path="res://Assets/Scenes/Baking_Scene_Background.png" id="1_iw7e6"]
 [ext_resource type="PackedScene" uid="uid://q1v1svbbga3m" path="res://Scenes/NonUpgradables/tablehotbar/hotbar.tscn" id="2_sqe8n"]
 [ext_resource type="PackedScene" uid="uid://b85a3mf75arf7" path="res://Scenes/Machines/mixing_station.tscn" id="3_ff7m2"]
 [ext_resource type="PackedScene" uid="uid://cgltvgu28fltw" path="res://Scenes/Machines/oven.tscn" id="3_gyj70"]
 [ext_resource type="PackedScene" uid="uid://b8rhowa3gudpk" path="res://Scenes/SceneSwitching/SceneButtons.tscn" id="4_gf4qy"]
+[ext_resource type="PackedScene" uid="uid://bqekke6vc13d1" path="res://Scenes/Orders/OrderContainer.tscn" id="5_0sb6y"]
+[ext_resource type="PackedScene" uid="uid://byjt0e223ntsh" path="res://Scenes/UI/Finances.tscn" id="7_yqxkc"]
 
 [node name="BakeryPlayground" type="Node2D"]
 
-[node name="Oven" parent="." instance=ExtResource("3_gyj70")]
-position = Vector2(63, 71)
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -2
+offset_right = 320.0
+offset_bottom = 180.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("1_iw7e6")
 
-[node name="Hotbar" parent="." instance=ExtResource("2_sqe8n")]
-anchors_preset = 0
-anchor_left = 0.0
-anchor_right = 0.0
-offset_left = 9.0
-offset_top = 145.0
-offset_right = 175.0
-offset_bottom = 175.0
-grow_horizontal = 1
-size_flags_vertical = 4
+[node name="Oven" parent="." instance=ExtResource("3_gyj70")]
+position = Vector2(56, 105)
 
 [node name="MixingStation" parent="." instance=ExtResource("3_ff7m2")]
-position = Vector2(194, 63)
+position = Vector2(162, 94)
 
 [node name="SceneButtons" parent="." instance=ExtResource("4_gf4qy")]
 offset_left = 212.0
 offset_top = 145.0
 offset_right = 310.0
 offset_bottom = 175.0
+
+[node name="Hotbar" parent="." instance=ExtResource("2_sqe8n")]
+anchors_preset = 0
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 20.0
+offset_top = 143.0
+offset_right = 186.0
+offset_bottom = 173.0
+grow_horizontal = 1
+size_flags_vertical = 4
+
+[node name="OrderContainer" parent="." instance=ExtResource("5_0sb6y")]
+offset_left = 258.0
+offset_top = 1.0
+offset_right = 258.0
+offset_bottom = 1.0
+
+[node name="Money" parent="." instance=ExtResource("7_yqxkc")]

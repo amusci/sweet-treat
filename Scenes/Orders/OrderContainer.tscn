@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqekke6vc13d1"]
+
+[ext_resource type="Texture2D" uid="uid://b1d5mv0ylx62x" path="res://Assets/TempAssets/ordercontainertest.png" id="1_bvury"]
+[ext_resource type="Script" uid="uid://dvuv40ewirygo" path="res://Scenes/Orders/order_container.gd" id="2_tuw3p"]
+[ext_resource type="PackedScene" uid="uid://c0xh2jlxgkwvv" path="res://Scenes/Orders/Order.tscn" id="3_tuw3p"]
+
+[node name="OrderContainer" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_right = 62.0
+offset_bottom = 136.0
+grow_horizontal = 2
+texture = ExtResource("1_bvury")
+
+[node name="OrdersContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_right = 62.0
+offset_bottom = 135.0
+script = ExtResource("2_tuw3p")
+order_scene = ExtResource("3_tuw3p")

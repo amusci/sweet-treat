@@ -1,11 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://c3e01muplx18p"]
+[gd_scene load_steps=7 format=3 uid="uid://c3e01muplx18p"]
 
 [ext_resource type="PackedScene" uid="uid://b8rhowa3gudpk" path="res://Scenes/SceneSwitching/SceneButtons.tscn" id="1_5ysot"]
 [ext_resource type="PackedScene" uid="uid://q1v1svbbga3m" path="res://Scenes/NonUpgradables/tablehotbar/hotbar.tscn" id="2_4lbp4"]
 [ext_resource type="PackedScene" uid="uid://m07v5i1n8ugu" path="res://Scenes/Machines/fridge.tscn" id="3_48a00"]
 [ext_resource type="PackedScene" uid="uid://be6ih76u65jfa" path="res://Scenes/Machines/dry_storage.tscn" id="4_hrdef"]
+[ext_resource type="PackedScene" uid="uid://bqekke6vc13d1" path="res://Scenes/Orders/OrderContainer.tscn" id="5_fsijw"]
+[ext_resource type="Texture2D" uid="uid://b1d5mv0ylx62x" path="res://Assets/TempAssets/ordercontainertest.png" id="6_kvb4u"]
 
 [node name="StoragePlayground" type="Node2D"]
+
+[node name="OrderContainer" parent="." instance=ExtResource("5_fsijw")]
+offset_left = 258.0
+offset_top = 1.0
+offset_right = 258.0
+offset_bottom = 1.0
+
+[node name="TextureRect2" type="TextureRect" parent="OrderContainer"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_kvb4u")
 
 [node name="SceneButtons" parent="." instance=ExtResource("1_5ysot")]
 offset_left = 212.0
@@ -14,14 +28,14 @@ offset_right = 310.0
 offset_bottom = 175.0
 
 [node name="Hotbar" parent="." instance=ExtResource("2_4lbp4")]
-offset_left = 9.0
-offset_top = 145.0
-offset_right = 175.0
-offset_bottom = 175.0
+offset_left = 20.0
+offset_top = 143.0
+offset_right = 186.0
+offset_bottom = 173.0
 size_flags_horizontal = 0
 
 [node name="Fridge" parent="." instance=ExtResource("3_48a00")]
 position = Vector2(31, 38)
 
 [node name="DryStorage" parent="." instance=ExtResource("4_hrdef")]
-position = Vector2(280, 50)
+position = Vector2(210, 58)

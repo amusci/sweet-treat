@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="Recipe" load_steps=10 format=3 uid="uid://cwtg4nksbkhqf"]
+[gd_resource type="Resource" script_class="Recipe" load_steps=11 format=3 uid="uid://cwtg4nksbkhqf"]
 
 [ext_resource type="Texture2D" uid="uid://dsr0os6v1t08y" path="res://Assets/TempAssets/Bowl_Empty.png" id="1_bnlqk"]
 [ext_resource type="Resource" uid="uid://b5gvgfhupsx1o" path="res://Resources/IngredientResources/dryIngredientResources/flour.tres" id="1_cmwlw"]
 [ext_resource type="Script" uid="uid://2afi4mayu2gq" path="res://Scripts/ResourceClasses/RecipeRequirement.gd" id="2_hupyq"]
 [ext_resource type="Resource" uid="uid://bscgdv7tmnru" path="res://Resources/IngredientResources/dryIngredientResources/baking_soda.tres" id="3_c1vfy"]
 [ext_resource type="Resource" uid="uid://b22e0h2xh7sfx" path="res://Resources/IngredientResources/dryIngredientResources/sea_salt.tres" id="4_gof8e"]
+[ext_resource type="Texture2D" uid="uid://dfa5lhl7on2ki" path="res://Assets/TempAssets/Stove_Sketch.png" id="7_kvj1w"]
 [ext_resource type="Script" uid="uid://db58b0en31pin" path="res://Scripts/ResourceClasses/Recipe.gd" id="9_eneie"]
 
 [sub_resource type="Resource" id="Resource_6ln8n"]
@@ -27,6 +28,6 @@ description = "SRD"
 category = "inbetween"
 ingredients = Array[ExtResource("2_hupyq")]([SubResource("Resource_6ln8n"), SubResource("Resource_si7ht"), SubResource("Resource_djmpx")])
 tool_required = "mixing"
-oven_temp = 0.0
+tool_required_icon = ExtResource("7_kvj1w")
 sell_price = 0.0
-unlock_level = 1
+time_to_make = 50.0

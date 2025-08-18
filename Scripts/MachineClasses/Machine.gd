@@ -286,6 +286,10 @@ func _craft_recipe(recipe: Recipe):
 	# Save state after crafting
 	_save_machine_state()
 	
+	# Let OrderManager know that we crafted an inbetween item so we can update the UI
+	if OrderManager:
+		OrderManager.notify_crafted_recipe(recipe)
+
 	print("Successfully crafted: ", recipe.title)
 	return recipe
 

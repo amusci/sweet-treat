@@ -128,6 +128,27 @@ func _end_drag():
 	_cleanup_drag_preview()
 	currently_dragging_slot = null
 	is_right_click_mode = false
+	_check_sell_finished()
+	
+func _check_sell_finished():
+	if item != null and amount > 0 and item.has_method("get") and item.get("category") == "finished":
+		if is_in_group("hotbar"):
+			var sell_amount = item.get("sell_price")
+			Money.add_money(sell_amount)
+			print("DING WE SOLD: +", sell_amount, "money")
+			
+			# Find the first matching order by recipe title
+			for order_data in OrderManager.active_orders:
+				if order_data.recipe.title == item.title:
+					OrderManager.complete_order(order_data)
+					print("Removed corresponding order: ", order_data.recipe.title)
+					break
+			
+			# Reduce stack amount AFTER removing the order
+			amount -= 1
+			if amount <= 0:
+				item = null
+
 
 func _cleanup_drag_preview():
 	# Good bye drag preview
