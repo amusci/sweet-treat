@@ -1,15 +1,17 @@
 [gd_scene load_steps=3 format=3 uid="uid://ce0uynhqjxqih"]
 
-[ext_resource type="Texture2D" uid="uid://dv6a36mp5hvqj" path="res://Assets/TempAssets/Temp Title Background.png" id="1_fl535"]
-[ext_resource type="Script" uid="uid://emr0rprao5lu" path="res://Scripts/Main Menu/settings.gd" id="1_l7is4"]
+[ext_resource type="Script" uid="uid://emr0rprao5lu" path="res://Scripts/Main Menu/settings.gd" id="1_n2jip"]
+[ext_resource type="Texture2D" uid="uid://dv6a36mp5hvqj" path="res://Assets/TempAssets/Temp Title Background.png" id="2_oe156"]
 
-[node name="Settings" type="Node2D"]
-script = ExtResource("1_l7is4")
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_n2jip")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 320.0
 offset_bottom = 180.0
-texture = ExtResource("1_fl535")
+texture = ExtResource("2_oe156")
 
 [node name="HSlider" type="HSlider" parent="."]
 offset_left = 97.0

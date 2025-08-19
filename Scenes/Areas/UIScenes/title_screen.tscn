@@ -1,15 +1,17 @@
 [gd_scene load_steps=3 format=3 uid="uid://cs61hh6a5onuu"]
 
-[ext_resource type="Script" uid="uid://bjl1csrh6kwip" path="res://Scripts/Main Menu/title_screen.gd" id="1_4tbts"]
-[ext_resource type="Texture2D" uid="uid://dv6a36mp5hvqj" path="res://Assets/TempAssets/Temp Title Background.png" id="2_k8d4h"]
+[ext_resource type="Script" uid="uid://bjl1csrh6kwip" path="res://Scripts/Main Menu/title_screen.gd" id="1_qa6a4"]
+[ext_resource type="Texture2D" uid="uid://dv6a36mp5hvqj" path="res://Assets/TempAssets/Temp Title Background.png" id="2_i50ag"]
 
-[node name="Title Screen" type="Node2D"]
-script = ExtResource("1_4tbts")
+[node name="Title Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_qa6a4")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 320.0
 offset_bottom = 180.0
-texture = ExtResource("2_k8d4h")
+texture = ExtResource("2_i50ag")
 
 [node name="Play" type="Button" parent="."]
 offset_left = 126.0

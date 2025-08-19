@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 @onready var play_button = $Play
 @onready var settings_button = $Settings
@@ -16,7 +16,7 @@ func _on_play_pressed() -> void:
 
 
 func _on_settings_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Areas/Title Screen/Settings.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Areas/UIScenes/Settings.tscn")
 	print("Settings Pressed")
 
 
