@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://4rouxcf08nwj"]
+[gd_scene load_steps=8 format=3 uid="uid://4rouxcf08nwj"]
 
 [ext_resource type="Script" uid="uid://b3cly2n5obgcy" path="res://Scenes/Areas/ui.gd" id="1_7h0is"]
 [ext_resource type="PackedScene" uid="uid://q1v1svbbga3m" path="res://Scenes/NonUpgradables/tablehotbar/hotbar.tscn" id="2_aj1vn"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bqekke6vc13d1" path="res://Scenes/Orders/OrderContainer.tscn" id="4_7h0is"]
 [ext_resource type="PackedScene" uid="uid://dtu3jt1kqe2kv" path="res://Scenes/Areas/UIScenes/pause_menu.tscn" id="5_aneyl"]
 [ext_resource type="Texture2D" uid="uid://b1d5mv0ylx62x" path="res://Assets/TempAssets/ordercontainertest.png" id="5_wspjr"]
+[ext_resource type="PackedScene" uid="uid://buwcfxv72l13v" path="res://Scenes/Shop/shop.tscn" id="7_exsb2"]
 
 [node name="ShopPlayground" type="Node2D"]
 script = ExtResource("1_7h0is")
@@ -42,15 +43,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Label" type="Label" parent="Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 22.3333
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "WELCOME TO THE SHOP"
+[node name="Control" parent="." instance=ExtResource("7_exsb2")]
+offset_left = -9.0
+offset_top = 5.0
+offset_right = -9.0
+offset_bottom = 5.0

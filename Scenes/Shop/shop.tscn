@@ -1,0 +1,356 @@
+[gd_scene load_steps=11 format=3 uid="uid://buwcfxv72l13v"]
+
+[ext_resource type="Texture2D" uid="uid://cbp7qyiqpeatv" path="res://Assets/TempAssets/32x32.png" id="1_78vcx"]
+[ext_resource type="Script" uid="uid://iyvrqmv07hjf" path="res://Scenes/Shop/shop.gd" id="1_w8bjl"]
+[ext_resource type="Texture2D" uid="uid://ca2xwqvxlpetl" path="res://Assets/TempAssets/Baking_Soda.png" id="2_dqdqq"]
+[ext_resource type="PackedScene" uid="uid://dfseuxorrds8m" path="res://Scenes/NonUpgradables/tablehotbar/inventory_slot.tscn" id="3_8dak6"]
+[ext_resource type="Texture2D" uid="uid://bca1kcgfxe5y0" path="res://Assets/TempAssets/Egg.png" id="5_274ew"]
+[ext_resource type="Texture2D" uid="uid://dytopvc3rkp4d" path="res://Assets/FoodAssets/IngredientAssets/DryIngredientAssets/josieFlour.png" id="6_rjc2l"]
+[ext_resource type="Texture2D" uid="uid://bs7s1710qmt6u" path="res://Assets/TempAssets/Sea-Salt.png" id="7_fobo1"]
+[ext_resource type="Texture2D" uid="uid://3yoy2puyrd8" path="res://Assets/FoodAssets/IngredientAssets/DryIngredientAssets/josieSugar.png" id="8_oqg8q"]
+[ext_resource type="Texture2D" uid="uid://7q07knpe2cdg" path="res://Assets/TempAssets/Vanilla_Extract.png" id="9_kcc5r"]
+[ext_resource type="Texture2D" uid="uid://dhf7ct8pu8moo" path="res://Assets/TempAssets/Butter.png" id="10_xybqi"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w8bjl")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 5.0
+offset_right = 241.0
+offset_bottom = 27.3333
+text = "WELCOME TO THE SHOP"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(180, 100)
+layout_mode = 0
+offset_left = 58.0
+offset_top = 33.0
+offset_right = 251.0
+offset_bottom = 133.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+custom_minimum_size = Vector2(180, 100)
+layout_mode = 2
+
+[node name="BakingSodaSlot" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(180, 40)
+layout_mode = 2
+
+[node name="BakingSodaTexture" type="TextureRect" parent="ScrollContainer/VBoxContainer/BakingSodaSlot"]
+layout_mode = 2
+offset_top = 4.0
+offset_right = 180.0
+offset_bottom = 36.0
+texture = ExtResource("1_78vcx")
+
+[node name="BakingSodaSprite" type="TextureRect" parent="ScrollContainer/VBoxContainer/BakingSodaSlot"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_dqdqq")
+
+[node name="BakingSodaSlot" parent="ScrollContainer/VBoxContainer/BakingSodaSlot" instance=ExtResource("3_8dak6")]
+z_index = 0
+layout_mode = 0
+offset_left = 149.0
+offset_top = 5.0
+offset_right = 179.0
+offset_bottom = 35.0
+
+[node name="BakingSodaButton" type="Button" parent="ScrollContainer/VBoxContainer/BakingSodaSlot"]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 8.0
+offset_right = 145.0
+offset_bottom = 30.0
+theme_override_font_sizes/font_size = 10
+text = "BUY"
+
+[node name="BakingSodaLabel" type="Label" parent="ScrollContainer/VBoxContainer/BakingSodaSlot"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 12.0
+offset_right = 113.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "BAKING SODA"
+
+[node name="EggSlot" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(180, 40)
+layout_mode = 2
+
+[node name="EggTexture" type="TextureRect" parent="ScrollContainer/VBoxContainer/EggSlot"]
+layout_mode = 2
+offset_top = 4.0
+offset_right = 180.0
+offset_bottom = 36.0
+texture = ExtResource("1_78vcx")
+
+[node name="EggSprite" type="TextureRect" parent="ScrollContainer/VBoxContainer/EggSlot"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_274ew")
+
+[node name="EggSlot" parent="ScrollContainer/VBoxContainer/EggSlot" instance=ExtResource("3_8dak6")]
+z_index = 0
+layout_mode = 0
+offset_left = 149.0
+offset_top = 5.0
+offset_right = 179.0
+offset_bottom = 35.0
+
+[node name="EggButton" type="Button" parent="ScrollContainer/VBoxContainer/EggSlot"]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 8.0
+offset_right = 145.0
+offset_bottom = 30.0
+theme_override_font_sizes/font_size = 10
+text = "BUY"
+
+[node name="EggLabel" type="Label" parent="ScrollContainer/VBoxContainer/EggSlot"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 12.0
+offset_right = 113.0
+offset_bottom = 26.0
+scale = Vector2(1, 0.992404)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "EGG"
+
+[node name="Flour" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(180, 40)
+layout_mode = 2
+
+[node name="FlourTexture" type="TextureRect" parent="ScrollContainer/VBoxContainer/Flour"]
+layout_mode = 2
+offset_top = 4.0
+offset_right = 180.0
+offset_bottom = 36.0
+texture = ExtResource("1_78vcx")
+
+[node name="FlourSprite" type="TextureRect" parent="ScrollContainer/VBoxContainer/Flour"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("6_rjc2l")
+
+[node name="FlourSlot" parent="ScrollContainer/VBoxContainer/Flour" instance=ExtResource("3_8dak6")]
+z_index = 0
+layout_mode = 0
+offset_left = 149.0
+offset_top = 5.0
+offset_right = 179.0
+offset_bottom = 35.0
+
+[node name="FlourButton" type="Button" parent="ScrollContainer/VBoxContainer/Flour"]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 8.0
+offset_right = 145.0
+offset_bottom = 30.0
+theme_override_font_sizes/font_size = 10
+text = "BUY"
+
+[node name="FlourLabel" type="Label" parent="ScrollContainer/VBoxContainer/Flour"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 12.0
+offset_right = 113.0
+offset_bottom = 26.0
+scale = Vector2(1, 0.992404)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "FLOUR
+"
+
+[node name="SeaSalt" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(180, 40)
+layout_mode = 2
+
+[node name="SeaSaltTexture" type="TextureRect" parent="ScrollContainer/VBoxContainer/SeaSalt"]
+layout_mode = 2
+offset_top = 4.0
+offset_right = 180.0
+offset_bottom = 36.0
+texture = ExtResource("1_78vcx")
+
+[node name="SeaSaltSprite" type="TextureRect" parent="ScrollContainer/VBoxContainer/SeaSalt"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("7_fobo1")
+
+[node name="SeaSaltSlot" parent="ScrollContainer/VBoxContainer/SeaSalt" instance=ExtResource("3_8dak6")]
+z_index = 0
+layout_mode = 0
+offset_left = 149.0
+offset_top = 5.0
+offset_right = 179.0
+offset_bottom = 35.0
+
+[node name="SeaSaltButton" type="Button" parent="ScrollContainer/VBoxContainer/SeaSalt"]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 8.0
+offset_right = 145.0
+offset_bottom = 30.0
+theme_override_font_sizes/font_size = 10
+text = "BUY"
+
+[node name="SeaSaltLabel" type="Label" parent="ScrollContainer/VBoxContainer/SeaSalt"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 12.0
+offset_right = 113.0
+offset_bottom = 26.0
+scale = Vector2(1, 0.992404)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "SEA SALT"
+
+[node name="Sugar" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(180, 40)
+layout_mode = 2
+
+[node name="SugarTexture" type="TextureRect" parent="ScrollContainer/VBoxContainer/Sugar"]
+layout_mode = 2
+offset_top = 4.0
+offset_right = 180.0
+offset_bottom = 36.0
+texture = ExtResource("1_78vcx")
+
+[node name="SugarSprite" type="TextureRect" parent="ScrollContainer/VBoxContainer/Sugar"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("8_oqg8q")
+
+[node name="SugarSlot" parent="ScrollContainer/VBoxContainer/Sugar" instance=ExtResource("3_8dak6")]
+z_index = 0
+layout_mode = 0
+offset_left = 149.0
+offset_top = 5.0
+offset_right = 179.0
+offset_bottom = 35.0
+
+[node name="SugarButton" type="Button" parent="ScrollContainer/VBoxContainer/Sugar"]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 8.0
+offset_right = 145.0
+offset_bottom = 30.0
+theme_override_font_sizes/font_size = 10
+text = "BUY"
+
+[node name="SugarLabel" type="Label" parent="ScrollContainer/VBoxContainer/Sugar"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 12.0
+offset_right = 113.0
+offset_bottom = 26.0
+scale = Vector2(1, 0.992404)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "SUGAR"
+
+[node name="VanillaExtract" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(180, 40)
+layout_mode = 2
+
+[node name="VanillaExtractTexture" type="TextureRect" parent="ScrollContainer/VBoxContainer/VanillaExtract"]
+layout_mode = 2
+offset_top = 4.0
+offset_right = 180.0
+offset_bottom = 36.0
+texture = ExtResource("1_78vcx")
+
+[node name="VanillaExtractSprite" type="TextureRect" parent="ScrollContainer/VBoxContainer/VanillaExtract"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("9_kcc5r")
+
+[node name="VanillaExtractSlot" parent="ScrollContainer/VBoxContainer/VanillaExtract" instance=ExtResource("3_8dak6")]
+z_index = 0
+layout_mode = 0
+offset_left = 149.0
+offset_top = 5.0
+offset_right = 179.0
+offset_bottom = 35.0
+
+[node name="VanillaExtractButton" type="Button" parent="ScrollContainer/VBoxContainer/VanillaExtract"]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 8.0
+offset_right = 145.0
+offset_bottom = 30.0
+theme_override_font_sizes/font_size = 10
+text = "BUY"
+
+[node name="VanillaExtractLabel" type="Label" parent="ScrollContainer/VBoxContainer/VanillaExtract"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 12.0
+offset_right = 113.0
+offset_bottom = 26.0
+scale = Vector2(1, 0.992404)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "Vanilla Extract"
+
+[node name="Butter" type="Control" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(180, 40)
+layout_mode = 2
+
+[node name="ButterTexture" type="TextureRect" parent="ScrollContainer/VBoxContainer/Butter"]
+layout_mode = 2
+offset_top = 4.0
+offset_right = 180.0
+offset_bottom = 36.0
+texture = ExtResource("1_78vcx")
+
+[node name="ButterSprite" type="TextureRect" parent="ScrollContainer/VBoxContainer/Butter"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("10_xybqi")
+
+[node name="ButterSlot" parent="ScrollContainer/VBoxContainer/Butter" instance=ExtResource("3_8dak6")]
+z_index = 0
+layout_mode = 0
+offset_left = 149.0
+offset_top = 5.0
+offset_right = 179.0
+offset_bottom = 35.0
+
+[node name="ButterButton" type="Button" parent="ScrollContainer/VBoxContainer/Butter"]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 8.0
+offset_right = 145.0
+offset_bottom = 30.0
+theme_override_font_sizes/font_size = 10
+text = "BUY"
+
+[node name="ButterLabel" type="Label" parent="ScrollContainer/VBoxContainer/Butter"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 12.0
+offset_right = 113.0
+offset_bottom = 26.0
+scale = Vector2(1, 0.992404)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "Butter"
