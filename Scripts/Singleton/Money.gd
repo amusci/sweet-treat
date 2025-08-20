@@ -16,4 +16,3 @@ func spend_money(amount: int) -> bool: #same as add_money function but is a bool
 		emit_signal("change_money", money)
 		return true
 	return false
-	

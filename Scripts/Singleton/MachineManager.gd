@@ -10,7 +10,6 @@ func set_machine_data(machine_id: String, data: Dictionary):
 	# Machine state management
 	machine_states[machine_id] = data
 
-
 func get_machine_data(machine_id: String) -> Dictionary:
 	# Helper function to return machine state
 	return machine_states.get(machine_id, {})
@@ -23,7 +22,6 @@ func clear_machine_data(machine_id: String):
 func clear_all_machine_data():
 	# Machine full clear handling
 	machine_states.clear()
-
 
 func print_all_machine_states():
 	# Pretty print
