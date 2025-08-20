@@ -1,6 +1,56 @@
-[gd_scene load_steps=2 format=3 uid="uid://4rouxcf08nwj"]
+[gd_scene load_steps=7 format=3 uid="uid://4rouxcf08nwj"]
 
-[ext_resource type="Script" uid="uid://c13lbx11faww2" path="res://Scenes/Areas/shop_playground.gd" id="1_ovb87"]
+[ext_resource type="Script" uid="uid://b3cly2n5obgcy" path="res://Scenes/Areas/ui.gd" id="1_7h0is"]
+[ext_resource type="PackedScene" uid="uid://q1v1svbbga3m" path="res://Scenes/NonUpgradables/tablehotbar/hotbar.tscn" id="2_aj1vn"]
+[ext_resource type="PackedScene" uid="uid://b8rhowa3gudpk" path="res://Scenes/SceneSwitching/SceneButtons.tscn" id="3_t82ki"]
+[ext_resource type="PackedScene" uid="uid://bqekke6vc13d1" path="res://Scenes/Orders/OrderContainer.tscn" id="4_7h0is"]
+[ext_resource type="PackedScene" uid="uid://dtu3jt1kqe2kv" path="res://Scenes/Areas/UIScenes/pause_menu.tscn" id="5_aneyl"]
+[ext_resource type="Texture2D" uid="uid://b1d5mv0ylx62x" path="res://Assets/TempAssets/ordercontainertest.png" id="5_wspjr"]
 
 [node name="ShopPlayground" type="Node2D"]
-script = ExtResource("1_ovb87")
+script = ExtResource("1_7h0is")
+
+[node name="Hotbar" parent="." instance=ExtResource("2_aj1vn")]
+offset_left = 20.0
+offset_top = 143.0
+offset_right = 186.0
+offset_bottom = 173.0
+
+[node name="SceneButtons" parent="." instance=ExtResource("3_t82ki")]
+offset_left = 212.0
+offset_top = 145.0
+offset_right = 310.0
+offset_bottom = 175.0
+
+[node name="OrderContainer" parent="." instance=ExtResource("4_7h0is")]
+offset_left = 258.0
+offset_top = 1.0
+offset_right = 320.0
+offset_bottom = 137.0
+
+[node name="TextureRect2" type="TextureRect" parent="OrderContainer"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_wspjr")
+
+[node name="PauseMenu" parent="." instance=ExtResource("5_aneyl")]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 22.3333
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "WELCOME TO THE SHOP"

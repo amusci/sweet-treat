@@ -31,3 +31,4 @@ text = "Shop
 
 [connection signal="pressed" from="StorageButton" to="." method="_on_storage_button_pressed"]
 [connection signal="pressed" from="BakingButton" to="." method="_on_baking_button_pressed"]
+[connection signal="pressed" from="ShopButton" to="." method="_on_shop_button_pressed"]

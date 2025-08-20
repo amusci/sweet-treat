@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtu3jt1kqe2kv"]
+
+[ext_resource type="Script" uid="uid://bntp0cu3fn8ry" path="res://Scenes/Areas/UIScenes/pause_menu.gd" id="1_1ixme"]
+[ext_resource type="Texture2D" uid="uid://dv6a36mp5hvqj" path="res://Assets/TempAssets/Temp Title Background.png" id="1_2jclo"]
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_1ixme")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+offset_right = 320.0
+offset_bottom = 180.0
+texture = ExtResource("1_2jclo")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 22.3333
+text = "THIS IS THE PAUSE SCREEN!!!!!! BRO!!!!!!!"
