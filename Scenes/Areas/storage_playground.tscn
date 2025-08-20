@@ -44,3 +44,4 @@ position = Vector2(31, 38)
 position = Vector2(210, 58)
 
 [node name="PauseMenu" parent="." instance=ExtResource("8_xkyle")]
+visible = false
