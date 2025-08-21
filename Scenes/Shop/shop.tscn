@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cbp7qyiqpeatv" path="res://Assets/TempAssets/32x32.png" id="1_78vcx"]
 [ext_resource type="Script" uid="uid://iyvrqmv07hjf" path="res://Scenes/Shop/shop.gd" id="1_w8bjl"]
 [ext_resource type="Texture2D" uid="uid://ca2xwqvxlpetl" path="res://Assets/TempAssets/Baking_Soda.png" id="2_dqdqq"]
-[ext_resource type="PackedScene" uid="uid://dfseuxorrds8m" path="res://Scenes/NonUpgradables/tablehotbar/inventory_slot.tscn" id="3_8dak6"]
+[ext_resource type="PackedScene" uid="uid://dtggv3if1mryj" path="res://Scenes/Shop/shop_output.tscn" id="4_xybqi"]
 [ext_resource type="Texture2D" uid="uid://bca1kcgfxe5y0" path="res://Assets/TempAssets/Egg.png" id="5_274ew"]
 [ext_resource type="Texture2D" uid="uid://dytopvc3rkp4d" path="res://Assets/FoodAssets/IngredientAssets/DryIngredientAssets/josieFlour.png" id="6_rjc2l"]
 [ext_resource type="Texture2D" uid="uid://bs7s1710qmt6u" path="res://Assets/TempAssets/Sea-Salt.png" id="7_fobo1"]
@@ -57,14 +57,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_dqdqq")
 
-[node name="BakingSodaSlot" parent="ScrollContainer/VBoxContainer/BakingSodaSlot" instance=ExtResource("3_8dak6")]
-z_index = 0
-layout_mode = 0
-offset_left = 149.0
-offset_top = 5.0
-offset_right = 179.0
-offset_bottom = 35.0
-
 [node name="BakingSodaButton" type="Button" parent="ScrollContainer/VBoxContainer/BakingSodaSlot"]
 layout_mode = 0
 offset_left = 117.0
@@ -84,6 +76,14 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 10
 text = "BAKING SODA"
 
+[node name="BakingSodaOutput" parent="ScrollContainer/VBoxContainer/BakingSodaSlot" instance=ExtResource("4_xybqi")]
+z_index = 1
+layout_mode = 0
+offset_left = 148.0
+offset_top = 5.0
+offset_right = 178.0
+offset_bottom = 35.0
+
 [node name="EggSlot" type="Control" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(180, 40)
 layout_mode = 2
@@ -100,14 +100,6 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("5_274ew")
-
-[node name="EggSlot" parent="ScrollContainer/VBoxContainer/EggSlot" instance=ExtResource("3_8dak6")]
-z_index = 0
-layout_mode = 0
-offset_left = 149.0
-offset_top = 5.0
-offset_right = 179.0
-offset_bottom = 35.0
 
 [node name="EggButton" type="Button" parent="ScrollContainer/VBoxContainer/EggSlot"]
 layout_mode = 0
@@ -129,6 +121,14 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 10
 text = "EGG"
 
+[node name="EggOutput" parent="ScrollContainer/VBoxContainer/EggSlot" instance=ExtResource("4_xybqi")]
+z_index = 1
+layout_mode = 0
+offset_left = 148.0
+offset_top = 5.0
+offset_right = 178.0
+offset_bottom = 35.0
+
 [node name="Flour" type="Control" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(180, 40)
 layout_mode = 2
@@ -145,14 +145,6 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("6_rjc2l")
-
-[node name="FlourSlot" parent="ScrollContainer/VBoxContainer/Flour" instance=ExtResource("3_8dak6")]
-z_index = 0
-layout_mode = 0
-offset_left = 149.0
-offset_top = 5.0
-offset_right = 179.0
-offset_bottom = 35.0
 
 [node name="FlourButton" type="Button" parent="ScrollContainer/VBoxContainer/Flour"]
 layout_mode = 0
@@ -175,6 +167,14 @@ theme_override_font_sizes/font_size = 10
 text = "FLOUR
 "
 
+[node name="FlourOutput" parent="ScrollContainer/VBoxContainer/Flour" instance=ExtResource("4_xybqi")]
+z_index = 1
+layout_mode = 0
+offset_left = 148.0
+offset_top = 5.0
+offset_right = 178.0
+offset_bottom = 35.0
+
 [node name="SeaSalt" type="Control" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(180, 40)
 layout_mode = 2
@@ -191,14 +191,6 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("7_fobo1")
-
-[node name="SeaSaltSlot" parent="ScrollContainer/VBoxContainer/SeaSalt" instance=ExtResource("3_8dak6")]
-z_index = 0
-layout_mode = 0
-offset_left = 149.0
-offset_top = 5.0
-offset_right = 179.0
-offset_bottom = 35.0
 
 [node name="SeaSaltButton" type="Button" parent="ScrollContainer/VBoxContainer/SeaSalt"]
 layout_mode = 0
@@ -220,6 +212,14 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 10
 text = "SEA SALT"
 
+[node name="SeaSaltOutput" parent="ScrollContainer/VBoxContainer/SeaSalt" instance=ExtResource("4_xybqi")]
+z_index = 1
+layout_mode = 0
+offset_left = 148.0
+offset_top = 5.0
+offset_right = 178.0
+offset_bottom = 35.0
+
 [node name="Sugar" type="Control" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(180, 40)
 layout_mode = 2
@@ -236,14 +236,6 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("8_oqg8q")
-
-[node name="SugarSlot" parent="ScrollContainer/VBoxContainer/Sugar" instance=ExtResource("3_8dak6")]
-z_index = 0
-layout_mode = 0
-offset_left = 149.0
-offset_top = 5.0
-offset_right = 179.0
-offset_bottom = 35.0
 
 [node name="SugarButton" type="Button" parent="ScrollContainer/VBoxContainer/Sugar"]
 layout_mode = 0
@@ -265,6 +257,14 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 10
 text = "SUGAR"
 
+[node name="SugarOutput" parent="ScrollContainer/VBoxContainer/Sugar" instance=ExtResource("4_xybqi")]
+z_index = 1
+layout_mode = 0
+offset_left = 148.0
+offset_top = 5.0
+offset_right = 178.0
+offset_bottom = 35.0
+
 [node name="VanillaExtract" type="Control" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(180, 40)
 layout_mode = 2
@@ -281,14 +281,6 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("9_kcc5r")
-
-[node name="VanillaExtractSlot" parent="ScrollContainer/VBoxContainer/VanillaExtract" instance=ExtResource("3_8dak6")]
-z_index = 0
-layout_mode = 0
-offset_left = 149.0
-offset_top = 5.0
-offset_right = 179.0
-offset_bottom = 35.0
 
 [node name="VanillaExtractButton" type="Button" parent="ScrollContainer/VBoxContainer/VanillaExtract"]
 layout_mode = 0
@@ -310,6 +302,14 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 10
 text = "Vanilla Extract"
 
+[node name="VanillaExtractOutput" parent="ScrollContainer/VBoxContainer/VanillaExtract" instance=ExtResource("4_xybqi")]
+z_index = 1
+layout_mode = 0
+offset_left = 148.0
+offset_top = 5.0
+offset_right = 178.0
+offset_bottom = 35.0
+
 [node name="Butter" type="Control" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(180, 40)
 layout_mode = 2
@@ -326,14 +326,6 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("10_xybqi")
-
-[node name="ButterSlot" parent="ScrollContainer/VBoxContainer/Butter" instance=ExtResource("3_8dak6")]
-z_index = 0
-layout_mode = 0
-offset_left = 149.0
-offset_top = 5.0
-offset_right = 179.0
-offset_bottom = 35.0
 
 [node name="ButterButton" type="Button" parent="ScrollContainer/VBoxContainer/Butter"]
 layout_mode = 0
@@ -354,3 +346,19 @@ scale = Vector2(1, 0.992404)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 10
 text = "Butter"
+
+[node name="ButterOutput" parent="ScrollContainer/VBoxContainer/Butter" instance=ExtResource("4_xybqi")]
+z_index = 1
+layout_mode = 0
+offset_left = 148.0
+offset_top = 5.0
+offset_right = 178.0
+offset_bottom = 35.0
+
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/BakingSodaSlot/BakingSodaButton" to="." method="_on_baking_soda_button_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/EggSlot/EggButton" to="." method="_on_egg_button_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Flour/FlourButton" to="." method="_on_flour_button_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/SeaSalt/SeaSaltButton" to="." method="_on_sea_salt_button_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Sugar/SugarButton" to="." method="_on_sugar_button_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/VanillaExtract/VanillaExtractButton" to="." method="_on_vanilla_extract_button_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Butter/ButterButton" to="." method="_on_butter_button_pressed"]

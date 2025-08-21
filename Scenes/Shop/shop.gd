@@ -1,22 +1,92 @@
 extends Control
 
-@onready var baking_soda_button = $ScrollContainer/VBoxContainer/BakingSodaSlot/BakingSodaButton
-@onready var baking_soda_slot = $ScrollContainer/VBoxContainer/BakingSodaSlot/BakingSodaSlot
+@onready var baking_soda_output = $ScrollContainer/VBoxContainer/BakingSodaSlot/BakingSodaOutput
+@onready var egg_output = $ScrollContainer/VBoxContainer/EggSlot/EggOutput
+@onready var flour_output = $ScrollContainer/VBoxContainer/Flour/FlourOutput
+@onready var sea_salt_output = $ScrollContainer/VBoxContainer/SeaSalt/SeaSaltOutput
+@onready var sugar_output = $ScrollContainer/VBoxContainer/Sugar/SugarOutput
+@onready var vanilla_extract_output = $ScrollContainer/VBoxContainer/VanillaExtract/VanillaExtractOutput
+@onready var butter_output = $ScrollContainer/VBoxContainer/Butter/ButterOutput
 
-@onready var egg_slot = $ScrollContainer/VBoxContainer/EggSlot/EggSlot
-@onready var egg_button = $ScrollContainer/VBoxContainer/EggSlot/EggButton
+# Resources will be loaded from DataManager
+var baking_soda_resource: Resource
+var egg_resource: Resource  
+var flour_resource: Resource
+var sea_salt_resource: Resource
+var sugar_resource: Resource
+var vanilla_extract_resource: Resource
+var butter_resource: Resource
 
-@onready var flour_slot = $ScrollContainer/VBoxContainer/Flour/FlourSlot
-@onready var flour_button = $ScrollContainer/VBoxContainer/Flour/FlourButton
+func _ready():
+	# Wait for DataManager to load all resources
+	if DataManager.data_loaded.is_connected(_on_data_loaded):
+		return
+	DataManager.data_loaded.connect(_on_data_loaded)
+	
+	# If data is already loaded, load resources immediately
+	if DataManager.dry_ingredients.size() > 0 or DataManager.wet_ingredients.size() > 0:
+		_on_data_loaded()
 
-@onready var sea_salt_slot = $ScrollContainer/VBoxContainer/SeaSalt/SeaSaltSlot
-@onready var sea_salt_button = $ScrollContainer/VBoxContainer/SeaSalt/SeaSaltButton
+func _on_data_loaded():
+	# Load ingredient resources from DataManager
+	baking_soda_resource = _get_ingredient("baking_soda")
+	egg_resource = _get_ingredient("egg")
+	flour_resource = _get_ingredient("flour") 
+	sea_salt_resource = _get_ingredient("sea_salt")
+	sugar_resource = _get_ingredient("sugar")
+	vanilla_extract_resource = _get_ingredient("vanilla_extract")
+	butter_resource = _get_ingredient("butter")
+	
+	print("Shop resources loaded from DataManager")
 
-@onready var sugar_slot = $ScrollContainer/VBoxContainer/Sugar/SugarSlot
-@onready var sugar_button = $ScrollContainer/VBoxContainer/Sugar/SugarButton
+func _get_ingredient(ingredient_id: String) -> Resource:
+	# Check dry ingredients first, then wet ingredients
+	if DataManager.dry_ingredients.has(ingredient_id):
+		return DataManager.dry_ingredients[ingredient_id]
+	elif DataManager.wet_ingredients.has(ingredient_id):
+		return DataManager.wet_ingredients[ingredient_id]
+	else:
+		print("Warning: Ingredient '", ingredient_id, "' not found in DataManager")
+		return null
 
-@onready var vanilla_extract_slot = $ScrollContainer/VBoxContainer/VanillaExtract/VanillaExtractSlot
-@onready var vanilla_extract_button = $ScrollContainer/VBoxContainer/VanillaExtract/VanillaExtractButton
+func _on_baking_soda_button_pressed():
+	purchase_item(baking_soda_resource, baking_soda_output, "Baking Soda")
 
-@onready var butter_slot = $ScrollContainer/VBoxContainer/Butter/ButterSlot
-@onready var butter_button = $ScrollContainer/VBoxContainer/Butter/ButterButton
+func _on_egg_button_pressed():
+	purchase_item(egg_resource, egg_output, "Egg")
+
+func _on_flour_button_pressed():
+	purchase_item(flour_resource, flour_output, "Flour")
+
+func _on_sea_salt_button_pressed():
+	purchase_item(sea_salt_resource, sea_salt_output, "Sea Salt")
+
+func _on_sugar_button_pressed():
+	purchase_item(sugar_resource, sugar_output, "Sugar")
+
+func _on_vanilla_extract_button_pressed():
+	purchase_item(vanilla_extract_resource, vanilla_extract_output, "Vanilla Extract")
+
+func _on_butter_button_pressed():
+	purchase_item(butter_resource, butter_output, "Butter")
+
+func purchase_item(item_resource: Resource, output_slot: ShopOutput, item_name: String):
+	# 
+	if item_resource == null:
+		print("Error: No resource defined for ", item_name)
+		return
+	
+	if output_slot == null:
+		print("Error: No output slot found for ", item_name)
+		return
+	
+	# Check if we have enough money
+	var item_price = item_resource.price
+	if Money.money >= item_price:
+		# Spend dat money
+		Money.spend_money(item_price)
+		
+		# Add item to output slot
+		output_slot.add_purchased_item(item_resource, 1)
+	else:
+		print("Not enough money! Need $", item_price, " but only have $", Money.money)

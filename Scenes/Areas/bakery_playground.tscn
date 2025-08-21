@@ -7,11 +7,17 @@
 [ext_resource type="PackedScene" uid="uid://cgltvgu28fltw" path="res://Scenes/Machines/oven.tscn" id="3_gyj70"]
 [ext_resource type="PackedScene" uid="uid://b8rhowa3gudpk" path="res://Scenes/SceneSwitching/SceneButtons.tscn" id="4_gf4qy"]
 [ext_resource type="PackedScene" uid="uid://bqekke6vc13d1" path="res://Scenes/Orders/OrderContainer.tscn" id="5_0sb6y"]
-[ext_resource type="PackedScene" uid="uid://byjt0e223ntsh" path="res://Scenes/UI/Finances.tscn" id="7_yqxkc"]
+[ext_resource type="PackedScene" uid="uid://byjt0e223ntsh" path="res://Scenes/UI/Money.tscn" id="7_yqxkc"]
 [ext_resource type="PackedScene" uid="uid://dtu3jt1kqe2kv" path="res://Scenes/Areas/UIScenes/pause_menu.tscn" id="9_1jsug"]
 
 [node name="BakeryPlayground" type="Node2D"]
 script = ExtResource("1_1jsug")
+
+[node name="OrderContainer" parent="." instance=ExtResource("5_0sb6y")]
+offset_left = 258.0
+offset_top = 1.0
+offset_right = 258.0
+offset_bottom = 1.0
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -2
@@ -45,11 +51,8 @@ grow_horizontal = 1
 size_flags_vertical = 4
 
 [node name="Money" parent="." instance=ExtResource("7_yqxkc")]
+offset_left = 8.0
+offset_right = 8.0
 
 [node name="PauseMenu" parent="." instance=ExtResource("9_1jsug")]
-
-[node name="OrderContainer" parent="." instance=ExtResource("5_0sb6y")]
-offset_left = 258.0
-offset_top = 1.0
-offset_right = 258.0
-offset_bottom = 1.0
+visible = false

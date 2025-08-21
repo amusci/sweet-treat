@@ -8,4 +8,4 @@ script = ExtResource("2_xm634")
 title = "Vanilla Extract"
 description = "This is VE"
 icon = ExtResource("1_4hayg")
-price = 3.5
+price = 65.0

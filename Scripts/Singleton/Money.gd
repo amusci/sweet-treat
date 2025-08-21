@@ -1,6 +1,6 @@
 extends Node
 
-var money: int = 0
+var money: int = 999
 
 signal change_money(new_amount)
 # creates a signal called change_money
