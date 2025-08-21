@@ -3,9 +3,7 @@ extends InventorySlot
 
 func _ready():
 	super._ready()
-	# Remove from inventory_slots and add to shop_outputs
-	remove_from_group("inventory_slots")
-	add_to_group("shop_outputs")
+	add_to_group("inventory_slots") # I think I need persistance
 	print("Added output slot to group: ", get_path())
 
 func _process(_delta):

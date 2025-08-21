@@ -12,18 +12,6 @@
 [node name="ShopPlayground" type="Node2D"]
 script = ExtResource("1_7h0is")
 
-[node name="Hotbar" parent="." instance=ExtResource("2_aj1vn")]
-offset_left = 20.0
-offset_top = 143.0
-offset_right = 186.0
-offset_bottom = 173.0
-
-[node name="SceneButtons" parent="." instance=ExtResource("3_t82ki")]
-offset_left = 212.0
-offset_top = 145.0
-offset_right = 310.0
-offset_bottom = 175.0
-
 [node name="OrderContainer" parent="." instance=ExtResource("4_7h0is")]
 offset_left = 258.0
 offset_top = 1.0
@@ -35,6 +23,18 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("5_wspjr")
+
+[node name="Hotbar" parent="." instance=ExtResource("2_aj1vn")]
+offset_left = 20.0
+offset_top = 143.0
+offset_right = 186.0
+offset_bottom = 173.0
+
+[node name="SceneButtons" parent="." instance=ExtResource("3_t82ki")]
+offset_left = 212.0
+offset_top = 145.0
+offset_right = 310.0
+offset_bottom = 175.0
 
 [node name="PauseMenu" parent="." instance=ExtResource("5_aneyl")]
 visible = false
