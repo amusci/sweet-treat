@@ -30,6 +30,10 @@ static var is_right_click_mode = false # If the drag is right click initated
 var _original_icon_texture = null # Visual of original icon in original slot
 var _original_amount_text = "" # Visual of original amount in original slot
 
+# Bugfix Test
+static var buttons_disabled = false
+
+
 func _ready():
 	
 	# Add slot to group
@@ -69,6 +73,7 @@ func _start_click_drag(right_click: bool):
 	
 	currently_dragging_slot = self
 	is_right_click_mode = right_click # true or false
+	buttons_disabled = true
 	
 	print("PICKED UP ", amount, " ", item.title)
 	
@@ -115,6 +120,7 @@ func _cancel_drag():
 	_cleanup_drag_preview()
 	currently_dragging_slot = null
 	is_right_click_mode = false
+	buttons_disabled = false
 
 func _end_drag():
 	# End drag logic and clean up
@@ -128,6 +134,7 @@ func _end_drag():
 	_cleanup_drag_preview()
 	currently_dragging_slot = null
 	is_right_click_mode = false
+	buttons_disabled = false
 	_check_sell_finished()
 	
 func _check_sell_finished():

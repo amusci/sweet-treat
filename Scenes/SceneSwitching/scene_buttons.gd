@@ -11,6 +11,8 @@ const shop := "res://Scenes/Areas/shop_playground.tscn"
 func _on_baking_button_pressed():
 	if _get_current_scene(bakery):
 		return  # Do nothing if already in bakery
+	if InventorySlot.buttons_disabled == true:
+		return
 	
 	InventoryManager.save_all_inventory_slots()
 	TransitionScreen.transition()
@@ -20,6 +22,8 @@ func _on_baking_button_pressed():
 func _on_storage_button_pressed():
 	if _get_current_scene(storage):
 		return  # Do nothing if already in storage
+	if InventorySlot.buttons_disabled == true:
+		return
 	
 	InventoryManager.save_all_inventory_slots()
 	TransitionScreen.transition()
@@ -29,6 +33,8 @@ func _on_storage_button_pressed():
 func _on_shop_button_pressed():
 	if _get_current_scene(shop):
 		return  # Do nothing if already in storage
+	if InventorySlot.buttons_disabled == true:
+		return
 	
 	InventoryManager.save_all_inventory_slots()
 	TransitionScreen.transition()
