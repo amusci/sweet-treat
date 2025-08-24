@@ -167,6 +167,7 @@ func _pretty_print():
 
 func _handle_left_click():
 	# Left click handling
+	InventorySlot.buttons_disabled = false
 	if InventorySlot.currently_dragging_slot != null:
 		var dragging_slot = InventorySlot.currently_dragging_slot
 		var dragging_item = dragging_slot.item

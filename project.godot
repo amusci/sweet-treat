@@ -24,6 +24,7 @@ TransitionScreen="*res://Scripts/Singleton/transition_screen.tscn"
 MachineManager="*res://Scripts/Singleton/MachineManager.gd"
 OrderManager="*res://Scripts/Singleton/OrderManager.gd"
 MusicManager="*res://Scripts/Singleton/MusicManager.gd"
+SfxManager="*res://Scripts/Singleton/SFXManager.gd"
 
 [display]
 

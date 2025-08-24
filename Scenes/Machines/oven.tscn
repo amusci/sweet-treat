@@ -24,7 +24,7 @@ shape = SubResource("RectangleShape2D_5vh13")
 [node name="OutputSlot" parent="." instance=ExtResource("3_pokic")]
 offset_left = -52.0
 offset_top = -15.0
-offset_right = -22.0
-offset_bottom = 15.0
+offset_right = -32.0
+offset_bottom = 1.0
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

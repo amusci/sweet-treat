@@ -67,6 +67,3 @@ func _update_button_states():
 		baking_button.disabled = false
 		storage_button.disabled = false
 		shop_button.disabled = true
-		
-		
-		
