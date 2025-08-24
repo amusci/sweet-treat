@@ -4,14 +4,15 @@
 [ext_resource type="PackedScene" uid="uid://dfseuxorrds8m" path="res://Scenes/NonUpgradables/tablehotbar/inventory_slot.tscn" id="2_wps2s"]
 
 [node name="Hotbar" type="HBoxContainer"]
+custom_minimum_size = Vector2(145, 6)
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -84.5
-offset_right = 84.5
-offset_bottom = 30.0
+offset_left = -72.5
+offset_right = 72.5
+offset_bottom = 6.0
 grow_horizontal = 2
-size_flags_horizontal = 8
+theme_override_constants/separation = 9
 alignment = 1
 script = ExtResource("1_yxu82")
 

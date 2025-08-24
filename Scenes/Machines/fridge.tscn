@@ -19,6 +19,7 @@ position = Vector2(-1, -2)
 shape = SubResource("RectangleShape2D_qhi1q")
 
 [node name="Inventory" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(21, 16)
 offset_left = 26.725
 offset_top = -20.0
 offset_right = 158.725

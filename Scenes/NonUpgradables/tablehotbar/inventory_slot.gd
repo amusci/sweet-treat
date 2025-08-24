@@ -168,17 +168,17 @@ func _create_drag_preview():
 	drag_preview.z_index = 100
 	drag_preview.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
-	var bg = ColorRect.new()
-	bg.color = Color(0.2, 0.2, 0.2, 0.8)
-	bg.size = size
-	bg.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	drag_preview.add_child(bg)
+	#var bg = ColorRect.new()
+	#bg.color = Color(0.2, 0.2, 0.2, 0.8)
+	#bg.size = size
+	#bg.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	#drag_preview.add_child(bg)
 
 	var icon = TextureRect.new()
 	icon.texture = item.icon
-	icon.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
-	icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	icon.size = $Icon.size
+	#icon.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
+	#icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	#icon.size = $Icon.size
 	icon.position = $Icon.position
 	icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	drag_preview.add_child(icon)
@@ -192,8 +192,8 @@ func _create_drag_preview():
 	if drag_amount >= 1:
 		var amount_label = Label.new()
 		amount_label.text = str(drag_amount)
-		amount_label.size = $Amount.size
-		amount_label.position = Vector2(25,23) # Hack positioning
+		#amount_label.size = $Amount.size
+		amount_label.position = Vector2(17,10) # Hack positioning
 		amount_label.add_theme_color_override("font_color", Color.WHITE)
 		amount_label.add_theme_font_size_override("font_size", 4)
 		amount_label.mouse_filter = Control.MOUSE_FILTER_IGNORE

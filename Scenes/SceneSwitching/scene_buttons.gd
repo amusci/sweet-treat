@@ -1,4 +1,4 @@
-extends HBoxContainer
+extends Control
 
 @onready var storage_button = $StorageButton
 @onready var baking_button = $BakingButton

@@ -53,9 +53,12 @@ texture = ExtResource("1_78vcx")
 
 [node name="BakingSodaSprite" type="TextureRect" parent="ScrollContainer/VBoxContainer/BakingSodaSlot"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 9.0
+offset_top = 12.0
+offset_right = 30.0
+offset_bottom = 28.0
 texture = ExtResource("2_dqdqq")
+stretch_mode = 2
 
 [node name="BakingSodaButton" type="Button" parent="ScrollContainer/VBoxContainer/BakingSodaSlot"]
 layout_mode = 0
@@ -78,11 +81,12 @@ text = "BAKING SODA"
 
 [node name="BakingSodaOutput" parent="ScrollContainer/VBoxContainer/BakingSodaSlot" instance=ExtResource("4_xybqi")]
 z_index = 1
+custom_minimum_size = Vector2(21, 16)
 layout_mode = 0
-offset_left = 148.0
-offset_top = 5.0
-offset_right = 178.0
-offset_bottom = 35.0
+offset_left = 149.0
+offset_top = 12.0
+offset_right = 170.0
+offset_bottom = 28.0
 
 [node name="EggSlot" type="Control" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(180, 40)
@@ -123,11 +127,12 @@ text = "EGG"
 
 [node name="EggOutput" parent="ScrollContainer/VBoxContainer/EggSlot" instance=ExtResource("4_xybqi")]
 z_index = 1
+custom_minimum_size = Vector2(21, 16)
 layout_mode = 0
 offset_left = 148.0
 offset_top = 5.0
-offset_right = 178.0
-offset_bottom = 35.0
+offset_right = 169.0
+offset_bottom = 21.0
 
 [node name="Flour" type="Control" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(180, 40)
@@ -169,11 +174,12 @@ text = "FLOUR
 
 [node name="FlourOutput" parent="ScrollContainer/VBoxContainer/Flour" instance=ExtResource("4_xybqi")]
 z_index = 1
+custom_minimum_size = Vector2(21, 16)
 layout_mode = 0
 offset_left = 148.0
 offset_top = 5.0
-offset_right = 178.0
-offset_bottom = 35.0
+offset_right = 169.0
+offset_bottom = 21.0
 
 [node name="SeaSalt" type="Control" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(180, 40)
@@ -214,11 +220,12 @@ text = "SEA SALT"
 
 [node name="SeaSaltOutput" parent="ScrollContainer/VBoxContainer/SeaSalt" instance=ExtResource("4_xybqi")]
 z_index = 1
+custom_minimum_size = Vector2(21, 16)
 layout_mode = 0
 offset_left = 148.0
 offset_top = 5.0
-offset_right = 178.0
-offset_bottom = 35.0
+offset_right = 169.0
+offset_bottom = 21.0
 
 [node name="Sugar" type="Control" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(180, 40)
@@ -259,11 +266,12 @@ text = "SUGAR"
 
 [node name="SugarOutput" parent="ScrollContainer/VBoxContainer/Sugar" instance=ExtResource("4_xybqi")]
 z_index = 1
+custom_minimum_size = Vector2(21, 16)
 layout_mode = 0
 offset_left = 148.0
 offset_top = 5.0
-offset_right = 178.0
-offset_bottom = 35.0
+offset_right = 169.0
+offset_bottom = 21.0
 
 [node name="VanillaExtract" type="Control" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(180, 40)
@@ -304,11 +312,12 @@ text = "Vanilla Extract"
 
 [node name="VanillaExtractOutput" parent="ScrollContainer/VBoxContainer/VanillaExtract" instance=ExtResource("4_xybqi")]
 z_index = 1
+custom_minimum_size = Vector2(21, 16)
 layout_mode = 0
 offset_left = 148.0
 offset_top = 5.0
-offset_right = 178.0
-offset_bottom = 35.0
+offset_right = 169.0
+offset_bottom = 21.0
 
 [node name="Butter" type="Control" parent="ScrollContainer/VBoxContainer"]
 custom_minimum_size = Vector2(180, 40)
@@ -349,11 +358,12 @@ text = "Butter"
 
 [node name="ButterOutput" parent="ScrollContainer/VBoxContainer/Butter" instance=ExtResource("4_xybqi")]
 z_index = 1
+custom_minimum_size = Vector2(21, 16)
 layout_mode = 0
 offset_left = 148.0
 offset_top = 5.0
-offset_right = 178.0
-offset_bottom = 35.0
+offset_right = 169.0
+offset_bottom = 21.0
 
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/BakingSodaSlot/BakingSodaButton" to="." method="_on_baking_soda_button_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/EggSlot/EggButton" to="." method="_on_egg_button_pressed"]
