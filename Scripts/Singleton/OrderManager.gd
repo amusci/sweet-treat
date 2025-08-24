@@ -31,7 +31,7 @@ func init_recipes():
 		print("- ", recipe.title)
 
 func _process(delta):
-	print(orders_spawning)
+
 	if orders_spawning == true:
 		
 		# Update existing orders time_left
@@ -70,7 +70,7 @@ func spawn_order():
 
 	# Reset timer AND pick next random interval for next spawn
 	spawn_timer = 0.0
-	spawn_interval = 2.0 + randf() * 10.0
+	spawn_interval = 15.0 + randf() * 10.0
 	print("Next order in: ", spawn_interval, " seconds")
 
 func remove_order_by_data(order_data):

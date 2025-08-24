@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="Recipe" load_steps=6 format=3 uid="uid://bq7n7n1o4h666"]
+[gd_resource type="Resource" script_class="Recipe" load_steps=7 format=3 uid="uid://bq7n7n1o4h666"]
 
 [ext_resource type="Texture2D" uid="uid://c3sad6hogv6ue" path="res://Assets/FoodAssets/FinishedFoodAssets/CookieAssets/cookiebomb.png" id="1_0io6r"]
 [ext_resource type="Script" uid="uid://db58b0en31pin" path="res://Scripts/ResourceClasses/Recipe.gd" id="1_la24q"]
 [ext_resource type="Script" uid="uid://2afi4mayu2gq" path="res://Scripts/ResourceClasses/RecipeRequirement.gd" id="1_mcsu6"]
 [ext_resource type="Resource" uid="uid://bbpdh55jflj0h" path="res://Resources/RecipeResources/InbetweenRecipeResources/cookie_dough.tres" id="2_k3dlt"]
+[ext_resource type="Texture2D" uid="uid://cjnorlh67a2tn" path="res://Assets/TempAssets/ovenTemp.png" id="5_yo38j"]
 
 [sub_resource type="Resource" id="Resource_k3yvg"]
 script = ExtResource("1_mcsu6")
@@ -17,5 +18,6 @@ description = "This is a CCC"
 category = "finished"
 ingredients = Array[ExtResource("1_mcsu6")]([SubResource("Resource_k3yvg")])
 tool_required = "oven"
+tool_required_icon = ExtResource("5_yo38j")
 sell_price = 400.0
-time_to_make = 5.0
+time_to_make = 100.0
