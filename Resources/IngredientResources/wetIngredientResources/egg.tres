@@ -8,4 +8,4 @@ script = ExtResource("2_wnf54")
 title = "Egg"
 description = "This is Egg"
 icon = ExtResource("1_hdj3d")
-price = 3.5
+price = 45.0

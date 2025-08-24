@@ -7,3 +7,4 @@ func _ready() -> void:
 		if child is InventorySlot:
 			child.add_to_group("hotbar")
 			print("Added slot to hotbar group:", child.name)
+"res://Assets/TempAssets/Baking_Soda.png"

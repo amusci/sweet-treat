@@ -148,7 +148,7 @@ func _deserialize_output_item(output_data: Dictionary):
 		else:
 			print("Warning: Could not load output item from path: ", item_path)
 
-func _on_input_event(viewport, event, shape_idx):
+func _on_input_event(_viewport, event, _shape_idx):
 	# Mouse input handling
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:

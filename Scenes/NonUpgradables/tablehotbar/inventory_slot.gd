@@ -30,6 +30,10 @@ static var is_right_click_mode = false # If the drag is right click initated
 var _original_icon_texture = null # Visual of original icon in original slot
 var _original_amount_text = "" # Visual of original amount in original slot
 
+# Bugfix Test
+static var buttons_disabled = false
+
+
 func _ready():
 	
 	# Add slot to group
@@ -69,6 +73,7 @@ func _start_click_drag(right_click: bool):
 	
 	currently_dragging_slot = self
 	is_right_click_mode = right_click # true or false
+	buttons_disabled = true
 	
 	print("PICKED UP ", amount, " ", item.title)
 	
@@ -115,6 +120,7 @@ func _cancel_drag():
 	_cleanup_drag_preview()
 	currently_dragging_slot = null
 	is_right_click_mode = false
+	buttons_disabled = false
 
 func _end_drag():
 	# End drag logic and clean up
@@ -128,6 +134,7 @@ func _end_drag():
 	_cleanup_drag_preview()
 	currently_dragging_slot = null
 	is_right_click_mode = false
+	buttons_disabled = false
 	_check_sell_finished()
 	
 func _check_sell_finished():
@@ -168,17 +175,17 @@ func _create_drag_preview():
 	drag_preview.z_index = 100
 	drag_preview.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
-	var bg = ColorRect.new()
-	bg.color = Color(0.2, 0.2, 0.2, 0.8)
-	bg.size = size
-	bg.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	drag_preview.add_child(bg)
+	#var bg = ColorRect.new()
+	#bg.color = Color(0.2, 0.2, 0.2, 0.8)
+	#bg.size = size
+	#bg.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	#drag_preview.add_child(bg)
 
 	var icon = TextureRect.new()
 	icon.texture = item.icon
-	icon.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
-	icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	icon.size = $Icon.size
+	#icon.expand_mode = TextureRect.EXPAND_FIT_WIDTH_PROPORTIONAL
+	#icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	#icon.size = $Icon.size
 	icon.position = $Icon.position
 	icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	drag_preview.add_child(icon)
@@ -192,8 +199,8 @@ func _create_drag_preview():
 	if drag_amount >= 1:
 		var amount_label = Label.new()
 		amount_label.text = str(drag_amount)
-		amount_label.size = $Amount.size
-		amount_label.position = Vector2(25,23) # Hack positioning
+		#amount_label.size = $Amount.size
+		amount_label.position = Vector2(17,10) # Hack positioning
 		amount_label.add_theme_color_override("font_color", Color.WHITE)
 		amount_label.add_theme_font_size_override("font_size", 4)
 		amount_label.mouse_filter = Control.MOUSE_FILTER_IGNORE

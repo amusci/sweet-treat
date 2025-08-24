@@ -1,17 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://dfseuxorrds8m"]
+[gd_scene load_steps=2 format=3 uid="uid://dtggv3if1mryj"]
 
-[ext_resource type="Script" uid="uid://dty4dmp1t4a2s" path="res://Scenes/NonUpgradables/tablehotbar/inventory_slot.gd" id="1_1qonm"]
+[ext_resource type="Script" uid="uid://ckmxr6h22jp5c" path="res://Scripts/ShopClasses/ShopOutput.gd" id="1_miwww"]
 
-[node name="Slot" type="Panel"]
+[node name="OutputSlot" type="Panel"]
 z_index = -1
-custom_minimum_size = Vector2(21, 16)
-script = ExtResource("1_1qonm")
+custom_minimum_size = Vector2(30, 30)
+script = ExtResource("1_miwww")
 
 [node name="Icon" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(21, 16)
 layout_mode = 0
-offset_right = 21.0
-offset_bottom = 16.0
+offset_right = 30.0
+offset_bottom = 30.0
 stretch_mode = 2
 
 [node name="Amount" type="Label" parent="."]

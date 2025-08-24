@@ -1,11 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://m07v5i1n8ugu"]
+[gd_scene load_steps=5 format=3 uid="uid://m07v5i1n8ugu"]
 
 [ext_resource type="Texture2D" uid="uid://bur3ygr21flod" path="res://Assets/TempAssets/fridgeTemp.png" id="1_dgwsk"]
 [ext_resource type="Script" uid="uid://brs005kj6nqdw" path="res://Scripts/MachineClasses/Fridge.gd" id="1_nh1lm"]
 [ext_resource type="PackedScene" uid="uid://dfseuxorrds8m" path="res://Scenes/NonUpgradables/tablehotbar/inventory_slot.tscn" id="2_at4fk"]
-[ext_resource type="Resource" uid="uid://bmgduypa23b6h" path="res://Resources/IngredientResources/wetIngredientResources/vanilla_extract.tres" id="4_5y3t7"]
-[ext_resource type="Resource" uid="uid://bm5wa7wu7j2lo" path="res://Resources/IngredientResources/wetIngredientResources/egg.tres" id="5_lc1u1"]
-[ext_resource type="Resource" uid="uid://ehkrduea8x4a" path="res://Resources/IngredientResources/wetIngredientResources/butter.tres" id="6_2wvmb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qhi1q"]
 size = Vector2(32, 58)
@@ -22,6 +19,7 @@ position = Vector2(-1, -2)
 shape = SubResource("RectangleShape2D_qhi1q")
 
 [node name="Inventory" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(21, 16)
 offset_left = 26.725
 offset_top = -20.0
 offset_right = 158.725
@@ -29,18 +27,12 @@ offset_bottom = 20.0
 
 [node name="FridgeSlot" parent="Inventory" instance=ExtResource("2_at4fk")]
 layout_mode = 2
-item = ExtResource("4_5y3t7")
-amount = 5
 
 [node name="FridgeSlot2" parent="Inventory" instance=ExtResource("2_at4fk")]
 layout_mode = 2
-item = ExtResource("5_lc1u1")
-amount = 5
 
 [node name="FridgeSlot3" parent="Inventory" instance=ExtResource("2_at4fk")]
 layout_mode = 2
 
 [node name="FridgeSlot4" parent="Inventory" instance=ExtResource("2_at4fk")]
 layout_mode = 2
-item = ExtResource("6_2wvmb")
-amount = 5
