@@ -6,7 +6,6 @@ extends Node2D
 var open_menu = preload("res://Assets/SFX/openmenu.wav")
 var close_menu = preload("res://Assets/SFX/closemenu.wav")
  
-
 var not_showing := false
 
 func _ready():
@@ -20,4 +19,14 @@ func _process(_delta):
 		order_container.visible = !not_showing
 		Engine.time_scale = 1.0 if !not_showing else 0.0
 
+	if not_showing == true and Input.is_action_just_pressed("pause_menu"):
+		SfxManager.play_SFX(open_menu)
+		cancel_active_drag()
+	if not_showing == false and Input.is_action_just_pressed("pause_menu"):
+		SfxManager.play_SFX(close_menu)
+		
+func cancel_active_drag():
+	# Operation AVOID BUGS
+	if InventorySlot.currently_dragging_slot != null:
+		InventorySlot.currently_dragging_slot._cancel_drag()
 	
