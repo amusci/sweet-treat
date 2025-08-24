@@ -15,8 +15,8 @@ func _on_baking_button_pressed():
 		return
 	
 	InventoryManager.save_all_inventory_slots()
-	TransitionScreen.transition()
-	await get_tree().create_timer(1).timeout
+	#TransitionScreen.transition()
+	#await get_tree().create_timer(1).timeout
 	get_tree().change_scene_to_file(bakery)
 
 func _on_storage_button_pressed():
@@ -26,8 +26,8 @@ func _on_storage_button_pressed():
 		return
 	
 	InventoryManager.save_all_inventory_slots()
-	TransitionScreen.transition()
-	await get_tree().create_timer(1).timeout
+	#TransitionScreen.transition()
+	#await get_tree().create_timer(1).timeout
 	get_tree().change_scene_to_file(storage)
 	
 func _on_shop_button_pressed():
@@ -37,8 +37,8 @@ func _on_shop_button_pressed():
 		return
 	
 	InventoryManager.save_all_inventory_slots()
-	TransitionScreen.transition()
-	await get_tree().create_timer(1).timeout
+	#TransitionScreen.transition()
+	#await get_tree().create_timer(1).timeout
 	get_tree().change_scene_to_file(shop)
 
 func _ready():

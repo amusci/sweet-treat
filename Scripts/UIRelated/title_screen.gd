@@ -15,6 +15,7 @@ func _ready():
 func _on_play_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Areas/bakery_playground.tscn")
 	OrderManager.clear_all_orders() # Clear all orders because I dont want to rewrite anything ATM
+	OrderManager.spawn_order()
 	print("Play Pressed")
 
 func _on_settings_pressed() -> void:
