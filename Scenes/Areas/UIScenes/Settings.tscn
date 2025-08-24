@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ce0uynhqjxqih"]
 
-[ext_resource type="Script" uid="uid://emr0rprao5lu" path="res://Scripts/Main Menu/settings.gd" id="1_n2jip"]
+[ext_resource type="Script" uid="uid://emr0rprao5lu" path="res://Scripts/UIRelated/settings.gd" id="1_n2jip"]
 [ext_resource type="Texture2D" uid="uid://dv6a36mp5hvqj" path="res://Assets/TempAssets/Temp Title Background.png" id="2_oe156"]
 
 [node name="Settings" type="Control"]

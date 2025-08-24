@@ -191,3 +191,9 @@ func _find_first_missing_subrecipe(r: Recipe, completed: PackedStringArray) -> R
 				return deeper if deeper != null else ing
 	# All subrecipes done
 	return null
+	
+func clear_all_orders():
+	active_orders.clear()
+	progress_by_order_id.clear()
+	spawn_timer = 0.0
+	print("All orders cleared")
