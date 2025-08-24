@@ -1,6 +1,6 @@
 extends Node
 
-var money: int = 999
+var money = 999
 
 signal change_money(new_amount)
 # creates a signal called change_money
@@ -16,3 +16,7 @@ func spend_money(amount: int) -> bool: #same as add_money function but is a bool
 		emit_signal("change_money", money)
 		return true
 	return false
+	
+func lose_money(amount: int): # Function only used to lose money in orders
+	money -= amount
+	emit_signal("change_money", money)

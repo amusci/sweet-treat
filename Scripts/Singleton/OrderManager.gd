@@ -13,6 +13,10 @@ signal order_removed(order_data)
 #signal orders_restored(orders_array)
 signal order_progress_updated(order_id) 
 
+# Test
+
+var orders_spawning = false
+
 func _ready():
 	# Make sure DataManager already loaded the recipes
 	if DataManager.finished_recipes.size() > 0:
@@ -27,23 +31,27 @@ func init_recipes():
 		print("- ", recipe.title)
 
 func _process(delta):
-	# Update existing orders time_left
-	for i in range(active_orders.size() - 1, -1, -1):
-		var order_data = active_orders[i]
-		order_data.time_left -= delta
+	print(orders_spawning)
+	if orders_spawning == true:
+		
+		# Update existing orders time_left
+		for i in range(active_orders.size() - 1, -1, -1):
+			var order_data = active_orders[i]
+			order_data.time_left -= delta
 
-		if order_data.time_left <= 0:
-			print("Order expired: ", order_data.recipe.title)
-			order_removed.emit(order_data)
-			active_orders.remove_at(i)
-			progress_by_order_id.erase(order_data.id)
+			if order_data.time_left <= 0:
+				print("Order expired: ", order_data.recipe.title)
+				order_removed.emit(order_data)
+				active_orders.remove_at(i)
+				progress_by_order_id.erase(order_data.id)
+				Money.lose_money(order_data.recipe.sell_price)
 
-	# Increment the spawn timer
-	spawn_timer += delta
+		# Increment the spawn timer
+		spawn_timer += delta
 
-	# Only spawn if timer passed AND we are under the max orders
-	if spawn_timer >= spawn_interval and active_orders.size() < max_orders:
-		spawn_order()
+		# Only spawn if timer passed AND we are under the max orders
+		if spawn_timer >= spawn_interval and active_orders.size() < max_orders:
+			spawn_order()
 
 func spawn_order():
 	# Spawn the order
@@ -62,7 +70,7 @@ func spawn_order():
 
 	# Reset timer AND pick next random interval for next spawn
 	spawn_timer = 0.0
-	spawn_interval = 15.0 + randf() * 10.0
+	spawn_interval = 2.0 + randf() * 10.0
 	print("Next order in: ", spawn_interval, " seconds")
 
 func remove_order_by_data(order_data):
