@@ -99,7 +99,7 @@ func _get_container_parent():
 			break
 		current = current.get_parent()
 
-func _process(delta):
+func _process(_delta):
 	# Check if we have an order as well as update the timer
 	var current_order_data = OrderManager.get_order_by_id(order_id)
 

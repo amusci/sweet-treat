@@ -10,7 +10,7 @@ var spawn_timer := 0.0
 
 signal order_added(order_data)
 signal order_removed(order_data)
-signal orders_restored(orders_array)
+#signal orders_restored(orders_array)
 signal order_progress_updated(order_id) 
 
 func _ready():
