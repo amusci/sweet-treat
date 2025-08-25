@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cs61hh6a5onuu"]
 
-[ext_resource type="Script" uid="uid://bjl1csrh6kwip" path="res://Scripts/Main Menu/title_screen.gd" id="1_qa6a4"]
+[ext_resource type="Script" uid="uid://bjl1csrh6kwip" path="res://Scripts/UIRelated/title_screen.gd" id="1_qa6a4"]
 [ext_resource type="Texture2D" uid="uid://dv6a36mp5hvqj" path="res://Assets/TempAssets/Temp Title Background.png" id="2_i50ag"]
 
 [node name="Title Screen" type="Control"]
@@ -9,11 +9,13 @@ anchors_preset = 0
 script = ExtResource("1_qa6a4")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 320.0
 offset_bottom = 180.0
 texture = ExtResource("2_i50ag")
 
 [node name="Play" type="Button" parent="."]
+layout_mode = 0
 offset_left = 126.0
 offset_top = 27.0
 offset_right = 199.0
@@ -22,6 +24,7 @@ text = "Play
 "
 
 [node name="Settings" type="Button" parent="."]
+layout_mode = 0
 offset_left = 128.0
 offset_top = 66.0
 offset_right = 198.0
@@ -30,6 +33,7 @@ text = "Settings
 "
 
 [node name="Exit" type="Button" parent="."]
+layout_mode = 0
 offset_left = 144.0
 offset_top = 103.0
 offset_right = 181.0

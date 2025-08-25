@@ -23,8 +23,8 @@ shape = SubResource("RectangleShape2D_m4321")
 [node name="OutputSlot" parent="." instance=ExtResource("3_eop8k")]
 offset_left = -16.0
 offset_top = -46.0
-offset_right = 14.0
-offset_bottom = -16.0
+offset_right = 4.0
+offset_bottom = -30.0
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

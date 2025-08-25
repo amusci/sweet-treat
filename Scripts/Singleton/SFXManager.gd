@@ -3,7 +3,6 @@ extends Node
 var SFX_player: AudioStreamPlayer
 var current_song: AudioStream
 var current_volume: float = 0.3
-
 const SAVE_FILE = "user://settings.ini"
 
 func _ready():
@@ -14,7 +13,7 @@ func _ready():
 	load_volume_setting()
 
 func play_SFX(song: AudioStream):
-	# Play the SFX passed in
+	# Play the song passed into the function - ALWAYS play it
 	current_song = song
 	SFX_player.stream = song
 	SFX_player.play()
