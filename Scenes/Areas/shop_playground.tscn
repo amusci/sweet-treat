@@ -24,17 +24,29 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("5_wspjr")
 
+[node name="SceneButtons" parent="." instance=ExtResource("3_t82ki")]
+offset_left = 212.0
+offset_top = 155.0
+offset_right = 325.0
+offset_bottom = 185.0
+
+[node name="Shop" parent="." instance=ExtResource("7_exsb2")]
+offset_left = -8.0
+offset_top = -5.0
+offset_right = -8.0
+offset_bottom = -5.0
+
 [node name="Hotbar" parent="." instance=ExtResource("2_aj1vn")]
 offset_left = 19.0
 offset_top = 137.0
 offset_right = 189.0
 offset_bottom = 179.0
 
-[node name="SceneButtons" parent="." instance=ExtResource("3_t82ki")]
-offset_left = 212.0
-offset_top = 155.0
-offset_right = 325.0
-offset_bottom = 185.0
+[node name="Money" parent="." instance=ExtResource("8_tv5g6")]
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 5.0
+offset_bottom = 5.0
 
 [node name="PauseMenu" parent="." instance=ExtResource("5_aneyl")]
 visible = false
@@ -43,13 +55,3 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Shop" parent="." instance=ExtResource("7_exsb2")]
-offset_left = -8.0
-offset_top = -5.0
-offset_right = -8.0
-offset_bottom = -5.0
-
-[node name="Money" parent="." instance=ExtResource("8_tv5g6")]
-offset_left = 8.0
-offset_right = 8.0

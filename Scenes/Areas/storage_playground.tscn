@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://c3e01muplx18p"]
+[gd_scene load_steps=9 format=3 uid="uid://c3e01muplx18p"]
 
 [ext_resource type="PackedScene" uid="uid://b8rhowa3gudpk" path="res://Scenes/SceneSwitching/SceneButtons.tscn" id="1_5ysot"]
 [ext_resource type="Script" uid="uid://b3cly2n5obgcy" path="res://Scenes/Areas/ui.gd" id="1_34otg"]
 [ext_resource type="PackedScene" uid="uid://q1v1svbbga3m" path="res://Scenes/NonUpgradables/tablehotbar/hotbar.tscn" id="2_4lbp4"]
 [ext_resource type="PackedScene" uid="uid://m07v5i1n8ugu" path="res://Scenes/Machines/fridge.tscn" id="3_48a00"]
-[ext_resource type="PackedScene" uid="uid://be6ih76u65jfa" path="res://Scenes/Machines/dry_storage.tscn" id="4_hrdef"]
 [ext_resource type="PackedScene" uid="uid://bqekke6vc13d1" path="res://Scenes/Orders/OrderContainer.tscn" id="5_fsijw"]
 [ext_resource type="Texture2D" uid="uid://b1d5mv0ylx62x" path="res://Assets/TempAssets/ordercontainertest.png" id="6_kvb4u"]
 [ext_resource type="PackedScene" uid="uid://dtu3jt1kqe2kv" path="res://Scenes/Areas/UIScenes/pause_menu.tscn" id="8_xkyle"]
@@ -31,6 +30,9 @@ offset_top = 155.0
 offset_right = 325.0
 offset_bottom = 185.0
 
+[node name="Fridge" parent="." instance=ExtResource("3_48a00")]
+position = Vector2(78, 57)
+
 [node name="Hotbar" parent="." instance=ExtResource("2_4lbp4")]
 offset_left = 19.0
 offset_top = 137.0
@@ -38,13 +40,11 @@ offset_right = 189.0
 offset_bottom = 179.0
 size_flags_horizontal = 0
 
-[node name="Fridge" parent="." instance=ExtResource("3_48a00")]
-position = Vector2(31, 38)
-
-[node name="DryStorage" parent="." instance=ExtResource("4_hrdef")]
-position = Vector2(210, 58)
+[node name="Money" parent="." instance=ExtResource("9_5gdgs")]
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 5.0
+offset_bottom = 5.0
 
 [node name="PauseMenu" parent="." instance=ExtResource("8_xkyle")]
 visible = false
-
-[node name="Money" parent="." instance=ExtResource("9_5gdgs")]

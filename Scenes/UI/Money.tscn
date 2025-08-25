@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://byjt0e223ntsh"]
+[gd_scene load_steps=3 format=3 uid="uid://byjt0e223ntsh"]
 
 [ext_resource type="Script" uid="uid://hkbp1nek87v2" path="res://Scripts/ResourceClasses/MoneyUI.gd" id="1_w222k"]
+[ext_resource type="FontFile" uid="uid://b5xhjokk0mb84" path="res://Assets/Fonts/BoldPixels1.4.ttf" id="2_wl0va"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -16,5 +17,6 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_wl0va")
 text = "0
 "
