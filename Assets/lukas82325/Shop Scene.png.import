@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xtbia0ifsr2e"
-path="res://.godot/imported/Cookie.png-809c2c7be95c69f46b67b738e6293957.ctex"
+uid="uid://8i6hirtm6urj"
+path="res://.godot/imported/Shop Scene.png-abf18e2b45e92da427a053d949fcfd77.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/lukas82325/Sprites/Cookie.png"
-dest_files=["res://.godot/imported/Cookie.png-809c2c7be95c69f46b67b738e6293957.ctex"]
+source_file="res://Assets/lukas82325/Shop Scene.png"
+dest_files=["res://.godot/imported/Shop Scene.png-abf18e2b45e92da427a053d949fcfd77.ctex"]
 
 [params]
 
