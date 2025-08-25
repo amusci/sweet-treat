@@ -53,3 +53,6 @@ func _get_slot_identifier(slot) -> String:
 		current = current.get_parent()
 	# Fallback
 	return slot.get_parent().name + "." + slot.name
+
+func clear_all_inventory_slots():
+	saved_slots.clear()

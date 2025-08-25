@@ -9,6 +9,8 @@ func _ready():
 	
 func _process(_delta):
 	if Money.money <= 100:
+		MachineManager.clear_all_machine_data()
+		InventoryManager.clear_all_inventory_slots()
 		get_tree().change_scene_to_file(game_over)
 		
 	
