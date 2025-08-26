@@ -81,7 +81,7 @@ text = "BAKING SODA"
 
 [node name="BakingSodaOutput" parent="ScrollContainer/VBoxContainer/BakingSodaSlot" instance=ExtResource("4_xybqi")]
 z_index = 1
-custom_minimum_size = Vector2(21, 16)
+custom_minimum_size = Vector2(22, 18)
 layout_mode = 0
 offset_left = 149.0
 offset_top = 12.0
@@ -127,7 +127,7 @@ text = "EGG"
 
 [node name="EggOutput" parent="ScrollContainer/VBoxContainer/EggSlot" instance=ExtResource("4_xybqi")]
 z_index = 1
-custom_minimum_size = Vector2(21, 16)
+custom_minimum_size = Vector2(22, 18)
 layout_mode = 0
 offset_left = 148.0
 offset_top = 5.0

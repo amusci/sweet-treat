@@ -4,13 +4,13 @@
 
 [node name="Slot" type="Panel"]
 z_index = -1
-custom_minimum_size = Vector2(20, 16)
+custom_minimum_size = Vector2(22, 18)
 script = ExtResource("1_1qonm")
 
 [node name="Icon" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(20, 16)
+custom_minimum_size = Vector2(22, 18)
 layout_mode = 0
-offset_right = 21.0
+offset_right = 20.0
 offset_bottom = 16.0
 stretch_mode = 2
 

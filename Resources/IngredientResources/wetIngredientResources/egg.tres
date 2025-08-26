@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Ingredient" load_steps=3 format=3 uid="uid://bm5wa7wu7j2lo"]
 
-[ext_resource type="Texture2D" uid="uid://bca1kcgfxe5y0" path="res://Assets/TempAssets/Egg.png" id="1_hdj3d"]
+[ext_resource type="Texture2D" uid="uid://dgkyp7ovbn20x" path="res://Assets/lukas82325/Sprites/Egg.png" id="1_n6vv8"]
 [ext_resource type="Script" uid="uid://ns5k051rba57" path="res://Scripts/ResourceClasses/Ingredient.gd" id="2_wnf54"]
 
 [resource]
 script = ExtResource("2_wnf54")
 title = "Egg"
 description = "This is Egg"
-icon = ExtResource("1_hdj3d")
+icon = ExtResource("1_n6vv8")
 price = 45.0

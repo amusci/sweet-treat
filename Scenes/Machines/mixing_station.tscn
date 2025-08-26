@@ -21,10 +21,11 @@ theme_override_font_sizes/font_size = 4
 shape = SubResource("RectangleShape2D_m4321")
 
 [node name="OutputSlot" parent="." instance=ExtResource("3_eop8k")]
+custom_minimum_size = Vector2(22, 18)
 offset_left = -16.0
 offset_top = -46.0
-offset_right = 4.0
-offset_bottom = -30.0
+offset_right = 6.0
+offset_bottom = -28.0
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

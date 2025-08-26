@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Ingredient" load_steps=3 format=3 uid="uid://dck7jlw3lmsvy"]
 
-[ext_resource type="Texture2D" uid="uid://3yoy2puyrd8" path="res://Assets/FoodAssets/IngredientAssets/DryIngredientAssets/josieSugar.png" id="1_v700d"]
+[ext_resource type="Texture2D" uid="uid://fia70r7eia8k" path="res://Assets/lukas82325/Sprites/Sugar.png" id="1_jjsmw"]
 [ext_resource type="Script" uid="uid://ns5k051rba57" path="res://Scripts/ResourceClasses/Ingredient.gd" id="2_jeqhe"]
 
 [resource]
 script = ExtResource("2_jeqhe")
 title = "Sugar"
 description = "This is Sugar"
-icon = ExtResource("1_v700d")
+icon = ExtResource("1_jjsmw")
 price = 75.0
