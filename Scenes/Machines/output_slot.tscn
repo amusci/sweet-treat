@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dijx62bclshmv"]
+[gd_scene load_steps=3 format=3 uid="uid://dijx62bclshmv"]
 
 [ext_resource type="Script" uid="uid://bj0fv1l6cds81" path="res://Scripts/MachineClasses/OutputSlot.gd" id="1_fkgpm"]
+[ext_resource type="FontFile" uid="uid://b5xhjokk0mb84" path="res://Assets/Fonts/BoldPixels1.4.ttf" id="2_5ppsn"]
 
 [node name="OutputSlot" type="Panel"]
 z_index = -1
@@ -26,6 +27,7 @@ offset_top = -23.0
 offset_right = -1.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_5ppsn")
 theme_override_font_sizes/font_size = 4
 horizontal_alignment = 2
 vertical_alignment = 2
