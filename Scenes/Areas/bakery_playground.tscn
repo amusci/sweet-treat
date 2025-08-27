@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b3cly2n5obgcy" path="res://Scenes/Areas/ui.gd" id="1_1jsug"]
 [ext_resource type="PackedScene" uid="uid://q1v1svbbga3m" path="res://Scenes/NonUpgradables/tablehotbar/hotbar.tscn" id="2_sqe8n"]
-[ext_resource type="Texture2D" uid="uid://bcbece4ubcm8s" path="res://Assets/lukas82325/Baking_Scene_Background.png" id="3_1jsug"]
+[ext_resource type="Texture2D" uid="uid://cn6ft1k8ile0n" path="res://Assets/antoniotest/BakingSceneGutted.png" id="3_1jsug"]
 [ext_resource type="PackedScene" uid="uid://b85a3mf75arf7" path="res://Scenes/Machines/mixing_station.tscn" id="3_ff7m2"]
 [ext_resource type="PackedScene" uid="uid://cgltvgu28fltw" path="res://Scenes/Machines/oven.tscn" id="3_gyj70"]
 [ext_resource type="PackedScene" uid="uid://b8rhowa3gudpk" path="res://Scenes/SceneSwitching/SceneButtons.tscn" id="4_gf4qy"]
@@ -19,13 +19,14 @@ offset_top = 1.0
 offset_right = 258.0
 offset_bottom = 1.0
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="BackgroundImage" type="TextureRect" parent="."]
 z_index = -4
 offset_right = 320.0
 offset_bottom = 180.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 texture = ExtResource("3_1jsug")
+stretch_mode = 2
 
 [node name="Oven" parent="." instance=ExtResource("3_gyj70")]
 position = Vector2(56, 105)
