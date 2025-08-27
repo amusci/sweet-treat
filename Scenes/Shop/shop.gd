@@ -1,12 +1,12 @@
 extends Control
 
-@onready var baking_soda_output = $ScrollContainer/VBoxContainer/BakingSodaSlot/BakingSodaOutput
-@onready var egg_output = $ScrollContainer/VBoxContainer/EggSlot/EggOutput
-@onready var flour_output = $ScrollContainer/VBoxContainer/Flour/FlourOutput
-@onready var sea_salt_output = $ScrollContainer/VBoxContainer/SeaSalt/SeaSaltOutput
-@onready var sugar_output = $ScrollContainer/VBoxContainer/Sugar/SugarOutput
-@onready var vanilla_extract_output = $ScrollContainer/VBoxContainer/VanillaExtract/VanillaExtractOutput
-@onready var butter_output = $ScrollContainer/VBoxContainer/Butter/ButterOutput
+@onready var baking_soda_output = $BakingSodaOutputSlot
+@onready var egg_output = $EggOutputSlot
+@onready var flour_output = $FlourOutputSlot
+@onready var sea_salt_output = $SeaSaltOutputSlot
+@onready var sugar_output = $SugarOutputSlot
+@onready var vanilla_extract_output = $VanillaOutputSlot
+@onready var butter_output = $ButterOutputSlot
 
 # Resources will be loaded from DataManager
 var baking_soda_resource: Resource
@@ -64,14 +64,14 @@ func _on_sea_salt_button_pressed():
 func _on_sugar_button_pressed():
 	purchase_item(sugar_resource, sugar_output, "Sugar")
 
-func _on_vanilla_extract_button_pressed():
-	purchase_item(vanilla_extract_resource, vanilla_extract_output, "Vanilla Extract")
-
 func _on_butter_button_pressed():
 	purchase_item(butter_resource, butter_output, "Butter")
 
+func _on_vanilla_button_pressed():
+	purchase_item(vanilla_extract_resource, vanilla_extract_output, "Vanilla Extract")
+
 func purchase_item(item_resource: Resource, output_slot: ShopOutput, item_name: String):
-	# 
+	# Item purchasing 
 	if item_resource == null:
 		print("Error: No resource defined for ", item_name)
 		return
