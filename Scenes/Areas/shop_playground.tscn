@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://4rouxcf08nwj"]
+[gd_scene load_steps=11 format=3 uid="uid://4rouxcf08nwj"]
 
 [ext_resource type="Script" uid="uid://b3cly2n5obgcy" path="res://Scenes/Areas/ui.gd" id="1_7h0is"]
 [ext_resource type="PackedScene" uid="uid://q1v1svbbga3m" path="res://Scenes/NonUpgradables/tablehotbar/hotbar.tscn" id="2_aj1vn"]
@@ -6,8 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://bqekke6vc13d1" path="res://Scenes/Orders/OrderContainer.tscn" id="4_7h0is"]
 [ext_resource type="PackedScene" uid="uid://dtu3jt1kqe2kv" path="res://Scenes/Areas/UIScenes/pause_menu.tscn" id="5_aneyl"]
 [ext_resource type="Texture2D" uid="uid://b1d5mv0ylx62x" path="res://Assets/TempAssets/ordercontainertest.png" id="5_wspjr"]
-[ext_resource type="PackedScene" uid="uid://buwcfxv72l13v" path="res://Scenes/Shop/shop.tscn" id="7_exsb2"]
+[ext_resource type="Texture2D" uid="uid://ctmklw3nylrki" path="res://Assets/antoniotest/ShopSceneGutted.png" id="8_0hv02"]
+[ext_resource type="Script" uid="uid://iyvrqmv07hjf" path="res://Scenes/Shop/shop.gd" id="8_ardy5"]
 [ext_resource type="PackedScene" uid="uid://byjt0e223ntsh" path="res://Scenes/UI/Money.tscn" id="8_tv5g6"]
+[ext_resource type="PackedScene" uid="uid://dtggv3if1mryj" path="res://Scenes/Shop/shop_output.tscn" id="10_ardy5"]
 
 [node name="ShopPlayground" type="Node2D"]
 script = ExtResource("1_7h0is")
@@ -19,28 +21,11 @@ offset_right = 320.0
 offset_bottom = 137.0
 
 [node name="TextureRect2" type="TextureRect" parent="OrderContainer"]
+visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("5_wspjr")
-
-[node name="SceneButtons" parent="." instance=ExtResource("3_t82ki")]
-offset_left = 212.0
-offset_top = 155.0
-offset_right = 325.0
-offset_bottom = 185.0
-
-[node name="Shop" parent="." instance=ExtResource("7_exsb2")]
-offset_left = -8.0
-offset_top = -5.0
-offset_right = -8.0
-offset_bottom = -5.0
-
-[node name="Hotbar" parent="." instance=ExtResource("2_aj1vn")]
-offset_left = 19.0
-offset_top = 137.0
-offset_right = 189.0
-offset_bottom = 179.0
 
 [node name="Money" parent="." instance=ExtResource("8_tv5g6")]
 offset_left = 5.0
@@ -55,3 +40,151 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Shop" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("8_ardy5")
+
+[node name="TextureRect" type="TextureRect" parent="Shop"]
+z_index = -5
+layout_mode = 1
+offset_right = 320.0
+offset_bottom = 180.0
+texture = ExtResource("8_0hv02")
+stretch_mode = 2
+
+[node name="SugarButton" type="Button" parent="Shop"]
+modulate = Color(1, 1, 1, 0)
+z_index = 4
+layout_mode = 0
+offset_left = 65.0
+offset_top = 5.0
+offset_right = 85.0
+offset_bottom = 21.0
+
+[node name="SugarOutputSlot" parent="Shop" instance=ExtResource("10_ardy5")]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 4.0
+offset_right = 192.0
+offset_bottom = 22.0
+
+[node name="SeaSaltButton" type="Button" parent="Shop"]
+modulate = Color(1, 1, 1, 0)
+z_index = 4
+layout_mode = 0
+offset_left = 65.0
+offset_top = 24.0
+offset_right = 85.0
+offset_bottom = 40.0
+
+[node name="SeaSaltOutputSlot" parent="Shop" instance=ExtResource("10_ardy5")]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 23.0
+offset_right = 192.0
+offset_bottom = 41.0
+
+[node name="BakingSodaButton" type="Button" parent="Shop"]
+modulate = Color(1, 1, 1, 0)
+z_index = 4
+layout_mode = 0
+offset_left = 65.0
+offset_top = 43.0
+offset_right = 85.0
+offset_bottom = 59.0
+
+[node name="BakingSodaOutputSlot" parent="Shop" instance=ExtResource("10_ardy5")]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 42.0
+offset_right = 192.0
+offset_bottom = 60.0
+
+[node name="ButterButton" type="Button" parent="Shop"]
+modulate = Color(1, 1, 1, 0)
+z_index = 4
+layout_mode = 0
+offset_left = 65.0
+offset_top = 62.0
+offset_right = 85.0
+offset_bottom = 78.0
+
+[node name="ButterOutputSlot" parent="Shop" instance=ExtResource("10_ardy5")]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 61.0
+offset_right = 192.0
+offset_bottom = 79.0
+
+[node name="EggButton" type="Button" parent="Shop"]
+modulate = Color(1, 1, 1, 0)
+z_index = 4
+layout_mode = 0
+offset_left = 65.0
+offset_top = 81.0
+offset_right = 85.0
+offset_bottom = 97.0
+
+[node name="EggOutputSlot" parent="Shop" instance=ExtResource("10_ardy5")]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 80.0
+offset_right = 192.0
+offset_bottom = 98.0
+
+[node name="FlourButton" type="Button" parent="Shop"]
+modulate = Color(1, 1, 1, 0)
+z_index = 4
+layout_mode = 0
+offset_left = 65.0
+offset_top = 100.0
+offset_right = 85.0
+offset_bottom = 116.0
+
+[node name="FlourOutputSlot" parent="Shop" instance=ExtResource("10_ardy5")]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 99.0
+offset_right = 192.0
+offset_bottom = 117.0
+
+[node name="VanillaButton" type="Button" parent="Shop"]
+modulate = Color(1, 1, 1, 0)
+z_index = 4
+layout_mode = 0
+offset_left = 65.0
+offset_top = 119.0
+offset_right = 85.0
+offset_bottom = 135.0
+
+[node name="VanillaOutputSlot" parent="Shop" instance=ExtResource("10_ardy5")]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 118.0
+offset_right = 192.0
+offset_bottom = 136.0
+
+[node name="Hotbar" parent="." instance=ExtResource("2_aj1vn")]
+offset_left = 19.0
+offset_top = 137.0
+offset_right = 189.0
+offset_bottom = 179.0
+
+[node name="SceneButtons" parent="." instance=ExtResource("3_t82ki")]
+z_index = 5
+offset_left = 212.0
+offset_top = 155.0
+offset_right = 325.0
+offset_bottom = 185.0
+
+[connection signal="pressed" from="Shop/SugarButton" to="Shop" method="_on_sugar_button_pressed"]
+[connection signal="pressed" from="Shop/SeaSaltButton" to="Shop" method="_on_sea_salt_button_pressed"]
+[connection signal="pressed" from="Shop/BakingSodaButton" to="Shop" method="_on_baking_soda_button_pressed"]
+[connection signal="pressed" from="Shop/ButterButton" to="Shop" method="_on_butter_button_pressed"]
+[connection signal="pressed" from="Shop/EggButton" to="Shop" method="_on_egg_button_pressed"]
+[connection signal="pressed" from="Shop/FlourButton" to="Shop" method="_on_flour_button_pressed"]
+[connection signal="pressed" from="Shop/VanillaButton" to="Shop" method="_on_vanilla_button_pressed"]

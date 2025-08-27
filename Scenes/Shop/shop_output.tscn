@@ -1,17 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://dtggv3if1mryj"]
+[gd_scene load_steps=3 format=3 uid="uid://dtggv3if1mryj"]
 
 [ext_resource type="Script" uid="uid://ckmxr6h22jp5c" path="res://Scripts/ShopClasses/ShopOutput.gd" id="1_miwww"]
+[ext_resource type="FontFile" uid="uid://b5xhjokk0mb84" path="res://Assets/Fonts/BoldPixels1.4.ttf" id="2_86pm6"]
 
 [node name="OutputSlot" type="Panel"]
 z_index = -1
-custom_minimum_size = Vector2(20, 16)
+custom_minimum_size = Vector2(22, 18)
 script = ExtResource("1_miwww")
 
 [node name="Icon" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(20, 16)
+custom_minimum_size = Vector2(22, 18)
 layout_mode = 0
-offset_right = 30.0
-offset_bottom = 30.0
+offset_right = 22.0
+offset_bottom = 18.0
 stretch_mode = 2
 
 [node name="Amount" type="Label" parent="."]
@@ -26,6 +27,7 @@ offset_top = -23.0
 offset_right = -1.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_86pm6")
 theme_override_font_sizes/font_size = 4
 horizontal_alignment = 2
 vertical_alignment = 2
