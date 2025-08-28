@@ -20,4 +20,4 @@ ingredients = Array[ExtResource("1_mcsu6")]([SubResource("Resource_k3yvg")])
 tool_required = "oven"
 tool_required_icon = ExtResource("5_yo38j")
 sell_price = 400.0
-time_to_make = 50.0
+time_to_make = 125.0

@@ -200,9 +200,10 @@ func _create_drag_preview():
 		var amount_label = Label.new()
 		amount_label.text = str(drag_amount)
 		#amount_label.size = $Amount.size
-		amount_label.position = Vector2(17,10) # Hack positioning
+		amount_label.position = Vector2(18,14) # Hack positioning
 		amount_label.add_theme_color_override("font_color", Color.WHITE)
 		amount_label.add_theme_font_size_override("font_size", 4)
+		amount_label.add_theme_font_override("font", load("res://Assets/Fonts/BoldPixels1.4.ttf"))
 		amount_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		drag_preview.add_child(amount_label)
 	
