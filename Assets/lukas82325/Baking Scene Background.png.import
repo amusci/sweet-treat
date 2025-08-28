@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcbece4ubcm8s"
-path="res://.godot/imported/Baking_Scene_Background.png-fa43629896c1675d1946f7de427971a6.ctex"
+uid="uid://c1sq0f7s3jx0f"
+path="res://.godot/imported/Baking Scene Background.png-1feb5ca0d8b6285aa5a3c3e27336c84e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/lukas82325/Baking_Scene_Background.png"
-dest_files=["res://.godot/imported/Baking_Scene_Background.png-fa43629896c1675d1946f7de427971a6.ctex"]
+source_file="res://Assets/lukas82325/Baking Scene Background.png"
+dest_files=["res://.godot/imported/Baking Scene Background.png-1feb5ca0d8b6285aa5a3c3e27336c84e.ctex"]
 
 [params]
 

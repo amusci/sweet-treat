@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duqawxg276yk5"
-path="res://.godot/imported/Container_Without_Image.png-888d6af1ced1a0547083c97f78758c61.ctex"
+uid="uid://coaqmgem7o7hb"
+path="res://.godot/imported/Order Container Real.png-f295bc72968c780c66bd7cb1c8190039.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/lukas82325/Container_Without_Image.png"
-dest_files=["res://.godot/imported/Container_Without_Image.png-888d6af1ced1a0547083c97f78758c61.ctex"]
+source_file="res://Assets/lukas82325/Order Container Real.png"
+dest_files=["res://.godot/imported/Order Container Real.png-f295bc72968c780c66bd7cb1c8190039.ctex"]
 
 [params]
 
