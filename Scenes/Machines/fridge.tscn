@@ -1,47 +1,84 @@
-[gd_scene load_steps=8 format=3 uid="uid://m07v5i1n8ugu"]
+[gd_scene load_steps=6 format=3 uid="uid://m07v5i1n8ugu"]
 
-[ext_resource type="Texture2D" uid="uid://bur3ygr21flod" path="res://Assets/TempAssets/fridgeTemp.png" id="1_dgwsk"]
 [ext_resource type="Script" uid="uid://brs005kj6nqdw" path="res://Scripts/MachineClasses/Fridge.gd" id="1_nh1lm"]
 [ext_resource type="PackedScene" uid="uid://dfseuxorrds8m" path="res://Scenes/NonUpgradables/tablehotbar/inventory_slot.tscn" id="2_at4fk"]
 [ext_resource type="Resource" uid="uid://bscgdv7tmnru" path="res://Resources/IngredientResources/dryIngredientResources/baking_soda.tres" id="4_1ishy"]
-[ext_resource type="Resource" uid="uid://b5gvgfhupsx1o" path="res://Resources/IngredientResources/dryIngredientResources/flour.tres" id="5_7l55e"]
-[ext_resource type="Resource" uid="uid://b22e0h2xh7sfx" path="res://Resources/IngredientResources/dryIngredientResources/sea_salt.tres" id="6_7l55e"]
+[ext_resource type="Texture2D" uid="uid://dj7noo06nxgi6" path="res://Assets/lukas82325/Item_Slot.png" id="4_nudgb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qhi1q"]
-size = Vector2(32, 58)
+size = Vector2(80, 93)
 
 [node name="Fridge" type="Area2D"]
 script = ExtResource("1_nh1lm")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_dgwsk")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -2)
+position = Vector2(23, -19.5)
 shape = SubResource("RectangleShape2D_qhi1q")
 
-[node name="Inventory" type="HBoxContainer" parent="."]
-custom_minimum_size = Vector2(21, 16)
-offset_left = 26.725
-offset_top = -20.0
-offset_right = 158.725
-offset_bottom = 20.0
+[node name="Inventory" type="VBoxContainer" parent="."]
+z_index = 4
+custom_minimum_size = Vector2(22, 18)
+offset_left = 71.0
+offset_top = -60.0
+offset_right = 93.0
+offset_bottom = 24.0
 
 [node name="FridgeSlot" parent="Inventory" instance=ExtResource("2_at4fk")]
+z_index = 8
 layout_mode = 2
 item = ExtResource("4_1ishy")
 amount = 1
 
-[node name="FridgeSlot2" parent="Inventory" instance=ExtResource("2_at4fk")]
-layout_mode = 2
-item = ExtResource("5_7l55e")
-amount = 2
+[node name="TextureRect" type="TextureRect" parent="Inventory/FridgeSlot"]
+z_index = -5
+custom_minimum_size = Vector2(22, 18)
+layout_mode = 0
+offset_right = 22.0
+offset_bottom = 18.0
+texture = ExtResource("4_nudgb")
+stretch_mode = 2
 
-[node name="FridgeSlot3" parent="Inventory" instance=ExtResource("2_at4fk")]
+[node name="FridgeSlot2" parent="Inventory" instance=ExtResource("2_at4fk")]
+z_index = 8
 layout_mode = 2
-item = ExtResource("6_7l55e")
+item = ExtResource("4_1ishy")
 amount = 1
 
-[node name="FridgeSlot4" parent="Inventory" instance=ExtResource("2_at4fk")]
+[node name="TextureRect" type="TextureRect" parent="Inventory/FridgeSlot2"]
+z_index = -5
+custom_minimum_size = Vector2(22, 18)
+layout_mode = 0
+offset_right = 22.0
+offset_bottom = 18.0
+texture = ExtResource("4_nudgb")
+stretch_mode = 2
+
+[node name="FridgeSlot3" parent="Inventory" instance=ExtResource("2_at4fk")]
+z_index = 8
 layout_mode = 2
+item = ExtResource("4_1ishy")
+amount = 1
+
+[node name="TextureRect" type="TextureRect" parent="Inventory/FridgeSlot3"]
+z_index = -5
+custom_minimum_size = Vector2(22, 18)
+layout_mode = 0
+offset_right = 22.0
+offset_bottom = 18.0
+texture = ExtResource("4_nudgb")
+stretch_mode = 2
+
+[node name="FridgeSlot4" parent="Inventory" instance=ExtResource("2_at4fk")]
+z_index = 8
+layout_mode = 2
+item = ExtResource("4_1ishy")
+amount = 1
+
+[node name="TextureRect" type="TextureRect" parent="Inventory/FridgeSlot4"]
+z_index = -5
+custom_minimum_size = Vector2(22, 18)
+layout_mode = 0
+offset_right = 22.0
+offset_bottom = 18.0
+texture = ExtResource("4_nudgb")
+stretch_mode = 2

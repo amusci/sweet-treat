@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bqekke6vc13d1" path="res://Scenes/Orders/OrderContainer.tscn" id="4_7h0is"]
 [ext_resource type="PackedScene" uid="uid://dtu3jt1kqe2kv" path="res://Scenes/Areas/UIScenes/pause_menu.tscn" id="5_aneyl"]
 [ext_resource type="Texture2D" uid="uid://b1d5mv0ylx62x" path="res://Assets/TempAssets/ordercontainertest.png" id="5_wspjr"]
-[ext_resource type="Texture2D" uid="uid://ctmklw3nylrki" path="res://Assets/antoniotest/ShopSceneGutted.png" id="8_0hv02"]
+[ext_resource type="Texture2D" uid="uid://dqu8e301xbjcn" path="res://Assets/lukas82825/Shop_Scene.png" id="7_ardy5"]
 [ext_resource type="Script" uid="uid://iyvrqmv07hjf" path="res://Scenes/Shop/shop.gd" id="8_ardy5"]
 [ext_resource type="PackedScene" uid="uid://byjt0e223ntsh" path="res://Scenes/UI/Money.tscn" id="8_tv5g6"]
 [ext_resource type="PackedScene" uid="uid://dtggv3if1mryj" path="res://Scenes/Shop/shop_output.tscn" id="10_ardy5"]
@@ -53,7 +53,7 @@ z_index = -5
 layout_mode = 1
 offset_right = 320.0
 offset_bottom = 180.0
-texture = ExtResource("8_0hv02")
+texture = ExtResource("7_ardy5")
 stretch_mode = 2
 
 [node name="SugarButton" type="Button" parent="Shop"]

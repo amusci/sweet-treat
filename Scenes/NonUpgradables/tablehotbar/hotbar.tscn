@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://q1v1svbbga3m"]
 
+[ext_resource type="Texture2D" uid="uid://b6k7kcvm7xbkt" path="res://Assets/lukas82825/Hotbar.png" id="1_kmv8b"]
 [ext_resource type="Script" uid="uid://j4lctlyhillb" path="res://Scenes/NonUpgradables/tablehotbar/hotbar.gd" id="1_yxu82"]
 [ext_resource type="PackedScene" uid="uid://dfseuxorrds8m" path="res://Scenes/NonUpgradables/tablehotbar/inventory_slot.tscn" id="2_wps2s"]
-[ext_resource type="Texture2D" uid="uid://b2nhv5vp0ip3m" path="res://Assets/lukas82325/Hotbar.png" id="3_2mo1k"]
 [ext_resource type="Resource" uid="uid://bscgdv7tmnru" path="res://Resources/IngredientResources/dryIngredientResources/baking_soda.tres" id="4_kykox"]
 [ext_resource type="Resource" uid="uid://b5gvgfhupsx1o" path="res://Resources/IngredientResources/dryIngredientResources/flour.tres" id="5_kmv8b"]
 [ext_resource type="Resource" uid="uid://b22e0h2xh7sfx" path="res://Resources/IngredientResources/dryIngredientResources/sea_salt.tres" id="6_372kr"]
@@ -19,7 +19,7 @@ z_index = -4
 layout_mode = 0
 offset_right = 170.0
 offset_bottom = 42.0
-texture = ExtResource("3_2mo1k")
+texture = ExtResource("1_kmv8b")
 stretch_mode = 2
 
 [node name="Hotbar" type="HBoxContainer" parent="TextureRect"]
