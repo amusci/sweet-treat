@@ -41,17 +41,17 @@ script = ExtResource("1_yxu82")
 [node name="Slot" parent="TextureRect/Hotbar" instance=ExtResource("2_wps2s")]
 layout_mode = 2
 item = ExtResource("4_kykox")
-amount = 1
+amount = 6
 
 [node name="Slot2" parent="TextureRect/Hotbar" instance=ExtResource("2_wps2s")]
 layout_mode = 2
 item = ExtResource("5_kmv8b")
-amount = 1
+amount = 6
 
 [node name="Slot3" parent="TextureRect/Hotbar" instance=ExtResource("2_wps2s")]
 layout_mode = 2
 item = ExtResource("6_372kr")
-amount = 1
+amount = 6
 
 [node name="Slot4" parent="TextureRect/Hotbar" instance=ExtResource("2_wps2s")]
 layout_mode = 2

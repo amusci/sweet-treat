@@ -25,5 +25,6 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 0
 offset_right = 62.0
 offset_bottom = 135.0
+theme_override_constants/separation = 12
 script = ExtResource("2_tuw3p")
 order_scene = ExtResource("3_tuw3p")
