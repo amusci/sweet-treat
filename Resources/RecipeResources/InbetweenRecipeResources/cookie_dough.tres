@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cr1isyvhpjy3s" path="res://Assets/TempAssets/Cookie_Dough.png" id="3_gqoca"]
 [ext_resource type="Resource" uid="uid://bmgduypa23b6h" path="res://Resources/IngredientResources/wetIngredientResources/vanilla_extract.tres" id="6_usqu2"]
 [ext_resource type="Resource" uid="uid://dck7jlw3lmsvy" path="res://Resources/IngredientResources/dryIngredientResources/sugar.tres" id="6_uy27w"]
-[ext_resource type="Texture2D" uid="uid://dfa5lhl7on2ki" path="res://Assets/TempAssets/Stove_Sketch.png" id="9_0847v"]
+[ext_resource type="Texture2D" uid="uid://cpptwetba8cfq" path="res://Assets/lukas82325/Sprites/Mixer.png" id="9_0847v"]
 
 [sub_resource type="Resource" id="Resource_hct02"]
 script = ExtResource("1_xjijx")

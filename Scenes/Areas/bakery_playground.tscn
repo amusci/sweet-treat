@@ -14,10 +14,10 @@
 script = ExtResource("1_1jsug")
 
 [node name="OrderContainer" parent="." instance=ExtResource("5_0sb6y")]
-offset_left = 258.0
-offset_top = 1.0
-offset_right = 258.0
-offset_bottom = 1.0
+offset_left = 256.0
+offset_top = -1.0
+offset_right = 256.0
+offset_bottom = -1.0
 
 [node name="BackgroundImage" type="TextureRect" parent="."]
 z_index = -4

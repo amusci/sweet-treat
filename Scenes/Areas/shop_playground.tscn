@@ -15,10 +15,10 @@
 script = ExtResource("1_7h0is")
 
 [node name="OrderContainer" parent="." instance=ExtResource("4_7h0is")]
-offset_left = 258.0
-offset_top = 1.0
-offset_right = 320.0
-offset_bottom = 137.0
+offset_left = 256.0
+offset_top = -1.0
+offset_right = 318.0
+offset_bottom = 135.0
 
 [node name="TextureRect2" type="TextureRect" parent="OrderContainer"]
 visible = false
