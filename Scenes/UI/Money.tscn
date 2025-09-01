@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://byjt0e223ntsh"]
+[gd_scene load_steps=4 format=3 uid="uid://byjt0e223ntsh"]
 
 [ext_resource type="Script" uid="uid://hkbp1nek87v2" path="res://Scripts/ResourceClasses/MoneyUI.gd" id="1_w222k"]
+[ext_resource type="Texture2D" uid="uid://60el6ha7fgn" path="res://Assets/antoniotest/MONEYHOLDTONKA.png" id="2_0k76a"]
 [ext_resource type="FontFile" uid="uid://b5xhjokk0mb84" path="res://Assets/Fonts/BoldPixels1.4.ttf" id="2_wl0va"]
 
 [node name="Control" type="Control"]
@@ -12,11 +13,20 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_w222k")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 61.0
+offset_bottom = 17.0
+texture = ExtResource("2_0k76a")
+stretch_mode = 2
+
 [node name="MoneyLabel" type="Label" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 44.0
+offset_bottom = 33.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_wl0va")
 text = "0
 "

@@ -36,6 +36,7 @@ position = Vector2(57, 107)
 position = Vector2(162, 94)
 
 [node name="SceneButtons" parent="." instance=ExtResource("4_gf4qy")]
+z_index = 5
 offset_left = 212.0
 offset_top = 155.0
 offset_right = 325.0
@@ -50,10 +51,11 @@ offset_bottom = 179.0
 size_flags_vertical = 4
 
 [node name="Money" parent="." instance=ExtResource("7_yqxkc")]
-offset_left = 195.0
-offset_top = 139.0
-offset_right = 195.0
-offset_bottom = 139.0
+z_index = -4
+offset_left = 192.0
+offset_top = 137.0
+offset_right = 192.0
+offset_bottom = 137.0
 
 [node name="PauseMenu" parent="." instance=ExtResource("9_1jsug")]
 visible = false
