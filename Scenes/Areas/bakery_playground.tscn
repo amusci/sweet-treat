@@ -50,10 +50,10 @@ offset_bottom = 179.0
 size_flags_vertical = 4
 
 [node name="Money" parent="." instance=ExtResource("7_yqxkc")]
-offset_left = 5.0
-offset_top = 5.0
-offset_right = 5.0
-offset_bottom = 5.0
+offset_left = 195.0
+offset_top = 139.0
+offset_right = 195.0
+offset_bottom = 139.0
 
 [node name="PauseMenu" parent="." instance=ExtResource("9_1jsug")]
 visible = false

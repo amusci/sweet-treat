@@ -4,7 +4,7 @@ extends Control
 const game_over = "res://Scenes/Areas/UIScenes/game_over.tscn"
 
 func _ready():
-	money_label.text = str(Money.money)
+	money_label.text = "$" + str(Money.money)
 	Money.connect("change_money", _on_money_changed)
 	
 func _process(_delta):
