@@ -1,6 +1,8 @@
 class_name InventorySlot
 extends Panel
 
+var yrup = preload("res://Assets/SFX/yrup_cult_following.ogg")
+
 @export var item : Resource = null:
 	# The item currently in this slot
 	set(value):
@@ -71,6 +73,7 @@ func _start_click_drag(right_click: bool):
 	if item == null: # Do I really need to explain this Lukas
 		return
 	
+	SfxManager.play_SFX(yrup)
 	currently_dragging_slot = self
 	is_right_click_mode = right_click # true or false
 	buttons_disabled = true

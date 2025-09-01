@@ -14,6 +14,7 @@ func _ready():
 	MusicManager.play_music(music)
 	
 func _on_play_pressed() -> void:
+	SfxManager.play_SFX(SfxManager.play)
 	get_tree().change_scene_to_file("res://Scenes/Areas/bakery_playground.tscn")
 	OrderManager.orders_spawning = true
 	OrderManager.clear_all_orders() # Clear all orders because I dont want to rewrite anything ATM
@@ -21,6 +22,7 @@ func _on_play_pressed() -> void:
 	print("Play Pressed")
 
 func _on_settings_pressed() -> void:
+	SfxManager.play_SFX(SfxManager.click)
 	get_tree().change_scene_to_file("res://Scenes/Areas/UIScenes/Settings.tscn")
 	print("Settings Pressed")
 
