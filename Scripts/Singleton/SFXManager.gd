@@ -8,8 +8,16 @@ const SAVE_FILE = "user://settings.ini"
 const play = preload("uid://72jwyxf5swbd")
 const no = preload("res://Assets/SFX/no.wav")
 const click = preload("res://Assets/SFX/click.wav")
-
-
+const switch = preload("res://Assets/SFX/switch.wav")
+const complete = preload("res://Assets/SFX/complete.wav")
+const orderin = preload("res://Assets/SFX/orderin.mp3")
+const buy = preload("res://Assets/SFX/buy.wav")
+const open = preload("res://Assets/SFX/open.wav")
+const putin = preload("res://Assets/SFX/putin.wav")
+const gameover = preload("res://Assets/SFX/gameover.wav")
+const pickup = preload("res://Assets/SFX/pickup.wav")
+const putdown = preload("res://Assets/SFX/putdown.wav")
+const sold = preload("res://Assets/SFX/sold.wav")
 
 
 func _ready():

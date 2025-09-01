@@ -3,7 +3,6 @@ extends Node2D
 @onready var pause_menu = $PauseMenu
 @onready var order_container = $OrderContainer
 
- 
 var not_showing := false
 
 func _ready():
@@ -26,5 +25,4 @@ func _process(_delta):
 func cancel_active_drag():
 	# Operation AVOID BUGS
 	if InventorySlot.currently_dragging_slot != null:
-		InventorySlot.currently_dragging_slot._cancel_drag()
-	
+		InventorySlot.currently_dragging_slot._cancel_drag()	

@@ -182,9 +182,11 @@ func _consume_ingredient(slot, item_resource):
 	
 	# Check if this ingredient can be used in this machine type
 	if not _can_accept_ingredient(item_resource):
+		SfxManager.play_SFX(SfxManager.no)
 		print("This machine cannot accept ", item_resource.title)
 		return
 	
+	SfxManager.play_SFX(SfxManager.putin)
 	print("Added ", item_resource.title, " to ", machine_type, " station")
 	
 	# Add item to current ingredient dictionary
@@ -331,12 +333,15 @@ func _can_attempt_crafting() -> bool:
 func _attempt_crafting():
 	# Crafting handling (checks to make sure the output is empty, we can craft, and the recipe exists)
 	if not _can_attempt_crafting():
+		SfxManager.play_SFX(SfxManager.no)
 		print("Cannot craft - output slot is full! Collect the item first.")
 		return
 		
 	print("Attempting to craft in ", machine_type, " station...")
 	var crafted_recipe = _check_for_recipes()
 	if crafted_recipe == null:
+		SfxManager.play_SFX(SfxManager.no)
 		print("No valid recipes found with current ingredients")
 	else:
+		SfxManager.play_SFX(SfxManager.complete)
 		_craft_recipe(crafted_recipe)

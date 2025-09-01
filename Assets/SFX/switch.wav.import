@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://bv7e3pgks2xbt"
-path="res://.godot/imported/no.wav-9d4a30002870b9d6d091f0adf4616786.sample"
+uid="uid://cqnfvghrxflag"
+path="res://.godot/imported/switch.wav-94ccec91517138afe3ebdc4df305df45.sample"
 
 [deps]
 
-source_file="res://Assets/SFX/no.wav"
-dest_files=["res://.godot/imported/no.wav-9d4a30002870b9d6d091f0adf4616786.sample"]
+source_file="res://Assets/SFX/switch.wav"
+dest_files=["res://.godot/imported/switch.wav-94ccec91517138afe3ebdc4df305df45.sample"]
 
 [params]
 

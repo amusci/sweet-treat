@@ -60,17 +60,20 @@ func _on_shop_button_input(event: InputEvent):
 func _on_baking_button_pressed():
 	if InventorySlot.buttons_disabled == true:
 		return
+	SfxManager.play_SFX(SfxManager.switch)
 	InventoryManager.save_all_inventory_slots()
 	get_tree().change_scene_to_file(bakery)
 
 func _on_storage_button_pressed():
 	if InventorySlot.buttons_disabled == true:
 		return
+	SfxManager.play_SFX(SfxManager.switch)
 	InventoryManager.save_all_inventory_slots()
 	get_tree().change_scene_to_file(storage)
 	
 func _on_shop_button_pressed():
 	if InventorySlot.buttons_disabled == true:
 		return
+	SfxManager.play_SFX(SfxManager.switch)
 	InventoryManager.save_all_inventory_slots()
 	get_tree().change_scene_to_file(shop)

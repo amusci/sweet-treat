@@ -8,4 +8,4 @@ script = ExtResource("1_ffeaj")
 title = "Baking Soda"
 description = "This is Baking Soda"
 icon = ExtResource("1_kmjvl")
-price = 20.0
+price = 5.0

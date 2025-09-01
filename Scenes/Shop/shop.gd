@@ -50,24 +50,31 @@ func _get_ingredient(ingredient_id: String) -> Resource:
 		return null
 
 func _on_baking_soda_button_pressed():
+	SfxManager.play_SFX(SfxManager.buy)
 	purchase_item(baking_soda_resource, baking_soda_output, "Baking Soda")
 
 func _on_egg_button_pressed():
+	SfxManager.play_SFX(SfxManager.buy)
 	purchase_item(egg_resource, egg_output, "Egg")
 
 func _on_flour_button_pressed():
+	SfxManager.play_SFX(SfxManager.buy)
 	purchase_item(flour_resource, flour_output, "Flour")
 
 func _on_sea_salt_button_pressed():
+	SfxManager.play_SFX(SfxManager.buy)
 	purchase_item(sea_salt_resource, sea_salt_output, "Sea Salt")
 
 func _on_sugar_button_pressed():
+	SfxManager.play_SFX(SfxManager.buy)
 	purchase_item(sugar_resource, sugar_output, "Sugar")
 
 func _on_butter_button_pressed():
+	SfxManager.play_SFX(SfxManager.buy)
 	purchase_item(butter_resource, butter_output, "Butter")
 
 func _on_vanilla_button_pressed():
+	SfxManager.play_SFX(SfxManager.buy)
 	purchase_item(vanilla_extract_resource, vanilla_extract_output, "Vanilla Extract")
 
 func purchase_item(item_resource: Resource, output_slot: ShopOutput, item_name: String):

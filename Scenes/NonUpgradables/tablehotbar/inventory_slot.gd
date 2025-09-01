@@ -1,8 +1,6 @@
 class_name InventorySlot
 extends Panel
 
-var yrup = preload("res://Assets/SFX/yrup_cult_following.ogg")
-
 @export var item : Resource = null:
 	# The item currently in this slot
 	set(value):
@@ -73,7 +71,7 @@ func _start_click_drag(right_click: bool):
 	if item == null: # Do I really need to explain this Lukas
 		return
 	
-	SfxManager.play_SFX(yrup)
+	SfxManager.play_SFX(SfxManager.pickup)
 	currently_dragging_slot = self
 	is_right_click_mode = right_click # true or false
 	buttons_disabled = true
@@ -121,6 +119,7 @@ func _cancel_drag():
 	
 	#print("CANCELLED DRAG")
 	_cleanup_drag_preview()
+	SfxManager.play_SFX(SfxManager.putdown)
 	currently_dragging_slot = null
 	is_right_click_mode = false
 	buttons_disabled = false
@@ -135,6 +134,7 @@ func _end_drag():
 	
 	# print("DROPPED ITEM")
 	_cleanup_drag_preview()
+	SfxManager.play_SFX(SfxManager.putdown)
 	currently_dragging_slot = null
 	is_right_click_mode = false
 	buttons_disabled = false
@@ -144,6 +144,7 @@ func _check_sell_finished():
 	if item != null and amount > 0 and item.has_method("get") and item.get("category") == "finished":
 		if is_in_group("hotbar"):
 			var sell_amount = item.get("sell_price")
+			SfxManager.play_SFX(SfxManager.sold)
 			Money.add_money(sell_amount)
 			print("DING WE SOLD: +", sell_amount, "money")
 			

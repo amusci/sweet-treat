@@ -8,7 +8,7 @@ func _ready():
 	Money.connect("change_money", _on_money_changed)
 	
 func _process(_delta):
-	if Money.money <= 100:
+	if Money.money <= 0:
 		MachineManager.clear_all_machine_data()
 		InventoryManager.clear_all_inventory_slots()
 		get_tree().change_scene_to_file(game_over)

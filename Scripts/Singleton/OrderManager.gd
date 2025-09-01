@@ -67,6 +67,7 @@ func spawn_order():
 	_init_order_progress(order_data)
 	order_added.emit(order_data)
 	print("Spawned order: ", recipe.title)
+	SfxManager.play_SFX(SfxManager.orderin)
 
 	# Reset timer AND pick next random interval for next spawn
 	spawn_timer = 0.0
