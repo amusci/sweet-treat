@@ -35,13 +35,6 @@ position = Vector2(57, 107)
 [node name="MixingStation" parent="." instance=ExtResource("3_ff7m2")]
 position = Vector2(162, 94)
 
-[node name="SceneButtons" parent="." instance=ExtResource("4_gf4qy")]
-z_index = 5
-offset_left = 212.0
-offset_top = 155.0
-offset_right = 325.0
-offset_bottom = 185.0
-
 [node name="Hotbar" parent="." instance=ExtResource("2_sqe8n")]
 custom_minimum_size = Vector2(100, 16)
 offset_left = 19.0
@@ -59,3 +52,11 @@ offset_bottom = 137.0
 
 [node name="PauseMenu" parent="." instance=ExtResource("9_1jsug")]
 visible = false
+z_index = 100
+
+[node name="SceneButtons" parent="." instance=ExtResource("4_gf4qy")]
+z_index = 5
+offset_left = 212.0
+offset_top = 155.0
+offset_right = 325.0
+offset_bottom = 185.0

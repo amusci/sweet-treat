@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cs61hh6a5onuu"]
 
 [ext_resource type="Script" uid="uid://bjl1csrh6kwip" path="res://Scripts/UIRelated/title_screen.gd" id="1_qa6a4"]
-[ext_resource type="Texture2D" uid="uid://dv6a36mp5hvqj" path="res://Assets/TempAssets/Temp Title Background.png" id="2_i50ag"]
+[ext_resource type="Texture2D" uid="uid://5mqci2p87inq" path="res://Assets/antoniotest/titlescene.png" id="2_qa6a4"]
 
 [node name="Title Screen" type="Control"]
 layout_mode = 3
@@ -12,33 +12,45 @@ script = ExtResource("1_qa6a4")
 layout_mode = 0
 offset_right = 320.0
 offset_bottom = 180.0
-texture = ExtResource("2_i50ag")
+texture = ExtResource("2_qa6a4")
 
 [node name="Play" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 126.0
-offset_top = 27.0
-offset_right = 199.0
-offset_bottom = 58.0
-text = "Play
-"
+offset_left = 139.0
+offset_top = 37.0
+offset_right = 203.0
+offset_bottom = 59.0
 
 [node name="Settings" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 128.0
-offset_top = 66.0
-offset_right = 198.0
-offset_bottom = 97.0
-text = "Settings
-"
+offset_left = 139.0
+offset_top = 73.0
+offset_right = 203.0
+offset_bottom = 95.0
 
 [node name="Exit" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 144.0
-offset_top = 103.0
-offset_right = 181.0
-offset_bottom = 134.0
-text = "Exit"
+offset_left = 139.0
+offset_top = 109.0
+offset_right = 203.0
+offset_bottom = 131.0
+
+[node name="SFXSlider" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 213.0
+offset_top = 60.0
+offset_right = 313.0
+offset_bottom = 76.0
+
+[node name="MusicSlider" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 215.0
+offset_top = 82.0
+offset_right = 315.0
+offset_bottom = 98.0
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]

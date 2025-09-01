@@ -54,3 +54,4 @@ offset_bottom = 137.0
 
 [node name="PauseMenu" parent="." instance=ExtResource("8_xkyle")]
 visible = false
+z_index = 100

@@ -33,14 +33,6 @@ offset_top = 137.0
 offset_right = 192.0
 offset_bottom = 137.0
 
-[node name="PauseMenu" parent="." instance=ExtResource("5_aneyl")]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
 [node name="Shop" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -180,6 +172,15 @@ offset_left = 212.0
 offset_top = 155.0
 offset_right = 325.0
 offset_bottom = 185.0
+
+[node name="PauseMenu" parent="." instance=ExtResource("5_aneyl")]
+visible = false
+z_index = 100
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [connection signal="pressed" from="Shop/SugarButton" to="Shop" method="_on_sugar_button_pressed"]
 [connection signal="pressed" from="Shop/SeaSaltButton" to="Shop" method="_on_sea_salt_button_pressed"]
