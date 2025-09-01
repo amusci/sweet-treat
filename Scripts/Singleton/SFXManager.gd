@@ -5,6 +5,13 @@ var current_song: AudioStream
 var current_volume: float = 0.3
 const SAVE_FILE = "user://settings.ini"
 
+const play = preload("uid://72jwyxf5swbd")
+const no = preload("res://Assets/SFX/no.wav")
+const click = preload("res://Assets/SFX/click.wav")
+
+
+
+
 func _ready():
 	# On ready we make a new audio stream player and load our volume 
 	SFX_player = AudioStreamPlayer.new()
