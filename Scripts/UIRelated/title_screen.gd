@@ -6,7 +6,6 @@ extends Control
 
 @onready var settings_toggle = $SettingsToggle
 @onready var sfx_slider = $SettingsToggle/SFXSlider
-@onready var button = $SettingsToggle/Button
 @onready var music_slider = $SettingsToggle/MusicSlider
 
 var starting_money := 1000
@@ -54,7 +53,3 @@ func _on_music_slider_value_changed(value):
 func _on_sfx_slider_value_changed(value):
 	SfxManager.set_volume(value)
 	print("Volume Changed ", value)
-
-
-func _on_button_pressed():
-	SfxManager.play_SFX(SfxManager.no)

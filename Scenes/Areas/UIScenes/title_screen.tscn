@@ -124,17 +124,8 @@ grow_horizontal = 2
 theme_override_fonts/font = ExtResource("6_wd135")
 text = "SFX"
 
-[node name="Button" type="Button" parent="SettingsToggle"]
-layout_mode = 0
-offset_left = 243.0
-offset_top = 110.0
-offset_right = 281.0
-offset_bottom = 141.0
-text = "test"
-
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
 [connection signal="value_changed" from="SettingsToggle/MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="SettingsToggle/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
-[connection signal="pressed" from="SettingsToggle/Button" to="." method="_on_button_pressed"]
