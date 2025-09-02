@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://q1v1svbbga3m"]
+[gd_scene load_steps=7 format=3 uid="uid://q1v1svbbga3m"]
 
 [ext_resource type="Texture2D" uid="uid://b6k7kcvm7xbkt" path="res://Assets/lukas82825/Hotbar.png" id="1_kmv8b"]
 [ext_resource type="Script" uid="uid://j4lctlyhillb" path="res://Scenes/NonUpgradables/tablehotbar/hotbar.gd" id="1_yxu82"]
@@ -6,7 +6,6 @@
 [ext_resource type="Resource" uid="uid://bscgdv7tmnru" path="res://Resources/IngredientResources/dryIngredientResources/baking_soda.tres" id="4_kykox"]
 [ext_resource type="Resource" uid="uid://b5gvgfhupsx1o" path="res://Resources/IngredientResources/dryIngredientResources/flour.tres" id="5_kmv8b"]
 [ext_resource type="Resource" uid="uid://b22e0h2xh7sfx" path="res://Resources/IngredientResources/dryIngredientResources/sea_salt.tres" id="6_372kr"]
-[ext_resource type="Resource" uid="uid://bbpdh55jflj0h" path="res://Resources/RecipeResources/InbetweenRecipeResources/cookie_dough.tres" id="7_kmv8b"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -41,22 +40,20 @@ script = ExtResource("1_yxu82")
 [node name="Slot" parent="TextureRect/Hotbar" instance=ExtResource("2_wps2s")]
 layout_mode = 2
 item = ExtResource("4_kykox")
-amount = 6
+amount = 1
 
 [node name="Slot2" parent="TextureRect/Hotbar" instance=ExtResource("2_wps2s")]
 layout_mode = 2
 item = ExtResource("5_kmv8b")
-amount = 6
+amount = 1
 
 [node name="Slot3" parent="TextureRect/Hotbar" instance=ExtResource("2_wps2s")]
 layout_mode = 2
 item = ExtResource("6_372kr")
-amount = 6
+amount = 1
 
 [node name="Slot4" parent="TextureRect/Hotbar" instance=ExtResource("2_wps2s")]
 layout_mode = 2
 
 [node name="Slot5" parent="TextureRect/Hotbar" instance=ExtResource("2_wps2s")]
 layout_mode = 2
-item = ExtResource("7_kmv8b")
-amount = 10

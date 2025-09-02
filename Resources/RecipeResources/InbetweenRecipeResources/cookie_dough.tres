@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Recipe" load_steps=15 format=3 uid="uid://bbpdh55jflj0h"]
 
+[ext_resource type="Texture2D" uid="uid://cx3alxlakstyl" path="res://Assets/lukas82325/Sprites/Cookie Dough.png" id="1_0847v"]
 [ext_resource type="Resource" uid="uid://ehkrduea8x4a" path="res://Resources/IngredientResources/wetIngredientResources/butter.tres" id="1_bagit"]
 [ext_resource type="Script" uid="uid://db58b0en31pin" path="res://Scripts/ResourceClasses/Recipe.gd" id="1_q3jil"]
 [ext_resource type="Resource" uid="uid://cwtg4nksbkhqf" path="res://Resources/RecipeResources/InbetweenRecipeResources/self_rising_dough.tres" id="1_qyc1x"]
-[ext_resource type="Script" uid="uid://2afi4mayu2gq" path="res://Scripts/ResourceClasses/RecipeRequirement.gd" id="1_xjijx"]
+[ext_resource type="Script" uid="uid://lyippp6tv72w" path="res://Scripts/ResourceClasses/RecipeRequirement.gd" id="1_xjijx"]
 [ext_resource type="Resource" uid="uid://bm5wa7wu7j2lo" path="res://Resources/IngredientResources/wetIngredientResources/egg.tres" id="3_e4103"]
-[ext_resource type="Texture2D" uid="uid://cr1isyvhpjy3s" path="res://Assets/TempAssets/Cookie_Dough.png" id="3_gqoca"]
 [ext_resource type="Resource" uid="uid://bmgduypa23b6h" path="res://Resources/IngredientResources/wetIngredientResources/vanilla_extract.tres" id="6_usqu2"]
 [ext_resource type="Resource" uid="uid://dck7jlw3lmsvy" path="res://Resources/IngredientResources/dryIngredientResources/sugar.tres" id="6_uy27w"]
 [ext_resource type="Texture2D" uid="uid://cpptwetba8cfq" path="res://Assets/lukas82325/Sprites/Mixer.png" id="9_0847v"]
@@ -33,7 +33,7 @@ ingredient = ExtResource("6_uy27w")
 [resource]
 script = ExtResource("1_q3jil")
 title = "Cookie Dough"
-icon = ExtResource("3_gqoca")
+icon = ExtResource("1_0847v")
 description = "CD"
 category = "inbetween"
 ingredients = Array[ExtResource("1_xjijx")]([SubResource("Resource_hct02"), SubResource("Resource_mx8fl"), SubResource("Resource_sskqx"), SubResource("Resource_8l02b"), SubResource("Resource_s8xic")])

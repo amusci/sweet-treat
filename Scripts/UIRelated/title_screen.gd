@@ -15,6 +15,7 @@ var show_settings := false
 func _ready():
 	show_settings = false
 	settings_toggle.visible = false
+	Engine.time_scale = 1.0
 	
 	# Set slider to saved volume
 	music_slider.value = MusicManager.get_current_volume()
