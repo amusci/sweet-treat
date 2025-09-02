@@ -34,8 +34,14 @@ func load_resources(directory_path: String, target_dictionary: Dictionary, resou
 	var file_name = dir.get_next()
 	
 	while file_name != "":
+		#print(file_name)
+		if file_name.ends_with(".remap"):
+			file_name = file_name.replace(".remap", "") # Please remember to do this for the rest of your life
+			print(file_name)
+		
 		if file_name.ends_with(".tres"): # Loop through directory looking for only .tres
 			var full_path = directory_path + file_name
+			print(full_path + "HELLO????")
 			var resource = load(full_path)
 			if resource:
 				var id = file_name.get_basename()  # Remove .tres extension
